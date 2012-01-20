@@ -48,6 +48,8 @@ class Player
 		end
 	end
 end
+# .look - up to 3 spaces
+# .shoot
 # .pivot
 # .rest
 # .health
