@@ -1,0 +1,12 @@
+
+
+Started GET "/say/hello" for 127.0.0.1 at 2012-01-26 03:21:09 -0700
+
+ActionController::RoutingError (No route matches [GET] "/say/hello"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (24.6ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-01-26 03:21:33 -0700
+Served asset /rails.png - 304 Not Modified (53ms)
