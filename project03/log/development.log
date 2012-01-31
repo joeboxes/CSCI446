@@ -5784,3 +5784,77 @@ Served asset /test.jpg - 304 Not Modified (0ms)
 
 Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:23:51 -0700
 Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 16:32:18 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (238.1ms)
+Completed 200 OK in 1267ms (Views: 1117.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 16:32:21 -0700
+Served asset /products.css - 200 OK (14ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 16:32:21 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 16:32:21 -0700
+Served asset /store.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 16:32:21 -0700
+Served asset /jquery_ujs.js - 200 OK (17ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 16:32:21 -0700
+Served asset /scaffolds.css - 200 OK (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 16:32:21 -0700
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 16:32:21 -0700
+Served asset /products.js - 200 OK (3ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 16:32:21 -0700
+Served asset /logo.png - 200 OK (78ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 16:32:21 -0700
+Served asset /store.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 16:32:21 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 16:32:21 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.1ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 16:32:21 -0700
+Served asset /test.jpg - 200 OK (49ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 16:32:21 -0700
+Served asset /ruby.jpg - 200 OK (59ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateProducts (20120127200803)
+Migrating to CreateCarts (20120131233347)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (39.9ms)[0m  [1mCREATE TABLE "carts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120131233347')
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("carts")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("products")
