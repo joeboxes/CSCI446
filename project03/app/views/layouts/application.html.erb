@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= controller.controller_name %></title>
+  <title><%= puts "Pragprog Books Online Store" %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
-
-<%= yield %>
-
+	<div id="banner">
+		<%= image_tag("logo.png") %>
+		<%= @page_title || "Pragmatic Bookshelf" %>
+	</div>
+	<div id="columns">
+		<div id="side">
+			<ul>
+				<% tim = Time.new %>
+				<li><%= tim.month.to_s + "/" + tim.day.to_s + "/" + tim.year.to_s + " - " + tim.hour.to_s + ":" + tim.min.to_s + ":" + tim.sec.to_s  %></li>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#home">Questions</a></li>
+				<!-- <li><a href="#home">FAQ</a></li> -->
+				<li><a href="#home">News</a></li>
+				<li><a href="#home">Contact</a></li>
+			</ul>
+		</div>
+		<div id="main">
+			<%= yield %>
+		</div>
+	</div>
 </body>
 </html>

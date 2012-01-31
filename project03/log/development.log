@@ -2707,3 +2707,3080 @@ Served asset /ruby.jpg - 304 Not Modified (0ms)
 
 Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-30 23:55:04 -0700
 Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 00:03:15 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (8.4ms)
+Compiled store.css  (6ms)  (pid 8688)
+Compiled application.css  (1ms)  (pid 8688)
+Completed 200 OK in 32ms (Views: 28.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 00:03:15 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 00:03:15 -0700
+Served asset /store.css - 200 OK (9ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 00:03:15 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 00:03:15 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 00:03:15 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 00:03:15 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 00:03:15 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 00:03:15 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 00:03:15 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 00:03:15 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 00:03:15 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 00:03:15 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 00:06:39 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 18ms (Views: 14.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 00:06:39 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 00:06:39 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 00:06:39 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 00:06:39 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 00:06:39 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 00:06:39 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 00:06:39 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 00:06:39 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 00:06:39 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 00:06:39 -0700
+Served asset /logo.png - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/logo.png"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 00:06:39 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 00:06:39 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 00:06:39 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 00:08:25 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 47ms (Views: 14.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 00:08:25 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 00:08:25 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 00:08:25 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 00:08:25 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 00:08:25 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 00:08:25 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 00:08:25 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 00:08:25 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 00:08:25 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 00:08:25 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 00:08:25 -0700
+Served asset /logo.png - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/logo.png"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 00:08:25 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 00:08:25 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 00:10:45 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (8.2ms)
+Compiled application.css  (3ms)  (pid 8688)
+Completed 200 OK in 92ms (Views: 87.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 00:10:46 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 00:10:46 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 00:10:46 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 00:10:46 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 00:10:46 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 00:10:46 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 00:10:46 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 00:10:46 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 00:10:46 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 00:10:46 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 00:10:46 -0700
+Served asset /logo.png - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/logo.png"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 00:10:46 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 00:10:46 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 00:45:22 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (8.4ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 60ms (Views: 56.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 00:45:22 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 00:45:22 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 00:45:22 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 00:45:22 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 00:45:22 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 00:45:22 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 00:45:22 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 00:45:22 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 00:45:22 -0700
+Served asset /logo.png - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/logo.png"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 00:45:22 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 00:45:23 -0700
+Served asset /wtf.jpg - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 00:45:23 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 00:45:23 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 00:45:59 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 22ms (Views: 16.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 00:45:59 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 00:45:59 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 00:45:59 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 00:45:59 -0700
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 00:45:59 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 00:45:59 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 00:45:59 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 00:45:59 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 00:45:59 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 00:45:59 -0700
+Served asset /logo.png - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/logo.png"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 00:45:59 -0700
+Served asset /wtf.jpg - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 00:45:59 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 00:45:59 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 00:54:11 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 19ms (Views: 14.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 00:54:11 -0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 00:54:11 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 00:54:11 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 00:54:11 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 00:54:11 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 00:54:11 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 00:54:11 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 00:54:11 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 00:54:11 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 00:54:11 -0700
+Served asset /logo.png - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/logo.png"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 00:54:11 -0700
+Served asset /wtf.jpg - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 00:54:11 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 00:54:11 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 00:57:25 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (40.4ms)
+Completed 200 OK in 50ms (Views: 45.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 00:57:25 -0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 00:57:25 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 00:57:25 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 00:57:25 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 00:57:25 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 00:57:25 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 00:57:25 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 00:57:25 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 00:57:25 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 00:57:25 -0700
+Served asset /logo.png - 200 OK (13ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 00:57:25 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 00:57:26 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 00:57:26 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 00:58:32 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (9.0ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 35ms (Views: 30.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 00:58:32 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 00:58:32 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 00:58:32 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 00:58:32 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 00:58:32 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 00:58:32 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 00:58:32 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 00:58:32 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 00:58:32 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 00:58:32 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 00:58:32 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 00:58:32 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 00:58:32 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 00:58:56 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (9.2ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 32ms (Views: 27.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 00:58:56 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 00:58:57 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 00:58:57 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 00:58:57 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 00:58:57 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 00:58:57 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 00:58:57 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 00:58:57 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 00:58:57 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 00:58:57 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 00:58:57 -0700
+Served asset /wtf.jpg - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 00:58:57 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 00:58:57 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 00:58:57 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 00:59:07 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (9.4ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 63ms (Views: 27.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 00:59:08 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 00:59:08 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 00:59:08 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 00:59:08 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 00:59:08 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 00:59:08 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 00:59:08 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 00:59:08 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 00:59:08 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 00:59:08 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 00:59:08 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 00:59:08 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 00:59:08 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 00:59:58 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 19ms (Views: 14.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 00:59:58 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 00:59:58 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 00:59:58 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 00:59:58 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 00:59:58 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 00:59:58 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 00:59:58 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 00:59:58 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 00:59:58 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 00:59:58 -0700
+Served asset /wtf.jpg - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 00:59:58 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 00:59:58 -0700
+Served asset /wtf.jpg - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 00:59:58 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 00:59:58 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:00:15 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (9.2ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 32ms (Views: 28.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:00:15 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:00:15 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:00:15 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:00:15 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:00:15 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:00:15 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:00:15 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:00:15 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:00:15 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:00:15 -0700
+Served asset /wtf.jpg - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:00:15 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:00:15 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:00:15 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:00:15 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:00:18 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (8.9ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 31ms (Views: 27.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:00:18 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:00:18 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:00:18 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:00:18 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:00:18 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:00:18 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:00:18 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:00:18 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:00:18 -0700
+Served asset /wtf.jpg - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:00:18 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:00:18 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:00:18 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:00:18 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:00:18 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:03:22 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (38.5ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 60ms (Views: 56.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:03:22 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:03:22 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:03:22 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:03:22 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:03:22 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:03:22 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:03:22 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:03:22 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:03:22 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:03:22 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:03:22 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:03:22 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:03:22 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:03:26 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (9.0ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 31ms (Views: 27.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:03:26 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:03:26 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:03:26 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:03:26 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:03:26 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:03:26 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:03:26 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:03:26 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:03:26 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:03:26 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:03:26 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:03:26 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:03:26 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:03:26 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:06:10 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (9.0ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 31ms (Views: 26.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:06:10 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:06:10 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:06:10 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:06:10 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:06:10 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:06:10 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:06:10 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:06:10 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:06:10 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:06:10 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:06:10 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:06:10 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:06:10 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:06:18 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (8.8ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 31ms (Views: 27.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:06:18 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:06:18 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:06:18 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:06:18 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:06:18 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:06:18 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:06:18 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:06:18 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:06:18 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:06:18 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:06:18 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:06:18 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:06:18 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:06:18 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:06:33 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (37.6ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 59ms (Views: 55.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:06:33 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:06:33 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:06:33 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:06:33 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:06:33 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:06:33 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:06:33 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:06:33 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:06:33 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:06:33 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:06:33 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:06:33 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:06:33 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:06:33 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:07:11 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (8.9ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 31ms (Views: 27.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:07:11 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:07:11 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:07:11 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:07:11 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:07:12 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:07:12 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:07:12 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:07:12 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:07:12 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:07:12 -0700
+Served asset /wtf.jpg - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:07:12 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:07:12 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:07:12 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal(8,2), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120127200803')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (4.1ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal(8,2), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (2.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120127200803')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal(8,2), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (2.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120127200803')
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:13:55 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:13:55 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:13:55 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:13:55 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:13:55 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:13:55 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:13:55 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:13:55 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:13:55 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:13:55 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:13:55 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:13:55 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:13:55 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:13:55 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:13:55 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:14:12 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (9.2ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 62ms (Views: 28.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:14:13 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:14:13 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:14:13 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:14:13 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:14:13 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:14:13 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:14:13 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:14:13 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:14:13 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:14:13 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:14:13 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:14:13 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:14:13 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:14:26 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (9.1ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 60ms (Views: 56.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:14:26 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:14:26 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:14:26 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:14:26 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:14:26 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:14:26 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:14:26 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:14:26 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:14:26 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:14:26 -0700
+Served asset /wtf.jpg - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:14:26 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:14:26 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:14:26 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:17:21 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:17:21 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:17:21 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:17:21 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:17:21 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:17:21 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:17:21 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:17:21 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:17:21 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:17:21 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:17:21 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:17:21 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:17:21 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:17:21 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:17:56 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (9.1ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 32ms (Views: 27.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:17:56 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:17:56 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:17:56 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:17:56 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:17:56 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:17:56 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:17:56 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:17:56 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:17:56 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:17:56 -0700
+Served asset /wtf.jpg - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:17:56 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:17:56 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:17:56 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:18:03 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (35.7ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 60ms (Views: 56.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:18:03 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:18:03 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:18:03 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:18:03 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:18:03 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:18:03 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:18:03 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:18:03 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:18:03 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:18:03 -0700
+Served asset /wtf.jpg - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:18:03 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:18:03 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:18:03 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:18:34 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 19ms (Views: 14.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:18:34 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:18:34 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:18:34 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:18:34 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:18:34 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:18:34 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:18:34 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:18:34 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:18:34 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:18:34 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:18:34 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:18:34 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:18:34 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:18:57 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (8.6ms)
+Compiled application.css  (8ms)  (pid 8688)
+Completed 200 OK in 31ms (Views: 26.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:18:57 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:18:57 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:18:57 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:18:57 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:18:57 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:18:57 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:18:57 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:18:57 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:18:57 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:18:57 -0700
+Served asset /wtf.jpg - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:18:57 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:18:57 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:18:57 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:19:09 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (37.6ms)
+Completed 200 OK in 47ms (Views: 43.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:19:09 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:19:09 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:19:09 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:19:09 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:19:09 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:19:09 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:19:09 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:19:09 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:19:09 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:19:09 -0700
+Served asset /wtf.jpg - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:19:09 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:19:09 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:19:09 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:19:09 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:20:38 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 19ms
+
+ActionView::Template::Error (String can't be coerced into Fixnum):
+    15: 		<div id="side">
+    16: 			<ul>
+    17: 				<%= time_var = Time.new %>
+    18: 				<li><%= puts time_var.month + "/" + time_var.day + "/" + time_var.year + "  " + time_var.hour + ":" + time_var.minute + ":" + time_var.second %></li>
+    19: 				<li><a href="#home">Home</a></li>
+    20: 				<li><a href="#home">Questions</a></li>
+    21: 				<!-- <li><a href="#home">FAQ</a></li> -->
+  app/views/layouts/application.html.erb:18:in `+'
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__27119389046022481_33522080'
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:20:52 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (String can't be coerced into Fixnum):
+    15: 		<div id="side">
+    16: 			<ul>
+    17: 				<%= time_var = Time.new %>
+    18: 				<li><%= puts time_var.month + "/" %></li>
+    19: 				<li><a href="#home">Home</a></li>
+    20: 				<li><a href="#home">Questions</a></li>
+    21: 				<!-- <li><a href="#home">FAQ</a></li> -->
+  app/views/layouts/application.html.erb:18:in `+'
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__27119389046022481_70201207081840'
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:21:01 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 19ms (Views: 14.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:01 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:01 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:01 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:01 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:01 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:01 -0700
+Served asset /store.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:01 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:01 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:21:01 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (29.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:01 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:21:01 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:21:01 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:21:01 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:21:01 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:21:09 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:09 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:09 -0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:09 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:09 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:09 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:09 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:09 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:09 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:21:09 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:09 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:21:09 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:21:09 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:21:09 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:21:09 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:21:12 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 48ms (Views: 44.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:12 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:12 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:12 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:12 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:12 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:12 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:12 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:12 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:12 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:21:12 -0700
+Served asset /wtf.jpg - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:21:12 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:21:12 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:21:12 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:21:18 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 19ms (Views: 15.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:18 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:18 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:18 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:18 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:18 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:18 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:18 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:18 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:18 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:21:18 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:21:18 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:21:18 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:21:18 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:21:23 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (9.2ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (String can't be coerced into Fixnum):
+    15: 		<div id="side">
+    16: 			<ul>
+    17: 				<% time_var = Time.new %>
+    18: 				<li><%= time_var.month + "/" + time_var.day + "/" + time_var.year + "  " + time_var.hour + ":" + time_var.minute + ":" + time_var.second  %></li>
+    19: 				<li><a href="#home">Home</a></li>
+    20: 				<li><a href="#home">Questions</a></li>
+    21: 				<!-- <li><a href="#home">FAQ</a></li> -->
+  app/views/layouts/application.html.erb:18:in `+'
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__27119389046022481_35729620'
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:21:29 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 47ms
+
+ActionView::Template::Error (String can't be coerced into Fixnum):
+    15: 		<div id="side">
+    16: 			<ul>
+    17: 				<% time_var = Time.new %>
+    18: 				<li><%= time_var.month + "/" %></li>
+    19: 				<li><a href="#home">Home</a></li>
+    20: 				<li><a href="#home">Questions</a></li>
+    21: 				<!-- <li><a href="#home">FAQ</a></li> -->
+  app/views/layouts/application.html.erb:18:in `+'
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__27119389046022481_34347160'
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:21:41 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:41 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:41 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:41 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:41 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:21:41 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:41 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:41 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:41 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:21:41 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:21:41 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:21:41 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:21:41 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:21:41 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:21:53 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (38.1ms)
+ERROR: compiling _app_views_layouts_application_html_erb__27119389046022481_29836320 RAISED /home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:20: syntax error, unexpected '<', expecting ')'
+				<li><a href="#home">Questions</a></li>
+				 ^
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:20: unknown regexp option - l
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+				<!-- <li><a href="#home">FAQ</a></li> -->
+				 ^
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+				<!-- <li><a href="#home">FAQ</a></li> -->
+				      ^
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:21: unknown regexp option - l
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:21: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:22: unknown regexp option - l
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:23: syntax error, unexpected '<'
+				<li><a href="#home">Contact</a></li>
+				 ^
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:23: unknown regexp option - l
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+			</ul>
+			 ^
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:25: unknown regexp options - dv
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:26: syntax error, unexpected '<'
+		<div id="main">
+		 ^
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:29: unknown regexp options - dv
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+</body>
+ ^
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:31: unknown regexp options - htl
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:32: unterminated string meets end of file
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:32: syntax error, unexpected $end, expecting ')'
+Function body:           def _app_views_layouts_application_html_erb__27119389046022481_29836320(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!DOCTYPE html>
+<html>
+<head>
+  <title>');@output_buffer.append= ( puts "Pragprog Books Online Store" );@output_buffer.safe_concat('</title>
+  ');@output_buffer.append= ( stylesheet_link_tag    "application" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( javascript_include_tag "application" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( csrf_meta_tags );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</head>
+<body class=\'');@output_buffer.append= ( controller.controller_name );@output_buffer.safe_concat('\'>
+	<div id="banner">
+		');@output_buffer.append= ( image_tag("logo.png") );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		');@output_buffer.append= ( @page_title || "Pragmatic Bookshelf" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	</div>
+	<div id="columns">
+		<div id="side">
+			<ul>
+');				 time_var = Time.new 
+@output_buffer.safe_concat('				<li>');@output_buffer.append= ( time_var.month + "\" );@output_buffer.safe_concat('</li>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#home">Questions</a></li>
+				<!-- <li><a href="#home">FAQ</a></li> -->
+				<li><a href="#home">News</a></li>
+				<li><a href="#home">Contact</a></li>
+			</ul>
+		</div>
+		<div id="main">
+			');@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('		</div>
+	</div>
+</body>
+</html>
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/template.rb:309:in `module_eval'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/template.rb:309:in `compile'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/template.rb:217:in `compile!'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/template.rb:170:in `block in render'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/notifications.rb:55:in `instrument'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/template.rb:169:in `render'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/template_renderer.rb:52:in `render_with_layout'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/template_renderer.rb:12:in `block in render'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/template_renderer.rb:9:in `render'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/abstract_controller/rendering.rb:120:in `_render_template'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/streaming.rb:250:in `_render_template'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/abstract_controller/rendering.rb:114:in `render_to_body'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/renderers.rb:30:in `render_to_body'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/abstract_controller/rendering.rb:99:in `render'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/alice/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.1.3/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/abstract_controller/base.rb:167:in `process_action'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/callbacks.rb:416:in `_run__803251589469867973__process_action__4027165527719596063__callbacks'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/callbacks.rb:386:in `_run_process_action_callbacks'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/notifications.rb:53:in `block in instrument'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/notifications.rb:53:in `instrument'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/params_wrapper.rb:201:in `process_action'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.1.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/abstract_controller/base.rb:121:in `process'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/abstract_controller/rendering.rb:45:in `process'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal.rb:193:in `dispatch'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_controller/metal.rb:236:in `block in action'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/routing/route_set.rb:65:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/routing/route_set.rb:29:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:152:in `block in call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:96:in `block in recognize'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:95:in `recognize'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:141:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/routing/route_set.rb:532:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/etag.rb:23:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/conditionalget.rb:25:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/flash.rb:247:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/session/abstract/id.rb:195:in `context'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/session/abstract/id.rb:190:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/cookies.rb:331:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.1.3/lib/active_record/query_cache.rb:64:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/activerecord-3.1.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:477:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/reloader.rb:68:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/sendfile.rb:101:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.1.3/lib/rails/rack/logger.rb:13:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/methodoverride.rb:24:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/runtime.rb:17:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.1.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/lock.rb:15:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/static.rb:53:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.1.3/lib/rails/engine.rb:456:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/content_length.rb:14:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/railties-3.1.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/alice/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.6/lib/rack/handler/webrick.rb:59:in `service'
+/home/alice/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/alice/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/alice/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Completed 500 Internal Server Error in 46ms
+
+ActionView::Template::Error (/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:20: syntax error, unexpected '<', expecting ')'
+				<li><a href="#home">Questions</a></li>
+				 ^
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:20: unknown regexp option - l
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+				<!-- <li><a href="#home">FAQ</a></li> -->
+				 ^
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:21: syntax error, unexpected '<'
+				<!-- <li><a href="#home">FAQ</a></li> -->
+				      ^
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:21: unknown regexp option - l
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:21: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:22: unknown regexp option - l
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:23: syntax error, unexpected '<'
+				<li><a href="#home">Contact</a></li>
+				 ^
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:23: unknown regexp option - l
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+			</ul>
+			 ^
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:25: unknown regexp options - dv
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:26: syntax error, unexpected '<'
+		<div id="main">
+		 ^
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:29: unknown regexp options - dv
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:30: syntax error, unexpected '<'
+</body>
+ ^
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:31: unknown regexp options - htl
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:32: unterminated string meets end of file
+/home/alice/Documents/School/spring2012/Web/CSCI446/project03/app/views/layouts/application.html.erb:32: syntax error, unexpected $end, expecting ')'):
+    17: 				<% time_var = Time.new %>
+    18: 				<li><%= time_var.month + "\" %></li>
+    19: 				<li><a href="#home">Home</a></li>
+    20: 				<li><a href="#home">Questions</a></li>
+    21: 				<!-- <li><a href="#home">FAQ</a></li> -->
+    22: 				<li><a href="#home">News</a></li>
+    23: 				<li><a href="#home">Contact</a></li>
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:22:19 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 19ms (Views: 14.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:22:19 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:22:19 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:22:19 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:22:19 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:22:19 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:22:19 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:22:19 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:22:19 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:22:19 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:22:19 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:22:19 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:22:19 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:22:19 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:22:19 -0700
+Served asset /wtf.jpg - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:22:30 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:22:30 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:22:30 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:22:30 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:22:30 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:22:30 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:22:30 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:22:30 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:22:30 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:22:30 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:22:30 -0700
+Served asset /wtf.jpg - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:22:30 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:22:30 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:22:30 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:22:36 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (38.2ms)
+Completed 200 OK in 48ms (Views: 44.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:22:36 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:22:36 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:22:36 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:22:36 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:22:36 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:22:36 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:22:36 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:22:36 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:22:36 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:22:36 -0700
+Served asset /wtf.jpg - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:22:36 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:22:36 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:22:36 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:23:17 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (undefined method `minute' for 2012-01-31 01:23:17 -0700:Time):
+    15: 		<div id="side">
+    16: 			<ul>
+    17: 				<% tim = Time.new %>
+    18: 				<li><%= tim.month.to_s + "/" + tim.day.to_s + "/" + tim.year.to_s + "  " + tim.hour.to_s + ":" + tim.minute.to_s + ":" + tim.second.to_s  %></li>
+    19: 				<li><a href="#home">Home</a></li>
+    20: 				<li><a href="#home">Questions</a></li>
+    21: 				<!-- <li><a href="#home">FAQ</a></li> -->
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__27119389046022481_34308400'
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:23:25 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 49ms (Views: 44.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:23:25 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:23:25 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:23:25 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:23:25 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:23:25 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:23:25 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:23:25 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:23:25 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:23:25 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:23:25 -0700
+Served asset /wtf.jpg - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:23:25 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:23:25 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:23:25 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:23:38 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 19ms
+
+ActionView::Template::Error (undefined method `second' for 2012-01-31 01:23:38 -0700:Time):
+    15: 		<div id="side">
+    16: 			<ul>
+    17: 				<% tim = Time.new %>
+    18: 				<li><%= tim.month.to_s + "/" + tim.day.to_s + "/" + tim.year.to_s + "  " + tim.hour.to_s + ":" + tim.min.to_s + ":" + tim.second.to_s  %></li>
+    19: 				<li><a href="#home">Home</a></li>
+    20: 				<li><a href="#home">Questions</a></li>
+    21: 				<!-- <li><a href="#home">FAQ</a></li> -->
+  app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__27119389046022481_33281900'
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:23:42 -0700
+  Processing by StoreController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products" ORDER BY title[0m
+Rendered store/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:23:42 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:23:42 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:23:42 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:23:42 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:23:42 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:23:42 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:23:42 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:23:42 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:23:42 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:23:42 -0700
+Served asset /wtf.jpg - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:23:42 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:23:42 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:23:42 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-31 01:23:51 -0700
+  Processing by StoreController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" ORDER BY title
+Rendered store/index.html.erb within layouts/application (53.8ms)
+Completed 200 OK in 64ms (Views: 59.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-31 01:23:51 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-31 01:23:51 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-31 01:23:51 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-31 01:23:51 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-31 01:23:51 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-31 01:23:51 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-31 01:23:51 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-31 01:23:51 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-31 01:23:51 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/wtf.jpg" for 127.0.0.1 at 2012-01-31 01:23:51 -0700
+Served asset /wtf.jpg - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wtf.jpg"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-01-31 01:23:51 -0700
+Served asset /logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/test.jpg" for 127.0.0.1 at 2012-01-31 01:23:51 -0700
+Served asset /test.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2012-01-31 01:23:51 -0700
+Served asset /ruby.jpg - 304 Not Modified (0ms)
