@@ -1872,3 +1872,184 @@ Served asset /application.js - 304 Not Modified (0ms)
   [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
   [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120127200803')
+
+
+Started GET "/store/" for 127.0.0.1 at 2012-01-30 23:20:16 -0700
+
+ActionController::RoutingError (No route matches [GET] "/store"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (32.6ms)
+
+
+Started GET "/store/index/" for 127.0.0.1 at 2012-01-30 23:20:19 -0700
+  Processing by StoreController#index as HTML
+Rendered store/index.html.erb within layouts/application (0.8ms)
+Compiled application.css  (5ms)  (pid 8231)
+Compiled store.css  (49ms)  (pid 8231)
+Compiled application.js  (6ms)  (pid 8231)
+Compiled store.js  (596ms)  (pid 8231)
+Completed 200 OK in 1064ms (Views: 1063.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-30 23:20:20 -0700
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-30 23:20:20 -0700
+Served asset /products.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-30 23:20:20 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-30 23:20:20 -0700
+Served asset /store.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-30 23:20:20 -0700
+Served asset /jquery.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-30 23:20:20 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-30 23:20:20 -0700
+Served asset /products.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-30 23:20:20 -0700
+Served asset /store.js - 200 OK (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-30 23:20:20 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-01-30 23:21:35 -0700
+Served asset /rails.png - 200 OK (33ms)
+
+
+Started GET "/store" for 127.0.0.1 at 2012-01-30 23:21:39 -0700
+
+ActionController::RoutingError (No route matches [GET] "/store"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/store/index" for 127.0.0.1 at 2012-01-30 23:21:42 -0700
+  Processing by StoreController#index as HTML
+Rendered store/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-30 23:21:42 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-30 23:21:42 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-30 23:21:42 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-30 23:21:42 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-30 23:21:42 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-30 23:21:42 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-30 23:21:42 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-30 23:21:42 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-30 23:21:42 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/store" for 127.0.0.1 at 2012-01-30 23:22:13 -0700
+
+ActionController::RoutingError (No route matches [GET] "/store"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/store/index" for 127.0.0.1 at 2012-01-30 23:22:17 -0700
+  Processing by StoreController#index as HTML
+Rendered store/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-01-30 23:22:17 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-01-30 23:22:17 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.js?body=1" for 127.0.0.1 at 2012-01-30 23:22:17 -0700
+Served asset /store.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/store.css?body=1" for 127.0.0.1 at 2012-01-30 23:22:17 -0700
+Served asset /store.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-01-30 23:22:17 -0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-01-30 23:22:17 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-01-30 23:22:17 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-01-30 23:22:17 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-01-30 23:22:17 -0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/index.html" for 127.0.0.1 at 2012-01-30 23:24:24 -0700
+
+ActionController::RoutingError (No route matches [GET] "/index.html"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2012-01-30 23:24:27 -0700
+
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+
+Rendered /home/alice/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/rails/info/properties" for 127.0.0.1 at 2012-01-30 23:25:05 -0700
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  Processing by Rails::InfoController#properties as HTML
+Rendered inline template (11.2ms)
+Completed 200 OK in 65ms (Views: 64.6ms | ActiveRecord: 0.0ms)
