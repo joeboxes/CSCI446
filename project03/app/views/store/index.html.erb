@@ -1,7 +1,16 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
-<h1>Your Pragmatic Catalog</h1>
+
+<%
+# session crap by me
+if session[:counter].nil?
+	session[:counter] = 1
+else
+	session[:counter] = session[:counter] + 1
+end
+%>
+<h1>Your Pragmatic Catalog - <%= session[:counter] %></h1>
 <% @products.each do |product| %>
 	<div class="entry">
 		<%= image_tag(product.image_url) %>
@@ -9,6 +18,7 @@
 		<%= sanitize(product.description) %>
 		<div class="price_line">
 			<span class="price"><%= number_to_currency(product.price) %></span>
+			<%= button_to 'Add to Cart', line_items_path(product_id: product) %>
 		</div>
 	</div>
 <% end %>
