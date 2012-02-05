@@ -1,23 +1,5 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
-<div class="cart_title">Your Cart</div>
-<table>
-	<tr>
-		<th>Amount</th>
-		<th>Product</th>
-		<th>Price</th>
-	</tr>
-	<% @cart.line_items.each do |item| %>
-	<tr>
-		<td class="item_quantity"><%= item.quantity %> &times; </td>
-		<td><%= item.product.title %></td>
-		<td class="item_price"><%= number_to_currency(item.total_price) %></td>
-	</tr>
-	<% end %>
-	<tr>
-		<td colspan="2">Total</td>
-		<td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-	</tr>
-</table>
-<%= button_to 'Empty Cart', @cart, method: :delete, confirm: 'Are You Sure?' %>
+HI THERE
+<%= render @cart %>

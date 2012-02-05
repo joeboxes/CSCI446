@@ -38,10 +38,25 @@
 	#side{
 		float: left;
 		margin-top: 25px;
-		padding: 1em 2em;
+		padding: 1em 1em;
 		width: 13em;
 		background: #141;
 		color: #FFF;
+		form, div{
+			display: inline;
+		}
+		input{
+			font-size: small;
+		}
+		#cart{
+			font-size: smaller;
+			color: #FFF;
+			table{
+				border-top: 1px dotted #595;
+				border-bottom: 1px dotted #595;
+				margin-bottom: 10px;
+			}
+		}
 		ul{
 			padding: 0px;
 			li{
