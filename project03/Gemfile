@@ -37,3 +37,6 @@ end
 
 # added dependence for paginate functionality
 gem 'will_paginate', '~> 3.0'
+
+# added dependence on passwords
+gem 'bcrypt-ruby', '~> 3.0.0'
