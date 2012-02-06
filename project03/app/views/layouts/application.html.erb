@@ -24,11 +24,19 @@
 				<% tim = Time.new %>
 				<li><%= tim.month.to_s + "/" + tim.day.to_s + "/" + tim.year.to_s + " - " + tim.hour.to_s + ":" + tim.min.to_s + ":" + tim.sec.to_s  %></li>
 				<li><a href="#home">Home</a></li>
-				<li><a href="#home">Questions</a></li>
-				<!-- <li><a href="#home">FAQ</a></li> -->
-				<li><a href="#home">News</a></li>
-				<li><a href="#home">Contact</a></li>
+				<li><a href="#faqs">Questions</a></li>
+				<li><a href="#news">News</a></li>
+				<li><a href="#cont">Contact</a></li>
+				<li><a href="login">Log In</a></li>
 			</ul>
+			<% if session[:user_id] %>
+				<ul>
+					<li><%= link_to 'Orders', orders_path %></li>
+					<li><%= link_to 'Products', products_path %></li>
+					<li><%= link_to 'Users', users_path %></li>
+				</ul>
+				<%= button_to 'Logout', logout_path, method: :delete %>
+			<% end %>
 		</div>
 		<div id="main">
 			<%= yield %>
