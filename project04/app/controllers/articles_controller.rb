@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
     @article = Article.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html #new.html.erb
       format.json { render json: @article }
     end
   end

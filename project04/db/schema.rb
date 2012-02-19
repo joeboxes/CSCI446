@@ -11,12 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120218234634) do
+ActiveRecord::Schema.define(:version => 20120219040431) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "created"
     t.integer  "edit_count"
     t.integer  "author_id"
     t.datetime "created_at"
@@ -28,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20120218234634) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
   end
 
 end
