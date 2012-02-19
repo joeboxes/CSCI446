@@ -10,7 +10,19 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.label 'Author' %><br />
+    <%= :author_id %>
+    <%= 
+    @author_list = Author.find_all_by_id(1)
+    @a_name_id = []
+    @author_list.each do |author|
+      @a_name_id.push( [author.username, author.id] )
+    end
+    select_tag :author_id, options_for_select(@a_name_id), :style => 'width:250px'
+    %>
+    
+  </div>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -19,13 +31,9 @@
     <%= f.label :body %><br />
     <%= f.text_area :body, rows: 6, cols: 50 %>
   </div>
-<!--
-  <div class="field">
-    %= f.label 'Author: ' %><br />
-    %= f.text_field :hierherbitch %>
-find_by_id(1)
-  </div>
--->
+
+  
+
 <!--
   <div class="field">
     <%= f.label :edit_count %><br />

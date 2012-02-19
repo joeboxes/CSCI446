@@ -42,6 +42,15 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
 
+    f = open("info.txt", "w")
+    f.write( params )
+    f.write( "\n" )
+    f.write( params[:article] )
+    f.write( "\n" )
+    f.write( @article.author_id )
+    f.write( "\n" )
+    f.write( @article.edit_count )
+    error = true
     
     @article.edit_count = 1
 
