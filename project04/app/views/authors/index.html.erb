@@ -4,6 +4,7 @@
   <tr>
     <th>Username</th>
     <th>Password digest</th>
+    <th>Email</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +14,7 @@
   <tr>
     <td><%= author.username %></td>
     <td><%= author.password_digest %></td>
+    <td><%= author.email %></td>
     <td><%= link_to 'Show', author %></td>
     <td><%= link_to 'Edit', edit_author_path(author) %></td>
     <td><%= link_to 'Destroy', author, confirm: 'Are you sure?', method: :delete %></td>

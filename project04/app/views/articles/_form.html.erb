@@ -17,12 +17,16 @@
   </div>
   <div class="field">
     <%= f.label :body %><br />
-    <%= f.text_area :body %>
+    <%= f.text_area :body, rows: 6, cols: 50 %>
   </div>
+<!--
   <div class="field">
-    <%= f.label :created %><br />
-    <%= f.datetime_select :created %>
+    %= f.label 'Author: ' %><br />
+    %= f.text_field :hierherbitch %>
+find_by_id(1)
   </div>
+-->
+<!--
   <div class="field">
     <%= f.label :edit_count %><br />
     <%= f.number_field :edit_count %>
@@ -31,6 +35,7 @@
     <%= f.label :author_id %><br />
     <%= f.number_field :author_id %>
   </div>
+-->
   <div class="actions">
     <%= f.submit %>
   </div>
