@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
     @articles = Article.all
 
     respond_to do |format|
-      format.html #index.html.erb
+      format.html # index.html.erb
       format.json { render json: @articles }
     end
   end
@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
     @article = Article.new
 
     respond_to do |format|
-      format.html #new.html.erb
+      format.html # new.html.erb
       format.json { render json: @article }
     end
   end
