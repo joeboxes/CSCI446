@@ -14,14 +14,13 @@
     <%= f.label 'Author' %><br />
     <%= :author_id %>
     <%= 
-    @author_list = Author.find_all_by_id(1)
+    @author_list = Author.all()
     @a_name_id = []
     @author_list.each do |author|
       @a_name_id.push( [author.username, author.id] )
     end
-    select_tag :author_id, options_for_select(@a_name_id), :style => 'width:250px'
     %>
-    
+    <%= f.select :author_id, @a_name_id %>
   </div>
   <div class="field">
     <%= f.label :title %><br />
