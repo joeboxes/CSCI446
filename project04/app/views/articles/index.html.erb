@@ -5,27 +5,29 @@
     <%= link_to 'Create an Article', new_article_path, title: 'new' %>
     </div>
 </div>
-<div class="article">
+<div class="article" style="width:786px;">
 <table>
   <tr>
     <th>Title</th>
     <th>Author Name</th>
     <th>Body</th>
     <th>Creation Date</th>
+    <th></th>
   </tr>
-
+</table>
+</div>
+<div class="article" id="scroll_table">
+<table>
 <% @articles.each do |article| %>
   <tr style="background: #<%= cycle("EEE","FFF") %>;">
     <td><%= truncate(article.title, :length=>20, :omission=>'...') %></td>
      <% @author = Author.find_by_id(article.author_id) %>
     <td><%= @author.username %></td>
-    <td><%= truncate(article.body, :length=>40, :omission=>'...') %></td>
+    <td><%= truncate(article.body, :length=>30, :omission=>'...') %></td>
     <td><%= article.created_at.strftime("%A, %b. %d %Y") %></td>
-
     <td style="border: none;"><%= link_to 'Shw', article, title: 'View Article' %></td>
     <td style="border: none;"><%= link_to 'Edt', edit_article_path(article), title: 'Edit Article' %></td>
     <td style="border: none;"><%= link_to 'Del', article, title: 'Delete Article', confirm: 'Are you sure?', method: :delete %></td>
-
   </tr>
 <% end %>
 </table>

@@ -1,5 +1,6 @@
-<h1>Editing article</h1>
-
+<p id="notice"><%= notice %></p>
+<h1>Editing "<%= truncate(@article.title, :length=>25, :omission=>'...')  %>"</h1>
+<div class="spacer"></div>
 <%= render 'form' %>
 
 <%= link_to 'Show', @article %> |

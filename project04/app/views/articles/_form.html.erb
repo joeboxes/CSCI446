@@ -1,3 +1,4 @@
+<div class="editform">
 <%= form_for(@article) do |f| %>
   <% if @article.errors.any? %>
     <div id="error_explanation">
@@ -10,8 +11,9 @@
       </ul>
     </div>
   <% end %>
+  <!--%= @article %>-->
   <div class="field">
-    <%= f.label 'Author' %><br />
+    <%= f.label 'Author' %>
     <%
     @author_list = Author.all()
     @a_name_id = []
@@ -19,30 +21,23 @@
       @a_name_id.push( [author.username, author.id] )
     end
     %>
+    
     <%= f.select :author_id, @a_name_id %>
+
   </div>
+  
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body, rows: 6, cols: 50 %>
-  </div>
-
   
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body, rows: 14, cols: 60 %>
+  </div>
 
-<!--
-  <div class="field">
-    <%= f.label :edit_count %><br />
-    <%= f.number_field :edit_count %>
-  </div>
-  <div class="field">
-    <%= f.label :author_id %><br />
-    <%= f.number_field :author_id %>
-  </div>
--->
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>

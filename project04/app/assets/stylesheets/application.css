@@ -6,7 +6,7 @@
  *= require_tree . 
 */
 
-body, h1,h2,h3,h4,h5,h6,p,ul,li,a,div,table,tr,th,td{
+body, h1,h2,h3,h4,h5,h6,p,ol,ul,li,a,div,table,tr,th,td{
 	font-family: "Comic Sans MS";
 	font-weight: normal;
 	margin: 0px 0px 0px 0px;
@@ -55,7 +55,7 @@ header{
 	position: relative;
 	width: 800px;
 	margin: 0px auto;
-	background-color: #F5F5F5;
+	background-color: #FFF;
 }
 .odd{
 	background-color: #FFF;
@@ -81,8 +81,64 @@ header{
 	display: inline-block;
 }
 
+
 ul{
 	list-style: none;
+}
+.linklist{
+	width: 100%;
+}
+.linklist li{
+	width:20%;
+	display: inline-block;
+}
+
+
+p{
+	text-align:justify;
+}
+
+#scroll_table{
+	height: 250px;
+	overflow: auto;
+}
+
+
+.article th{
+	width:20%;
+}
+.article th + th{
+	width:15%;
+}
+.article th + th + th{
+	width:30%;
+}
+.article th + th + th + th{
+	width:20%;
+}
+.article th + th + th + th + th{
+	width:15%;
+}
+.article td{
+	width:20%;
+}
+.article td + td{
+	width:15%;
+}
+.article td + td + td{
+	width:30%;
+}
+.article td + td + td + td{
+	width:20%;
+}
+.article td + td + td + td + td{
+	width:5%;
+}
+.article td + td + td + td + td + td{
+	width:5%;
+}
+.article td + td + td + td + td + td + td{
+	width:5%;
 }
 
 .article table{
@@ -107,3 +163,38 @@ ul{
 	padding-top:10px;
 	text-align:left;
 }
+
+.editform{
+	text-align:left;
+	display: block;
+}
+
+.field{
+	width:100%;
+	display: block;
+	text-align:left;
+}
+
+.actions{
+	text-align:left;
+	margin-left: 105px;
+}
+label{
+	width:100px;
+	text-align:right;
+	float:left;
+	margin-right: 5px;
+}
+
+input[type="text"]{
+	width: 300px;
+}
+select{
+	width: 300px;
+}
+
+
+
+
+
+
