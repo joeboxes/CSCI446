@@ -1,33 +1,53 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing articles</h1>
-
-<table>
+<div class="double">
+    <div class="half"><h1>All the World's Articles</h1>
+    </div><div class="half">
+    <%= link_to 'Create an Article', new_article_path, title: 'new' %>
+    </div>
+</div>
+<div class="double">
+<div style="width:80%; display:inline-block;">
+<table class="article">
   <tr>
     <th>Title</th>
+    <th>Author Name</th>
     <th>Body</th>
-    <th>Created</th>
-    <th>Edits</th>
-    <th>Author</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Creation Date</th>
   </tr>
 
 <% @articles.each do |article| %>
-  <tr>
+  <tr class="<%= cycle("even","odd") %>">
     <td><%= article.title %></td>
+     <% @author = Author.find_by_id(article.author_id) %>
+    <td><%= @author.username %></td>
     <td><%= article.body %></td>
-    <td><%= article.created_at %></td>
-    <td><%= article.edit_count %></td>
-    <td><%= article.author_id %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= article.created_at.strftime("%A, %b. %d %Y") %></td>
   </tr>
 <% end %>
 </table>
+</div>
+<div style="width:10%; display:inline;">
 
+
+<table class="options"  style="width:20%;">
+    <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+    </tr>
+    <% @articles.each do |article| %>
+        <tr>
+            <td><%= link_to 'Shw', article %></td>
+            <td><%= link_to 'Edt', edit_article_path(article) %></td>
+            <td><%= link_to 'Del', article, confirm: 'Are you sure?', method: :delete %></td>
+        </tr>
+    <% end %>
+</table>
+<%= @articles.count %>
+
+
+
+</div>
+</div>
 <br />
-<%= link_to 'New Article', new_article_path %>
-<%= link_to 'New Article', new_article_path, title: 'whaddyp' %>
+

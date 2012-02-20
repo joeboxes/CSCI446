@@ -7,16 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<div>
-	<ul>
-		<li><a href="/articles">Articles</a></li>
-		<li><a href="/authors">Authors</a></li>
-	</ul>
+<div class="container">
+	<header>
+	<div class="title">Articl.es</div>
+	<div class="slogan">hi there buddy</div>
+	<div class="spacer"></div>
+	</header>
+	<div class="main">
+		<%= yield %>
+	</div>
+	<footer></footer>
+	<div>
+		<ul>
+			<li><a href="/articles">Articles</a></li>
+			<li><a href="/authors">Authors</a></li>
+		</ul>
+	</div>
 </div>
-<div>
-<%= yield %>
-</div>
-
 </body>
 </html>
