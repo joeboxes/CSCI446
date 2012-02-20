@@ -12,6 +12,7 @@ body, h1,h2,h3,h4,h5,h6,p,ul,li,a,div,table,tr,th,td{
 	margin: 0px 0px 0px 0px;
 	padding: 0px 0px 0px 0px;
 	vertical-align: middle;
+	text-align: center;
 	color: #000;
 	border: none;
 }
@@ -24,9 +25,12 @@ body{
 h1{
 	text-align: left;
 	font-size: 2em;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 }
-h6{
+h3{
+	font-size: 1em;
+	text-align: left;
+	padding-bottom: 10px;
 }
 
 header{
@@ -39,7 +43,7 @@ header{
 	padding: 10px;
 }
 .slogan{
-	font-size: 1.5em;
+	font-size: 1.0em;
 	margin: 0px;
 	padding: 0px;
 }
@@ -81,21 +85,25 @@ ul{
 	list-style: none;
 }
 
-table{
+.article table{
 	width: 100%;
 	border-spacing: 0px;
 	border-collapse: collapse;
 	border-bottom: 2px solid black;
 }
-td{
+.article tr > td{
 	border-left: 2px solid black;
 	border-right: 2px solid black;
 }
-th{
+.article tr > th {
 	border-bottom: 2px solid white;
 	border-top: 2px solid black;
 	border-left: 2px solid black;
 	border-right: 2px solid black;
 	font-weight: bold;
 	background: #DDD;
+}
+.subinfo{
+	padding-top:10px;
+	text-align:left;
 }

@@ -10,7 +10,12 @@
 <div class="container">
 	<header>
 	<div class="title">Articl.es</div>
-	<div class="slogan">hi there buddy</div>
+	<% random_slogans = "... with a name .com hipseters will love!",
+						"... what's Articl in Spanish anyway?",
+						"... my cousin works for Bit.ly",
+						"... not just for the country of Spain"
+	%>
+	<div class="slogan"><%= random_slogans[rand(random_slogans.length)] %></div>
 	<div class="spacer"></div>
 	</header>
 	<div class="main">

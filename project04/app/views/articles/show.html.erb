@@ -1,25 +1,14 @@
-<p id="notice"><%= notice %></p>
+<% author = Author.find_by_id(@article.author_id)  %>
 
-<p>
-  <b>Title:</b>
-  <%= @article.title %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= @article.body %>
-</p>
-
-<p>
-  <b>Edit count:</b>
-  <%= @article.edit_count %>
-</p>
-
-<p>
-  <b>Author:</b>
-  <%= @article.author_id %>
-</p>
+<%= link_to 'List all articles', articles_path %>
+<%= link_to 'Edit', edit_article_path(@article) %>
+<%= link_to 'Delete', @article, confirm: 'Are you sure?', method: :delete %>
+<%= mail_to author.email, author.username %>'Email',
 
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<h1><%= @article.title %></h1>
+<h3>by <%= author.username %>. <%= pluralize(@article.edit_count,'edit') %> since <%= @article.created_at.strftime("%b. %d, %Y")  %></h3>
+
+
+<p><%= @article.body %></p>
+
