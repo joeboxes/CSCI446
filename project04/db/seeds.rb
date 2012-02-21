@@ -7,7 +7,21 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-
+Author.delete_all
+Author.create( #id: 1,
+	username: 'richie',
+	password: 'bacon',
+	password_confirmation: 'bacon',
+	#password_digest: '$2a$10$xxdF9erFF9Ls8ZdsDiy.teeqIYdSQFz/n9PddRA0z7eYZqZCWFxn.',
+	email: 'richie@gmail.com'
+	)
+Author.create( #id: 2,
+	username: 'john',
+	password: 'secret',
+	password_confirmation: 'secret',
+	#password_digest: '$2a$10$reQx0QHX0MqkTpRWewtx4.gWDKDW/rsbLxvdpRx2AWTZkA.psk1n',
+	email: 'john@yahoo.com'
+	)
 Article.delete_all
 (1..20).each do |i|
 	Article.create( title: 'Lorem ipsum dolor sit amet, utamur mandamus mel ad',
