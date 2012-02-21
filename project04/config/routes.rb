@@ -53,7 +53,8 @@ Articles::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-  root to: 'articles#index', as: 'articles'
+  root :to => 'articles#index'
+    #root to: 'articles#index', as: 'articles' # THIS DOES NOT WORK CORRECTLY FOR CREATING
 
   # See how all your routes lay out with "rake routes"
 

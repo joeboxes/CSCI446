@@ -1,19 +1,20 @@
-<h1>Listing authors</h1>
-
-<table>
+<h1>All the World's Authors</h1>
+<!--<div class="article" style="width:786px;">-->
+<table style="width:100%;">
   <tr>
     <th>Username</th>
-    <th>Password digest</th>
     <th>Email</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-
+<!--</table>
+</div>
+<div class="article" id="scroll_table">
+<table style="width:100%;">-->
 <% @authors.each do |author| %>
   <tr>
     <td><%= author.username %></td>
-    <td><%= author.password_digest %></td>
     <td><%= author.email %></td>
     <td><%= link_to 'Show', author %></td>
     <td><%= link_to 'Edit', edit_author_path(author) %></td>
@@ -21,7 +22,7 @@
   </tr>
 <% end %>
 </table>
+<!--</div>-->
 
-<br />
 
 <%= link_to 'New Author', new_author_path %>

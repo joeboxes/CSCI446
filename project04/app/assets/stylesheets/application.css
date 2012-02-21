@@ -85,6 +85,9 @@ header{
 ul{
 	list-style: none;
 }
+li{
+	display: inline-block;
+}
 .linklist{
 	width: 100%;
 }
