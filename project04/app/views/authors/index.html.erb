@@ -1,4 +1,7 @@
 <h1>All the World's Authors</h1>
+
+<%= link_to 'Create Author', new_author_path, title: 'New Author' %>
+
 <!--<div class="article" style="width:786px;">-->
 <table style="width:100%;">
   <tr>
@@ -16,13 +19,13 @@
   <tr>
     <td><%= author.username %></td>
     <td><%= author.email %></td>
-    <td><%= link_to 'Show', author %></td>
-    <td><%= link_to 'Edit', edit_author_path(author) %></td>
-    <td><%= link_to 'Destroy', author, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Shw', author, title: 'Show Author' %></td>
+    <td><%= link_to 'Edt', edit_author_path(author), title: 'Edit Author' %></td>
+    <td><%= link_to 'Del', author, confirm: 'Are you sure?', method: :delete, title: 'Delete Author' %></td>
   </tr>
 <% end %>
 </table>
 <!--</div>-->
 
 
-<%= link_to 'New Author', new_author_path %>
+
