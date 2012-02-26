@@ -1,0 +1,43 @@
+<div class="editform">
+<%= form_for(@article) do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <!--%= @article %>-->
+  <div class="field">
+    <%= f.label 'Author' %>
+    <%
+    @author_list = Author.all()
+    @a_name_id = []
+    @author_list.each do |author|
+      @a_name_id.push( [author.username, author.id] )
+    end
+    %>
+    
+    <%= f.select :author_id, @a_name_id %>
+
+  </div>
+  
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body, rows: 14, cols: 60 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>

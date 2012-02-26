@@ -1,0 +1,16 @@
+<% author = Author.find_by_id(@article.author_id)  %>
+
+<ul class="linklist">
+<li><%= link_to 'List all Articles', articles_path, title: 'View all Articles' %></li>
+<li><%= link_to 'Edit', edit_article_path(@article), title: 'Edit this Article' %></li>
+<li><%= link_to 'Delete', @article, confirm: 'Are you sure?', method: :delete, title: 'Delete this Article' %></li>
+<li><%= mail_to author.email, "Email #{author.username}", title: 'Email the Author' %></li>
+</ul>
+<div class="spacer"></div>
+
+<h1><%= @article.title %></h1>
+<h3>by <%= author.username %>. <%= pluralize(@article.edit_count,'edit') %> since <%= @article.created_at.strftime("%b. %d, %Y")  %></h3>
+
+
+<p><%= @article.body %></p>
+

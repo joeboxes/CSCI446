@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Articles</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+	<header>
+	<div class="title">Articl.es</div>
+	<% random_slogans = "... with a name .com hipsters will love!",
+						"... what's Articl in Spanish anyway?",
+						"... my cousin works for Bit.ly",
+						"... not just for the country of Spain"
+	%>
+	<div class="slogan"><%= random_slogans[rand(random_slogans.length)] %></div>
+	<div class="spacer"></div>
+	</header>
+	<div class="main">
+		<%= yield %>
+	</div>
+	<footer></footer>
+	<!--<div>
+		<ul>
+			<li><a href="/articles">Articles</a></li>
+			<li><a href="/authors">Authors</a></li>
+		</ul>
+	</div>-->
+</div>
+<div class="spacer"></div>
+<div>
+<ul>
+	<li><%= link_to image_tag('icons/arrow_turn_left.png'), '/articles', title: 'View All Articles' %></td></li>
+	<li><%= link_to image_tag('icons/arrow_turn_right.png'), '/authors', title: 'View All Authors' %></td></li>
+</ul>
+</div>
+</body>
+</html>
