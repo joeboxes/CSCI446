@@ -24,7 +24,7 @@
      <% @author = Author.find_by_id(article.author_id) %>
     <td><%= @author.username %></td>
     <td><%= truncate(article.body, :length=>30, :omission=>'...') %></td>
-    <td><%= article.created_at.strftime("%A, %b. %d %Y") %></td>
+    <td><%= article.created_at.to_s(:time_format_main) %></td>
     <td style="border: none;"><%= link_to 'Shw', article, title: 'View Article' %></td>
     <td style="border: none;"><%= link_to 'Edt', edit_article_path(article), title: 'Edit Article' %></td>
     <td style="border: none;"><%= link_to 'Del', article, title: 'Delete Article', confirm: 'Are you sure?', method: :delete %></td>
