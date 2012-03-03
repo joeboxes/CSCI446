@@ -8,23 +8,24 @@
 
 
 Author.delete_all
-Author.create( #id: 1,
+richie = Author.create(# id: 1,
 	username: 'richie',
 	password: 'bacon',
 	password_confirmation: 'bacon',
 	#password_digest: '$2a$10$xxdF9erFF9Ls8ZdsDiy.teeqIYdSQFz/n9PddRA0z7eYZqZCWFxn.',
 	email: 'richie@gmail.com'
 	)
-Author.create( #id: 2,
+john = Author.create(# id: 2,
 	username: 'john',
 	password: 'secret',
 	password_confirmation: 'secret',
 	#password_digest: '$2a$10$reQx0QHX0MqkTpRWewtx4.gWDKDW/rsbLxvdpRx2AWTZkA.psk1n',
 	email: 'john@yahoo.com'
 	)
+ids = [richie.id, john.id]
 Article.delete_all
-(1..20).each do |i|
-	Article.create!( title: 'Lorem ipsum dolor sit amet, utamur mandamus mel ad',
+(1..120).each do |i|
+	Article.create( title: 'Lorem ipsum dolor sit amet, utamur mandamus mel ad',
 	body:
 	%{
 		Lorem ipsum dolor sit amet, utamur mandamus mel ad, quo et nonumy noster tritani. Modus ubique nostrum id est. Pro ea iusto interesset. Vel ad luptatum facilisis.
@@ -37,7 +38,8 @@ Exerci nominavi qui at. Eu nihil inimicus nec, ad probo mediocrem vis, no choro 
 
 Ut cibo animal suscipit sit, sed eu brute quodsi epicurei. Cum harum legere no, nobis suscipit dissentias qui no. Eu alii offendit eum. Eam vitae placerat tractatos at, ne sit causae molestie, ei partem aliquam cum.
 	},
-	edit_count: 1,
-	author_id: (i%2)+1
+	edit_count: 0,
+	#author_id: (i%2)+1
+	author_id: ids[ (i%2) ]
 	)
 end

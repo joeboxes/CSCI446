@@ -19,6 +19,9 @@
       <th></th><th></th><th></th>
     </tr>
   </thead>
+  <tfoot>
+    <tr><td colspan="666">&nbsp;</td></tr>
+  </tfoot>
   <tbody>
   <% @articles.each do |article| %>
     <tr><!-- style="background: #<%= cycle("DDD","FFF") %>;">-->
@@ -33,10 +36,9 @@
     </tr>
   <% end %>
   </tbody>
-  <tfoot>
-  </tfoot>
 </table>
 </div>
+<p><%= will_paginate @articles %></p>
 <div class="subinfo">
     <%= pluralize( @articles.count, 'Article') %>.
 </div>
