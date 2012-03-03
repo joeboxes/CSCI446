@@ -9,6 +9,8 @@ Articles::Application.initialize!
 	# TIMES:
 	Time::DATE_FORMATS[:time_format_main] = "%A, %b. %d %Y"
 
+	# SUBTITLES:
+	
 
 
 

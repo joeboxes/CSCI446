@@ -24,7 +24,7 @@ Author.create( #id: 2,
 	)
 Article.delete_all
 (1..20).each do |i|
-	Article.create( title: 'Lorem ipsum dolor sit amet, utamur mandamus mel ad',
+	Article.create!( title: 'Lorem ipsum dolor sit amet, utamur mandamus mel ad',
 	body:
 	%{
 		Lorem ipsum dolor sit amet, utamur mandamus mel ad, quo et nonumy noster tritani. Modus ubique nostrum id est. Pro ea iusto interesset. Vel ad luptatum facilisis.

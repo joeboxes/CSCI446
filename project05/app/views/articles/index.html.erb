@@ -1,3 +1,6 @@
+<% content_for :subtitle do %>
+  <!-- Articles Index)-->
+<% end %>
 <p id="notice"><%= notice %></p>
 <div class="double">
     <div class="half"><h1>All the World's Articles</h1>
@@ -5,31 +8,33 @@
     <%= link_to 'Create an Article', new_article_path, title: 'new' %>
     </div>
 </div>
-<div class="article" style="width:786px;">
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Author Name</th>
-    <th>Body</th>
-    <th>Creation Date</th>
-    <th></th>
-  </tr>
-</table>
-</div>
-<div class="article" id="scroll_table">
-<table>
-<% @articles.each do |article| %>
-  <tr style="background: #<%= cycle("EEE","FFF") %>;">
-    <td><%= truncate(article.title, :length=>20, :omission=>'...') %></td>
-     <% @author = Author.find_by_id(article.author_id) %>
-    <td><%= @author.username %></td>
-    <td><%= truncate(article.body, :length=>30, :omission=>'...') %></td>
-    <td><%= article.created_at.to_s(:time_format_main) %></td>
-    <td style="border: none;"><%= link_to 'Shw', article, title: 'View Article' %></td>
-    <td style="border: none;"><%= link_to 'Edt', edit_article_path(article), title: 'Edit Article' %></td>
-    <td style="border: none;"><%= link_to 'Del', article, title: 'Delete Article', confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+
+<table id="articleList">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author Name</th>
+      <th>Body</th>
+      <th>Creation Date</th>
+      <th></th><th></th><th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @articles.each do |article| %>
+    <tr><!-- style="background: #<%= cycle("DDD","FFF") %>;">-->
+      <td><%= h truncate(article.title, :length=>20, :omission=>'...') %></td>
+          <% @author = Author.find_by_id(article.author_id) %>
+      <td><%= h @author.username %></td>
+      <td><%= h truncate(article.body, :length=>30, :omission=>'...') %></td>
+      <td><%= article.created_at.to_s(:time_format_main) %></td>
+      <td><%= link_to 'Shw', article, title: 'View Article' %></td>
+      <td><%= link_to 'Edt', edit_article_path(article), title: 'Edit Article' %></td>
+      <td><%= link_to 'Del', article, title: 'Delete Article', confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
+  </tbody>
+  <tfoot>
+  </tfoot>
 </table>
 </div>
 <div class="subinfo">
