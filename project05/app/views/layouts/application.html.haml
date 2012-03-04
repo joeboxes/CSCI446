@@ -15,15 +15,14 @@
         %div.slogan
           =get_random_slogan
         %div.spacer
-          =request.protocol + request.host + request.fullpath
+          =#request.protocol + request.host + request.fullpath
+      %div
+      %ul
+        %li
+          =link_to 'Articles', '/articles', title: 'View All Articles'
+        %li
+          =link_to 'Authors', '/authors', title: 'View All Authors'
       %div.main
         =yield
     %footer
     %div.spacer
-    %div
-      %ul
-        %li
-          =link_to image_tag('icons/arrow_turn_left.png'), '/articles', title: 'View All Articles'
-        %li
-          =link_to image_tag('icons/arrow_turn_right.png'), '/authors', title: 'View All Authors'
-

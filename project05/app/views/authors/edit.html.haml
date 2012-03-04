@@ -1,0 +1,11 @@
+%p.notice
+  =notice
+%div{ :style => "text-align:left;" }
+  =link_to 'List all Authors', authors_path, title: 'View all Authors'
+%div.spacer
+%h1
+  Editing
+  =truncate(@author.username, :length=>25, :omission=>'...')
+%div.spacer
+
+=render 'form'

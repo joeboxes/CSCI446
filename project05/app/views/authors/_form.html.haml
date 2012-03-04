@@ -1,0 +1,28 @@
+=form_for @author, :html => { :multipart => true } do |f|
+  =if @author.errors.any?
+    %div#error_explanation
+      %h2
+        =pluralize(@author.errors.count, "error")
+        prohibited this author from being saved:
+      %ul
+        =@author.errors.full_messages.each do |msg|
+          %li
+            =msg
+  
+  %div.field
+    =f.label :username
+    =f.text_field :username
+  %div.field
+    =f.label :email
+    =f.text_field :email
+  %div.field
+    =f.label :password, 'Password:'
+    =f.password_field :password, size:40
+  %div.field
+    =f.label :password_confirmation, 'Confirm:'
+    =f.password_field :password_confirmation, size:40
+  %div.field
+    =f.label :photo, 'Photo Image:'
+    =f.file_field :photo
+  %div.actions
+    =f.submit

@@ -1,0 +1,27 @@
+%div.editform
+  =form_for @article do |f|
+    =if @article.errors.any?
+      %div#error_explanation
+        %h2
+          =pluralize(@article.errors.count, "error")
+          prohibited this article from being saved:
+        %ul
+          =@article.errors.full_messages.each do |msg|
+            %li
+              =msg
+    %div.field
+      =f.label 'Author'
+      -@author_list = Author.all()
+      -@a_name_id = []
+      -@author_list.each do |author|
+        -@a_name_id.push( [author.username, author.id] )
+      =f.select :author_id, @a_name_id
+    %div.field
+      =f.label :title
+      =f.text_field :title
+    %div.field
+      = f.label :body
+      = f.text_area :body, rows: 14, cols: 60
+    %div.actions
+      =f.submit
+  

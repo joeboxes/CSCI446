@@ -11,6 +11,9 @@ module ApplicationHelper
 	def get_icon_mail
 		image_tag('icons/email.png')
 	end
+	def get_icon_create
+		image_tag('icons/add.png')
+	end
 	def get_icon_show
 		image_tag('icons/magnifier.png')
 	end
