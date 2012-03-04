@@ -42,11 +42,11 @@
         %td
           = article.created_at.to_s(:time_format_main)
         %td
-          = link_to 'Shw', article, title: 'View Article'
+          = link_to get_icon_show, article, title: 'View Article'
         %td
-          = link_to 'Edt', edit_article_path(article), title: 'Edit Article'
+          = link_to get_icon_edit, edit_article_path(article), title: 'Edit Article'
         %td
-          = link_to 'Del', article, title: 'Delete Article', confirm: 'Are you sure?', method: :delete
+          = link_to get_icon_delete, article, title: 'Delete Article', confirm: 'Are you sure?', method: :delete
 
 %div.subinfo
   = will_paginate @articles

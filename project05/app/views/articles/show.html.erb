@@ -2,9 +2,9 @@
 
 <ul class="linklist">
 <li><%= link_to 'List all Articles', articles_path, title: 'View all Articles' %></li>
-<li><%= link_to 'Edit', edit_article_path(@article), title: 'Edit this Article' %></li>
-<li><%= link_to 'Delete', @article, confirm: 'Are you sure?', method: :delete, title: 'Delete this Article' %></li>
-<li><%= mail_to author.email, "Email #{author.username}", title: 'Email the Author' %></li>
+<li><%= link_to get_icon_edit, edit_article_path(@article), title: 'Edit this Article' %></li>
+<li><%= link_to get_icon_delete, @article, confirm: 'Are you sure?', method: :delete, title: 'Delete this Article' %></li>
+<li><%= mail_to  author.email, get_icon_mail, :subject => "Re: #{@article.title}", :body => article_url(@article), title: "Email #{author.username }" %></li>
 </ul>
 <div class="spacer"></div>
 
