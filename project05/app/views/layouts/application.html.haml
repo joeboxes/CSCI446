@@ -12,13 +12,10 @@
       %header
         %div.title
           Articl.es
-        -random_slogans = "... with a name .com hipsters will love!",
-						"... what's Articl in Spanish anyway?",
-						"... my cousin works for Bit.ly",
-						"... not just for the country of Spain"
         %div.slogan
-          =random_slogans[rand(random_slogans.length)]
+          =get_random_slogan
         %div.spacer
+          =request.protocol + request.host + request.fullpath
       %div.main
         =yield
     %footer
