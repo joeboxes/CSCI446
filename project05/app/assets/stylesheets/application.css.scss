@@ -8,9 +8,10 @@
 $main-color: #CCCCCC;
 $dark-color: #333344;
 $light-color: #EEEEFF;
-$even-color: #DDDDDD;
-$odd-color: #FFFFFF;
+$even-color: #DDDDE9;
+$odd-color: #F5F5FF;
 
+// default everything
 body, h1,h2,h3,h4,h5,h6,p,ol,ul,li,a,div,table,tr,th,td{
 	font-family: "Comic Sans MS";
 	font-weight: normal;
@@ -82,8 +83,11 @@ header{
 	width: 100%;
 }
 .half{
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
 	text-align: center;
-	width: 50%;
+	width: 49%;
 	display: inline-block;
 }
 
@@ -207,7 +211,7 @@ select{
 
 
 
-// scrolling table
+// pagination table
 #mainList{
 	width: 800px;
 	border-collapse: collapse;

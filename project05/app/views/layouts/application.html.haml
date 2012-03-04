@@ -1,0 +1,32 @@
+!!! 
+%html
+  %head
+    %title
+      Articles
+      =yield :subtitle
+    =stylesheet_link_tag    "application"
+    =javascript_include_tag "application"
+    =csrf_meta_tags
+  %body
+    %div.container
+      %header
+        %div.title
+          Articl.es
+        -random_slogans = "... with a name .com hipsters will love!",
+						"... what's Articl in Spanish anyway?",
+						"... my cousin works for Bit.ly",
+						"... not just for the country of Spain"
+        %div.slogan
+          =random_slogans[rand(random_slogans.length)]
+        %div.spacer
+      %div.main
+        =yield
+    %footer
+    %div.spacer
+    %div
+      %ul
+        %li
+          =link_to image_tag('icons/arrow_turn_left.png'), '/articles', title: 'View All Articles'
+        %li
+          =link_to image_tag('icons/arrow_turn_right.png'), '/authors', title: 'View All Authors'
+

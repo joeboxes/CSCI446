@@ -13,4 +13,3 @@ Articles::Application.initialize!
 	
 
 
-
