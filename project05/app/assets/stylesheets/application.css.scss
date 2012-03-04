@@ -5,12 +5,13 @@
  *= require_self
  *= require_tree . 
 */
+// variables
 $main-color: #CCCCCC;
 $dark-color: #333344;
 $light-color: #EEEEFF;
 $even-color: #DDDDE9;
 $odd-color: #F5F5FF;
-
+$font-dark: #000022;
 // default everything
 body, h1,h2,h3,h4,h5,h6,p,ol,ul,li,a,div,table,tr,th,td{
 	font-family: "Comic Sans MS";
@@ -19,11 +20,9 @@ body, h1,h2,h3,h4,h5,h6,p,ol,ul,li,a,div,table,tr,th,td{
 	padding: 0px 0px 0px 0px;
 	vertical-align: middle;
 	text-align: center;
-	color: #000;
+	color: $font-dark;
 	border: none;
 }
-
-
 body{
 	padding-top: 20px;
 	text-align: center;
@@ -39,7 +38,6 @@ h3{
 	text-align: left;
 	padding-bottom: 10px;
 }
-
 header{
 	text-align: center;
 }
@@ -90,8 +88,6 @@ header{
 	width: 49%;
 	display: inline-block;
 }
-
-
 ul{
 	list-style: none;
 }
@@ -105,89 +101,26 @@ li{
 	width:20%;
 	display: inline-block;
 }
-
-
 p{
 	text-align:justify;
 }
-
 #scroll_table{
 	height: 250px;
 	overflow: auto;
-}
-
-
-.article th{
-	width:20%;
-}
-.article th + th{
-	width:15%;
-}
-.article th + th + th{
-	width:30%;
-}
-.article th + th + th + th{
-	width:20%;
-}
-.article th + th + th + th + th{
-	width:15%;
-}
-.article td{
-	width:20%;
-}
-.article td + td{
-	width:15%;
-}
-.article td + td + td{
-	width:30%;
-}
-.article td + td + td + td{
-	width:20%;
-}
-.article td + td + td + td + td{
-	width:5%;
-}
-.article td + td + td + td + td + td{
-	width:5%;
-}
-.article td + td + td + td + td + td + td{
-	width:5%;
-}
-
-.article table{
-	width: 100%;
-	border-spacing: 0px;
-	border-collapse: collapse;
-	border-bottom: 2px solid black;
-}
-.article tr > td{
-	border-left: 2px solid black;
-	border-right: 2px solid black;
-}
-.article tr > th {
-	border-bottom: 2px solid white;
-	border-top: 2px solid black;
-	border-left: 2px solid black;
-	border-right: 2px solid black;
-	font-weight: bold;
-	background: #DDD;
 }
 .subinfo{
 	padding-top:10px;
 	text-align:left;
 }
-
 .editform{
 	text-align:left;
 	display: block;
 }
-
 .field{
 	width:100%;
 	display: block;
 	text-align:left;
 }
-
 .actions{
 	text-align:left;
 	margin-left: 105px;
@@ -205,12 +138,6 @@ input[type="text"]{
 select{
 	width: 300px;
 }
-
-
-
-
-
-
 // pagination table
 #mainList{
 	width: 800px;
@@ -233,14 +160,6 @@ select{
 		
 	}	
 }
-
-
-
-
-
-
-
-
 
 
 
