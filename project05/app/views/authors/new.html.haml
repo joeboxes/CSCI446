@@ -1,0 +1,8 @@
+%p#notice
+  = notice
+%div{ :style => "text-align:left;" }
+  = link_to 'List all Authors', authors_path, title: 'View all Authors'
+%h1
+  Creating a New Author
+= render 'form'
+

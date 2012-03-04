@@ -1,0 +1,7 @@
+%p#notice
+  = notice
+%div{ :style => "text-align:left;" }
+  = link_to 'List all Articles', articles_path, title: 'View all Articles'
+%h1
+  Creating a New Article
+= render 'form'
