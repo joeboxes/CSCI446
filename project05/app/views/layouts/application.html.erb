@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Articles</title>
+  <title>Articles - <%= yield :subtitle %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -16,9 +16,6 @@
 						"... not just for the country of Spain"
 	%>
 	<div class="slogan"><%= random_slogans[rand(random_slogans.length)] %></div>
-	<div class="subtitle">
-		<%= yield :subtitle %>
-	</div>
 	<div class="spacer"></div>
 	</header>
 	<div class="main">

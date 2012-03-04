@@ -1,0 +1,52 @@
+= content_for :subtitle do
+  Articles List
+
+%p#notice
+  =notice
+
+%div.double
+  %div.half
+    %h1
+      All the World's Articles
+  %div.half
+    =link_to 'Create an Article', new_article_path, title: 'new'
+
+%table#articleList
+  %thead
+    %tr
+      %th
+        Title
+      %th
+        Author Name
+      %th
+        Body
+      %th
+        Creation Date
+      %th
+      %th
+      %th
+  %tfoot
+    %tr
+      %td{:colspan => 666}
+        = pluralize( @articles.count, 'Article')
+  %tbody
+    - @articles.each do |article|
+      %tr{ :class => cycle("even","odd") }
+        %td
+          = h truncate(article.title, :length=>20, :omission=>'...')
+          - @author = Author.find_by_id(article.author_id)
+        %td
+          = h @author.username
+        %td
+          = h truncate(article.body, :length=>30, :omission=>'...')
+        %td
+          = article.created_at.to_s(:time_format_main)
+        %td
+          = link_to 'Shw', article, title: 'View Article'
+        %td
+          = link_to 'Edt', edit_article_path(article), title: 'Edit Article'
+        %td
+          = link_to 'Del', article, title: 'Delete Article', confirm: 'Are you sure?', method: :delete
+
+%div.subinfo
+  = will_paginate @articles

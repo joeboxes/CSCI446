@@ -5,7 +5,11 @@
  *= require_self
  *= require_tree . 
 */
-$mainColor: "#00EEEE";
+$main-color: #CCCCCC;
+$dark-color: #333344;
+$light-color: #EEEEFF;
+$even-color: #DDDDDD;
+$odd-color: #FFFFFF;
 
 body, h1,h2,h3,h4,h5,h6,p,ol,ul,li,a,div,table,tr,th,td{
 	font-family: "Comic Sans MS";
@@ -59,11 +63,11 @@ header{
 	margin: 0px auto;
 	background-color: #FFF;
 }
-.odd{
-	background-color: #FFF;
-}
 .even{
-	background-color: #EEE;
+	background-color: $even-color;
+}
+.odd{
+	background-color: $odd-color;
 }
 .excess{
 	width: 100%;
@@ -207,18 +211,23 @@ select{
 #articleList{
 	width: 800px;
 	border-collapse: collapse;
-}
-#articleList thead{
-	background: #0000FF;
-}
-table#articleList tfoot{
-	background: #FF0000;
-	height: 20px;
-}
-#articleList tbody{
-	background: #00FF00;
-//	height: 50px;
-	overflow: auto;
+	thead{
+		background: $dark-color;
+	}
+	thead th{
+		color: $light-color;
+		td{
+			color: $light-color;
+		}
+	}
+	tfoot tr td{
+		background: $dark-color;
+		color: $light-color;
+		text-align: left;
+	}
+	tbody{
+		
+	}	
 }
 
 

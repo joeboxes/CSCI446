@@ -8,14 +8,14 @@
 
 
 Author.delete_all
-richie = Author.create(# id: 1,
+richie = Author.create!(# id: 1,
 	username: 'richie',
 	password: 'bacon',
 	password_confirmation: 'bacon',
 	#password_digest: '$2a$10$xxdF9erFF9Ls8ZdsDiy.teeqIYdSQFz/n9PddRA0z7eYZqZCWFxn.',
 	email: 'richie@gmail.com'
 	)
-john = Author.create(# id: 2,
+john = Author.create!(# id: 2,
 	username: 'john',
 	password: 'secret',
 	password_confirmation: 'secret',
@@ -25,7 +25,7 @@ john = Author.create(# id: 2,
 ids = [richie.id, john.id]
 Article.delete_all
 (1..120).each do |i|
-	Article.create( title: 'Lorem ipsum dolor sit amet, utamur mandamus mel ad',
+	Article.create!( title: "Lorem ipsum #{i} dolor sit amet, utamur mandamus mel ad",
 	body:
 	%{
 		Lorem ipsum dolor sit amet, utamur mandamus mel ad, quo et nonumy noster tritani. Modus ubique nostrum id est. Pro ea iusto interesset. Vel ad luptatum facilisis.

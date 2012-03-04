@@ -12,10 +12,10 @@ class Author < ActiveRecord::Base
 	has_attached_file :photo, :styles => { :small => "150x150>" },
 						:url => "/assets/images/authors/:id_:style_:basename.:extension",
 						:path => ":rails_root/public/assets/images/authors/:id_:style_:basename.:extension"
-
 #	validates_attachment_presence :photo
 	validates_attachment_size :photo, :less_than => 1.megabytes
 	validates_attachment_content_type :photo, :content_type => ["image/gif","image/jpeg","image/jpg","image/png"]
+
 	private
 		
 		def increment_count_on_update
