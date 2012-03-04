@@ -37,3 +37,6 @@ end
 
 # PAGINATE GOD DAMNIT
 gem 'will_paginate', '~> 3.0'
+
+# PAPERCLIP GOD DAMNIT
+gem 'paperclip', '~> 2.3'
