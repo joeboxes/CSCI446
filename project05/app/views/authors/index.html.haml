@@ -40,11 +40,11 @@
           = image_tag author.photo.url(:small), :size => "20x20", :alt => ""
           -# :height => "50%", :width => "50%",
         %td
-          = link_to 'Shw', author, title: 'View Author'
+          = link_to get_icon_show, author, title: 'View Author'
         %td
-          = link_to 'Edt', edit_author_path(author), title: 'Edit Author'
+          = link_to get_icon_edit, edit_author_path(author), title: 'Edit Author'
         %td
-          = link_to 'Del', author, confirm: 'Are you sure?',  title: 'Delete Author', method: :delete
+          = link_to get_icon_delete, author, confirm: 'Are you sure?',  title: 'Delete Author', method: :delete
 
 %div.subinfo
   = will_paginate @authors

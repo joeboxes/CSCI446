@@ -1,3 +1,3 @@
-{"utf8"=>"✓", "authenticity_token"=>"Za+43yNCTUNcj2G6FwGE2EUVpf+1LjFmmyPnjCPIGsg=", "article"=>{"author_id"=>"26", "title"=>"qwerqwe", "body"=>"4123412341231234"}, "commit"=>"Create Article", "action"=>"create", "controller"=>"articles"}
-{"author_id"=>"26", "title"=>"qwerqwe", "body"=>"4123412341231234"}
-26
+{"utf8"=>"✓", "authenticity_token"=>"Za+43yNCTUNcj2G6FwGE2EUVpf+1LjFmmyPnjCPIGsg=", "article"=>{"author_id"=>"28", "title"=>"asdfadfadsfasd", "body"=>"fasdfasdfadsfs"}, "commit"=>"Create Article", "action"=>"create", "controller"=>"articles"}
+{"author_id"=>"28", "title"=>"asdfadfadsfasd", "body"=>"fasdfasdfadsfs"}
+28

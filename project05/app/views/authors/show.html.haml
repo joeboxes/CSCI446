@@ -1,0 +1,18 @@
+%p#notice
+  =notice
+
+%ul.linklist
+  %li
+    =link_to 'List all Authors', authors_path, title: 'View all Authors'
+  %li
+    =link_to get_icon_edit, edit_author_path(@article), title: 'Edit this Author'
+  %li
+    =link_to get_icon_delete, @author, confirm: 'Are you sure?', method: :delete, title: 'Delete this Author'
+%div.spacer
+%h1
+  =@author.username
+%h3
+  = @author.email
+%p
+  = image_tag @author.photo.url(:small)
+
