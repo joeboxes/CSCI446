@@ -10,9 +10,52 @@
     =link_to get_icon_delete, @author, confirm: 'Are you sure?', method: :delete, title: 'Delete this Author'
 %div.spacer
 %h1
-  =@author.username
+  = @author.username
 %h3
   = @author.email
 %p
   = image_tag @author.photo.url(:small)
+
+
+=#Article.find_by_author_id(@author.id)
+
+%table#mainList
+  %thead
+    %tr
+      %th
+        Title
+      %th
+        Author Name
+      %th
+        Body
+      %th
+        Creation Date
+      %th
+      %th
+      %th
+  %tfoot
+    %tr
+      %td{:colspan => 666}
+        = pluralize( @author.articles.count, 'Article')
+  %tbody
+    - @author.articles.each do |article|
+      %tr{ :class => cycle("even","odd") }
+        %td
+          = h truncate(article.title, :length=>20, :omission=>'...')
+          - @author = Author.find_by_id(article.author_id)
+        %td
+          = h @author.username
+        %td
+          = h truncate(article.body, :length=>30, :omission=>'...')
+        %td
+          = article.created_at.to_s(:time_format_main)
+        %td
+          = link_to get_icon_show, article, title: 'View Article'
+        %td
+          = link_to get_icon_edit, edit_article_path(article), title: 'Edit Article'
+        %td
+          = link_to get_icon_delete, article, title: 'Delete Article', confirm: 'Are you sure?', method: :delete
+
+%div.subinfo
+  =# will_paginate @author.articles
 
