@@ -1,3 +1,8 @@
 Richie Zirbes Midterm Folder
-This folder will at some point be updated with my answers to the midterm exam:
+
+My solutions for the Midterm exam:
 http://mines.humanoriented.com/446/exams/midterm.html
+
+are located in:
+rzirbes_midterm.pdf
+
