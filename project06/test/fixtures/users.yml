@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rank_id: 1
+  username: MyString
+  fname: MyString
+  lname: MyString
+  email: MyString
+  password_digest: MyString
+  icon: MyString
+
+two:
+  rank_id: 1
+  username: MyString
+  fname: MyString
+  lname: MyString
+  email: MyString
+  password_digest: MyString
+  icon: MyString
