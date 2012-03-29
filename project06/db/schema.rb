@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120329044533) do
+ActiveRecord::Schema.define(:version => 20120329194008) do
 
   create_table "games", :force => true do |t|
     t.integer  "user_id"
@@ -28,6 +28,11 @@ ActiveRecord::Schema.define(:version => 20120329044533) do
     t.datetime "updated_at"
   end
 
+  create_table "user_sessions", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.integer  "rank_id"
     t.string   "username"
@@ -38,13 +43,13 @@ ActiveRecord::Schema.define(:version => 20120329044533) do
     t.string   "icon"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "cypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"
     t.string   "icon_file_name"
     t.string   "icon_content_type"
     t.integer  "icon_file_size"
     t.datetime "icon_updated_at"
+    t.string   "crypted_password"
   end
 
 end
