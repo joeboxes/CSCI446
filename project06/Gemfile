@@ -36,7 +36,10 @@ group :test do
 end
 
 # ADDED GEMS:
-gem 'authlogic'
+#gem 'authlogic'
+gem "authlogic", "~> 3.1.0"
+##gem "authlogic", :git => "git://github.com/binarylogic/authlogic.git"
+
 gem 'will_paginate', '~> 3.0'
 gem 'paperclip', '~> 2.3'
 gem 'haml'

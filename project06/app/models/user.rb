@@ -17,6 +17,6 @@ class User < ActiveRecord::Base
 		:path => ":rails_root/public/assets/images/users/:id_:style_:basename.:extension"
 	validates_attachment_size :icon, :less_than => 0.5.megabytes
 	validates_attachment_content_type :icon, :content_type => ["image/gif","image/jpeg","image/jpg","image/png"]
-	validates_attachment_presence :icon
+#	validates_attachment_presence :icon
 	# 
 end
