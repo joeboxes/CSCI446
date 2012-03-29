@@ -24,5 +24,7 @@ class User < ActiveRecord::Base
 	validates_attachment_size :icon, :less_than => 0.5.megabytes
 	validates_attachment_content_type :icon, :content_type => ["image/gif","image/jpeg","image/jpg","image/png"]
 #	validates_attachment_presence :icon
+	# recaptcha
+	
 	# 
 end

@@ -34,15 +34,23 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to root_url, notice: 'Registration Successful.' }
-        format.json { render json: @user, status: :created, location: @user }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
+	#recaptcha
+	if verify_recaptcha
+	    respond_to do |format|
+		 if @user.save
+		   format.html { redirect_to root_url, notice: 'Registration Successful.' }
+		   format.json { render json: @user, status: :created, location: @user }
+		 else
+		   format.html { render action: "new" }
+		   format.json { render json: @user.errors, status: :unprocessable_entity }
+		 end
+	    end
+	else
+		#flash[:error] = "invalid recaptcha."
+		#flash[:notice] = "invalid recaptcha."
+		@user.errors.add( :base, 'invalid recaptcha')
+		render :action => 'new'
+	end
   end
 
   # PUT /users/1
