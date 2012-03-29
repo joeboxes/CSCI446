@@ -1,6 +1,6 @@
 Gamez::Application.routes.draw do
 	
-	resources :user_sessions
+	resources :user_sessions, :only => [:new, :create, :destroy]
 	resources :games
 	resources :ranks
 	resources :users

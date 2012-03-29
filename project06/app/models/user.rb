@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
 	has_many :games, dependent: :destroy
 	# authlogic
 	acts_as_authentic
+#	acts_as_authentic  do |c|
+#	   c.validate_password_field = false
+#	end
+
 	#
 	has_secure_password
 

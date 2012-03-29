@@ -1,14 +1,13 @@
 class UserSessionsController < ApplicationController
   # GET /user_sessions
   # GET /user_sessions.json
-  def index
-    @user_sessions = UserSession.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @user_sessions }
-    end
-  end
+#  def index
+#    @user_sessions = UserSession.all
+#    respond_to do |format|
+#      format.html # index.html.erb
+#      format.json { render json: @user_sessions }
+#    end
+#  end
 
   # GET /user_sessions/1
   # GET /user_sessions/1.json
@@ -39,15 +38,18 @@ class UserSessionsController < ApplicationController
   # POST /user_sessions.json
   def create
     @user_session = UserSession.new(params[:user_session])
-    respond_to do |format|
+#    respond_to do |format|
       if @user_session.save
-        format.html { redirect_to root_url, notice: 'Logged In.' }
-        format.json { render json: @user_session, status: :created, location: @user_session }
+		flash[:notice] = "saved"
+		redirect_to user_sessions_url
+#        format.html { redirect_to root_url, notice: 'Logged In.' }
+#        format.json { render json: @user_session, status: :created, location: @user_session }
       else
-        format.html { render action: "new" }
-        format.json { render json: @user_session.errors, status: :unprocessable_entity }
+		render :action => 'new'
+#        format.html { render action: "new" }
+#        format.json { render json: @user_session.errors, status: :unprocessable_entity }
       end
-    end
+#    end
   end
 
   # PUT /user_sessions/1
@@ -70,7 +72,7 @@ class UserSessionsController < ApplicationController
   def destroy
     @user_session = UserSession.find
     @user_session.destroy
-        format.html { redirect_to root_url, notice: 'Logged Out.' }
+	format.html { redirect_to root_url, notice: 'Logged Out.' }
   end
 end
 
