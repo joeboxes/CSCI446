@@ -6,11 +6,10 @@ class User < ActiveRecord::Base
 #	acts_as_authentic  do |c|
 #	   c.validate_password_field = false
 #	end
-
 	#
-	has_secure_password
-
-#	before_save :encrypt_password
+	# conflicts with authlogic:
+	# has_secure_password
+	# before_save :encrypt_password
 	
 	# validation
 	validates :username, presence: true, uniqueness: true,
