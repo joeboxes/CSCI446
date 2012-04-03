@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gamez</title>
+  <title>Gamez | <%= content_for :header_title %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -12,8 +12,7 @@
 <div><%= "Welcome #{user.fname} #{user.lname}! - " %>
 	<%= link_to "Edit Profile", edit_user_path(:current) %>|<%= link_to "Logout", logout_path %></div>
 <% else %>
-<div><%= link_to "Register", new_user_path %></div>
-<div><%= link_to "Login", login_path %></div>
+<div><%= link_to "Register", new_user_path %>|<%= link_to "Login", login_path %></div>
 <% end %>
 
 <%= yield %>

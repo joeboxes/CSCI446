@@ -44,6 +44,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
+    declarative_authorization (0.5.5)
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
@@ -125,6 +126,7 @@ DEPENDENCIES
   authlogic (~> 3.1.0)
   bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 3.1.1)
+  declarative_authorization
   haml
   jquery-rails
   paperclip (~> 2.3)

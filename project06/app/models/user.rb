@@ -29,4 +29,13 @@ class User < ActiveRecord::Base
 	# recaptcha
 	
 	# 
+	# roles:
+	def role_symbols
+		#roles.map do |role|
+		#	role.name.underscore.to_sym
+		#end
+		myrole = Role.find(role_id)
+		"ROLE: #{myrole}"
+		[myrole.name.underscore.to_sym]
+	end
 end

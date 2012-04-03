@@ -40,6 +40,10 @@ end
 gem "authlogic", "~> 3.1.0"
 # gem "authlogic", :git => "git://github.com/binarylogic/authlogic.git"
 
+#https://github.com/stffn/declarative_authorization
+gem "declarative_authorization"
+#, :source => "http://gemcutter.org"
+
 gem "recaptcha", :require => "recaptcha/rails"
 
 gem 'will_paginate', '~> 3.0'

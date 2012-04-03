@@ -1,4 +1,12 @@
 class UserSessionsController < ApplicationController
+
+	#declarative authorization
+	filter_resource_access
+	
+	
+	
+	
+	
   # GET /user_sessions
   # GET /user_sessions.json
 #  def index

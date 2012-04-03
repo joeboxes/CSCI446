@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+	
+	#declarative authorization - single resources loaded behind the scenes
+	filter_resource_access
+	
+	
+	
+	
+	
   # GET /users
   # GET /users.json
   def index

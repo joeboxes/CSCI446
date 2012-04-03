@@ -1,4 +1,12 @@
 class RolesController < ApplicationController
+
+	#declarative authorization
+	filter_resource_access
+	
+	
+	
+	
+	
   # GET /roles
   # GET /roles.json
   def index
