@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120401184851) do
+ActiveRecord::Schema.define(:version => 20120403092546) do
 
   create_table "games", :force => true do |t|
     t.integer  "user_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20120401184851) do
     t.datetime "updated_at"
   end
 
-  create_table "ranks", :force => true do |t|
+  create_table "roles", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(:version => 20120401184851) do
   end
 
   create_table "users", :force => true do |t|
-    t.integer  "rank_id"
     t.string   "username"
     t.string   "fname"
     t.string   "lname"
@@ -49,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20120401184851) do
     t.integer  "icon_file_size"
     t.datetime "icon_updated_at"
     t.string   "crypted_password"
+    t.integer  "role_id",           :default => 0
   end
 
 end

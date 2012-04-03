@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	# design
+	belongs_to :role
 	has_many :games, dependent: :destroy
 	# authlogic
 	acts_as_authentic
@@ -14,7 +15,7 @@ class User < ActiveRecord::Base
 	# validation
 	validates :username, presence: true, uniqueness: true,
 		:length => {:minimum => 6, :maximum => 20}
-	# 
+	# validates_existance_and_...of
 	validates :password, presence: true, :length => {:minimum => 6, :maximum => 20}
 	validates :password_confirmation, presence: true
 	

@@ -11,11 +11,7 @@
     </div>
   <% end %>
 
-  <!--<div class="field">
-    %= f.label :rank_id %><br />
-    %= f.number_field :rank_id %>
-  </div>
-  -->
+
   <div class="field">
     <%= f.label :username %><br />
     <%= f.text_field :username %>
@@ -48,6 +44,15 @@
   <div class="field">
     <%= f.label :icon %><br />
     <%= f.file_field :icon %>
+  </div>
+
+  <div class="field">
+<% for role in Role.find(:all) %>
+	<div>
+	<%= label :user, role.name %>
+	<%= radio_button :user, :role_id, role.id %><br />
+	</div>
+<% end %>
   </div>
 
   <div class="field">

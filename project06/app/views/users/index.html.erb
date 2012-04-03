@@ -7,7 +7,7 @@
     <th>Fname</th>
     <th>Lname</th>
     <th>Email</th>
-    <th>Password digest</th>
+<!--    <th>Password digest</th>-->
     <th>Icon</th>
     <th></th>
     <th></th>
@@ -16,12 +16,12 @@
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.rank_id %></td>
+    <td><%= Role.find(user.role_id).name %></td>
     <td><%= user.username %></td>
     <td><%= user.fname %></td>
     <td><%= user.lname %></td>
     <td><%= user.email %></td>
-    <td><%= user.password_digest %></td>
+<!--    <td><= user.password_digest %></td> -->
     <td><%= user.icon %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
