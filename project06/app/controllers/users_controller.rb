@@ -28,14 +28,14 @@ class UsersController < ApplicationController
   end
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    @user = current_user#User.find(params[:id])
   end
   # POST /users
   # POST /users.json
   def create
     @user = User.new(params[:user])
 	#recaptcha
-	if verify_recaptcha
+	if true #verify_recaptcha
 	    respond_to do |format|
 		 if @user.save
 		   format.html { redirect_to root_url, notice: 'Registration Successful.' }
@@ -56,11 +56,11 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
-    @user = User.find(params[:id])
+    @user = current_user#User.find(params[:id])
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to root_url, notice: 'User was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

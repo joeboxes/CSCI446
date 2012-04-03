@@ -41,7 +41,7 @@ class UserSessionsController < ApplicationController
 #    respond_to do |format|
       if @user_session.save
 		flash[:notice] = "saved"
-		redirect_to user_sessions_url
+		redirect_to root_url
 #        format.html { redirect_to root_url, notice: 'Logged In.' }
 #        format.json { render json: @user_session, status: :created, location: @user_session }
       else
@@ -70,9 +70,10 @@ class UserSessionsController < ApplicationController
   # DELETE /user_sessions/1
   # DELETE /user_sessions/1.json
   def destroy
-    @user_session = UserSession.find
+    @user_session = UserSession.find #current_user
     @user_session.destroy
-	format.html { redirect_to root_url, notice: 'Logged Out.' }
+		flash[:notice] = 'Logged Out.'
+		redirect_to root_url
   end
 end
 

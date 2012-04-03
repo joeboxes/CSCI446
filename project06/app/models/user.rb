@@ -14,8 +14,10 @@ class User < ActiveRecord::Base
 	# validation
 	validates :username, presence: true, uniqueness: true,
 		:length => {:minimum => 6, :maximum => 20}
+	# 
 	validates :password, presence: true, :length => {:minimum => 6, :maximum => 20}
 	validates :password_confirmation, presence: true
+	
 	# paperclip icon
 	has_attached_file :icon, :styles => { :small => "100x100>" },
 		:url => "assets/images/users/:id_:style_:basename.:extension",
