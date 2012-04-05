@@ -15,9 +15,10 @@ class User < ActiveRecord::Base
 	# validation
 	validates :username, presence: true, uniqueness: true,
 		:length => {:minimum => 6, :maximum => 20}
+	# authlogic takes care of password
 	# validates_existance_and_...of
-	validates :password, presence: true, :length => {:minimum => 6, :maximum => 20}
-	validates :password_confirmation, presence: true
+#	validates :password, presence: true, :length => {:minimum => 6, :maximum => 20}
+#	validates :password_confirmation, presence: true
 	
 	# paperclip icon
 	has_attached_file :icon, :styles => { :small => "100x100>" },
@@ -26,16 +27,10 @@ class User < ActiveRecord::Base
 	validates_attachment_size :icon, :less_than => 0.5.megabytes
 	validates_attachment_content_type :icon, :content_type => ["image/gif","image/jpeg","image/jpg","image/png"]
 #	validates_attachment_presence :icon
-	# recaptcha
 	
-	# 
-	# roles:
 	def role_symbols
-		#roles.map do |role|
-		#	role.name.underscore.to_sym
-		#end
 		myrole = Role.find(role_id)
-		"ROLE: #{myrole}"
 		[myrole.name.underscore.to_sym]
+		# [myrole.name.downcase.to_sym] # bakos
 	end
 end

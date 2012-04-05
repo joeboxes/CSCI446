@@ -1,4 +1,12 @@
 class GamesController < ApplicationController
+	
+	#declarative authorization - single resources loaded behind the scenes
+	filter_resource_access
+	
+	
+	
+	
+	
   # GET /games
   # GET /games.json
   def index

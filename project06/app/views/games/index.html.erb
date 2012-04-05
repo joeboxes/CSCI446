@@ -7,7 +7,6 @@
     <th>User</th>
     <th>Title</th>
     <th>Rating</th>
-    <th>Comment</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,13 +14,16 @@
 
 <% @games.each do |game| %>
   <tr>
-    <td><%= game.user_id %></td>
-    <td><%= game.title %></td>
+	<% usr = User.find(game.user_id) %>
+    <td><%= link_to usr.username, user_path(usr) %></td>
+    <td><%= link_to game.title, game %></td>
     <td><%= game.rating %></td>
-    <td><%= game.comment %></td>
-    <td><%= link_to 'Show', game %></td>
+	<% if permitted_to? :edit, game %>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>
+	<% end %>
+	<% if permitted_to? :destroy, game %>
     <td><%= link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete %></td>
+	<% end %>
   </tr>
 <% end %>
 </table>
