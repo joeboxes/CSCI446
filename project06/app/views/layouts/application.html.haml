@@ -1,0 +1,55 @@
+!!!
+%html
+	%head
+		%title
+			= " Gamez | #{content_for :header_title}"
+		= stylesheet_link_tag    "application"
+		= javascript_include_tag "application"
+		= csrf_meta_tags
+	%body
+		%div.error
+			-if flash[:error]
+				= flash[:error]
+		%div.notice
+			-if flash[:notice]
+				= flash[:notice]
+		%header
+			%h1 Welcome to Gamez!
+		%div.container
+			%div.headbar
+				-if current_user
+					-user = UserSession.find.user
+					= "Welcome #{user.fname} #{user.lname}! - "
+					= link_to "Edit Profile", edit_user_path(:current) 
+					|
+					= link_to "Logout", logout_path
+				-else
+					= link_to "Login", login_path
+					|
+					= link_to "Register", new_user_path
+			%div.sidebar
+				-if current_user
+					= "#{get_user_role(current_user)} Home"
+					%br
+					-if permitted_to? :create, :games
+						New Game
+						%br
+					-if permitted_to? :edit, :games
+						Edit Game
+						%br
+					-if permitted_to? :edit, :users
+						Edit Profile
+						%br
+					-if permitted_to? :show, :users
+						View Users
+						%br
+					-if permitted_to? [:create, :edit], :roles
+						Roles Pages
+						%br
+					=#-if current_user.
+					
+				-else
+					Welcome
+			%div.content
+				= yield
+	=# SHOW NOTICE AND ERROR FIELDS

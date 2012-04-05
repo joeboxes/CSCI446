@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 	before_filter { |c| Authorization.current_user = c.current_user }
 	
 	helper_method :current_user_session, :current_user
-	helper_method :rating_to_title
+	helper_method :rating_to_title, :get_user_role
 	
 	def rating_to_title (rate)
 		if rate==5
@@ -21,6 +21,9 @@ class ApplicationController < ActionController::Base
 			return 'Lame'
 		end
 		return 
+	end
+	def get_user_role usr
+		Role.find(usr.role_id).name
 	end
 #	private
 # current user helper 

@@ -1,0 +1,95 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+// color variables
+$font-dark: #000000;
+$link-visited: #000000;
+$dark-color: #003311;
+$light-color: #00CC66;
+
+// default everything
+body,h1,h2,h3,h4,h5,h6,p,ol,ul,li,a,div,table,tr,th,td,header,footer{
+	font-family: "sans-serif";
+	font-weight: normal;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	vertical-align: middle;
+	text-align: center;
+	color: $font-dark;
+	border: none;
+}
+
+// everything container
+.container{
+	position: relative;
+	width: 800px;
+	margin: 0px auto;
+	background-color: #0FF;
+}
+
+// header bar 
+.headbar{
+	display: block;
+	width: 100%;
+	background-color: #56F;
+}
+
+// side bar
+.sidebar{
+	display: inline;
+	width: 200px;
+	float:left;
+	background-color: #F67;
+}
+// content
+.content{
+	display: inline;
+	width: 600px;
+	float:left;
+	background-color: #0F5;
+}
+
+//links
+a:link{
+	color:#FF0000;
+}
+a:visited{
+	color:#00FF00;
+}
+a:hover{
+	color:#FF00FF;
+}
+a:active{
+	color:#00FF00;
+}
+
+// content tables
+.tablelist{
+	font-weight: bold;
+	width: 100%;
+	border-collapse: collapse;
+
+	thead{
+		background: $dark-color;
+	}
+	thead th{
+		color: $light-color;
+		td{
+			color: $light-color;
+		}
+	}
+	tfoot tr td{
+		background: $dark-color;
+		color: $light-color;
+		text-align: left;
+	}
+	tbody{
+		
+	}	
+}
+
+

@@ -3,16 +3,20 @@
 
 %h1 Listing games
 
-%table
-  %tr
-    %th User
-    %th Title
-    %th Rating
-    - if permitted_to? :edit, :games
-      %th EDIT
-    - if permitted_to? :destroy, :games
-      %th DESTROY
-
+%table.tablelist
+  %thead
+    %tr
+      %th User
+      %th Title
+      %th Rating
+      - if permitted_to? :edit, :games
+        %th EDIT
+      - if permitted_to? :destroy, :games
+        %th DESTROY
+  %tfoot
+    %tr
+      %td{:colspan => 666}
+        = pluralize( @games.count, 'Gamez')
   - @games.each do |game|
     %tr
     - usr = User.find(game.user_id)
@@ -21,7 +25,7 @@
     %td
       = link_to game.title, game
     %td
-      = game.rating
+      = rating_to_title(game.rating)
     - if permitted_to? :edit, game
       %td
         = link_to 'Edit', edit_game_path(game)
@@ -30,6 +34,7 @@
         = link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete
     
 %br
-- if permitted_to? :create, :games
-  = link_to 'New Game', new_game_path
-
+-# if permitted_to? :create, :games
+  =# link_to 'New Game', new_game_path
+%br
+= will_paginate @games
