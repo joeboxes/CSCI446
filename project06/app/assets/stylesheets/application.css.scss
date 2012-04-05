@@ -8,8 +8,11 @@
 // color variables
 $font-dark: #000000;
 $link-visited: #000000;
-$dark-color: #003311;
-$light-color: #00CC66;
+$dark-color: #002211;
+$light-color: #33DD66;
+$bright-color: #BBFFDD;
+$even-color: #BBFFCC;
+$odd-color: #E0FFE5;
 
 // default everything
 body,h1,h2,h3,h4,h5,h6,p,ol,ul,li,a,div,table,tr,th,td,header,footer{
@@ -23,19 +26,50 @@ body,h1,h2,h3,h4,h5,h6,p,ol,ul,li,a,div,table,tr,th,td,header,footer{
 	border: none;
 }
 
+// headings
+h1{
+	font-size: 30px;
+	padding: 5px;
+}
+h2{
+	font-size: 25px;
+	font-style: italic;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
 // everything container
 .container{
 	position: relative;
 	width: 800px;
 	margin: 0px auto;
-	background-color: #0FF;
+	
+}
+
+//header
+header{
+	display: block;
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	
+}
+
+//footer
+footer{
+	display: block;
+	width: 100%;
+	float:left;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	
 }
 
 // header bar 
 .headbar{
 	display: block;
 	width: 100%;
-	background-color: #56F;
+	
 }
 
 // side bar
@@ -43,53 +77,89 @@ body,h1,h2,h3,h4,h5,h6,p,ol,ul,li,a,div,table,tr,th,td,header,footer{
 	display: inline;
 	width: 200px;
 	float:left;
-	background-color: #F67;
+	
 }
 // content
 .content{
 	display: inline;
-	width: 600px;
+	width: 580px;
+	padding: 10px;
 	float:left;
-	background-color: #0F5;
+	
 }
 
 //links
+a{
+	text-decoration: underline;
+	color:#009900;
+}
 a:link{
-	color:#FF0000;
+	color:#006600;
+	background-color: transparent;
 }
 a:visited{
-	color:#00FF00;
+	color:#009900;
 }
 a:hover{
-	color:#FF00FF;
+	color:#00CC00;
 }
 a:active{
-	color:#00FF00;
+	color:#009900;
 }
 
+.even{
+	background: $even-color;
+}
+.odd{
+	background: $odd-color;
+}
 // content tables
 .tablelist{
 	font-weight: bold;
 	width: 100%;
 	border-collapse: collapse;
-
 	thead{
-		background: $dark-color;
+		background: $light-color;
 	}
 	thead th{
-		color: $light-color;
+		color: $dark-color;
 		td{
-			color: $light-color;
+			color: $dark-color;
 		}
+		padding: 2px;
 	}
 	tfoot tr td{
-		background: $dark-color;
-		color: $light-color;
-		text-align: left;
+		background: $light-color;
+		color: $dark-color;
+		text-align: right;
+		padding: 2px;
 	}
 	tbody{
-		
-	}	
+		background: $bright-color;
+		tr td{
+			padding-bottom: 1px;
+		}
+
+	}
 }
 
-
+// forms
+.fieldtitle{
+	width:20%;
+	float:left;	
+	text-align:right;
+	padding-right:10px;
+}
+.fieldinput{
+	width:75%;
+	float:left;
+	padding-left:2px;
+	text-align:left;
+	padding-bottom:2px;
+}
+.actions{
+	width:100%;
+	float:left;
+	padding-top:5px;
+	text-align:center;
+}

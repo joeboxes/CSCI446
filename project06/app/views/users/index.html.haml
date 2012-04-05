@@ -1,0 +1,36 @@
+= content_for :header_title do
+  Userz Listing
+
+%h2 Userz Listing
+%table.tablelist
+  %thead
+    %tr
+      %th Name
+      %th Username
+      %th Last Login
+      %th Number of Games
+      - if permitted_to? :edit, :users
+        %th EDIT
+      - if permitted_to? :destroy, :users
+        %th DESTROY
+  %tfoot
+    %tr
+      %td{:colspan => 666}
+        = pluralize( @users.count, 'Userz')
+  - @users.each do |user|
+    %tr{ :class => cycle("even","odd") }
+      %td
+        = "#{user.fname} #{user.lname}"
+      %td
+        = link_to user.username, user
+      %td
+        = "last login?"
+      %td
+        = "no games"
+      - if permitted_to? :edit, user
+        %td
+          = link_to 'Edit', edit_game_path(user)
+      - if permitted_to? :destroy, user
+        %td
+          = link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete
+= will_paginate @games

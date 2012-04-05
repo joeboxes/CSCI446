@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 	# declarative logic
 	before_filter { |c| Authorization.current_user = c.current_user }
 	
-	helper_method :current_user_session, :current_user
+	helper_method :current_user_session, :current_user #, :current_user_edit
 	helper_method :rating_to_title, :get_user_role
 	
 	def rating_to_title (rate)
@@ -35,8 +35,20 @@ class ApplicationController < ActionController::Base
 		return @current_user if defined?(@current_user)
 		@current_user = current_user_session && @current_user_session.record
 	end
-	
-	
+#	def current_user_edit
+#		if current_user
+#			if is_user_admin?( current_user )
+#				return User.find(params[:id])
+#			end
+#		end
+#		return current_user
+#	end
+#	def is_user_admin? usr
+#	    is_admin?(Role.find(usr.role.id))
+#	end
+#	def is_admin? roller
+#	    roller.name.downcase == "admin"
+#	end
 	def permission_denied
 		flash[:error] = "You do not have access to view that material."
 		redirect_to root_url

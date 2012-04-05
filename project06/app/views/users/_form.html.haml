@@ -1,0 +1,62 @@
+%div.editform
+  = form_for @user, :html => { :multipart => true } do |f|
+    -if @user.errors.any?
+      %div#error_explanation
+        %h2
+          = "#{pluralize(@user.errors.count, 'error')} prohibited this user from being saved:"
+        %ul
+          -@user.errors.full_messages.each do |msg|
+            %li
+              = msg
+    %div.fieldtitle
+      = f.label :username
+    %div.fieldinput
+      = f.text_field :username
+    %div.fieldtitle
+      = f.label "First Name"
+    %div.fieldinput
+      = f.text_field :fname
+    %div.fieldtitle
+      = f.label "Last Name"
+    %div.fieldinput
+      = f.text_field :lname
+    %div.fieldtitle
+      = f.label :email
+    %div.fieldinput
+      = f.text_field :email
+    %div.fieldtitle
+      = f.label "Password"
+    %div.fieldinput
+      = f.password_field :password
+    %div.fieldtitle
+      = f.label "Confirm"
+    %div.fieldinput
+      = f.password_field :password_confirmation
+    %div.fieldtitle
+      = f.label :icon
+    %div.fieldinput
+      = f.file_field :icon
+    %div.field
+    -for role in Role.find(:all)
+      %div.fieldtitle
+        = label :user, role.name
+      %div.fieldinput
+        = radio_button :user, :role_id, role.id
+      %br
+    %div.fieldtitle
+      = f.label "ReCaptcha"
+    %div.fieldinput
+      = recaptcha_tags
+    %br
+    %div.actions
+      =#"#{params[:action]} =?= #{:edit}"
+      - if (params[:action] == "edit" || params[:action] == "update")
+        = f.submit "Update"
+      -else
+        = f.submit "Register"
+
+
+
+
+
+

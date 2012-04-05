@@ -53,8 +53,8 @@ bob = User.create!(# id: ?,
 	lname: 'Banker',
 	email: 'Bob@gmail.com',
 	icon: '',
-	password: 'richie',
-	password_confirmation: 'richie',
+	password: 'bobbob',
+	password_confirmation: 'bobbob',
 	role_id: member.id
 	)
 # games:
@@ -107,9 +107,30 @@ war = Game.create!( #id: ?,
 	rating: 3,
 	comment: 'I used to play this game tons as a kid. It\'s simple and exciting. However as time went on, less people wanted to play with me, as it takes forever to complete.'
 	)
-
-
-
+hearts = Game.create!( #id: ?,
+	user_id: richie.id,
+	title: 'Hearts',
+	rating: 5,
+	comment: 'Fun game for four people. Although strict rules are to not talk, it\'s much more enjoyable to give other people shit.'
+	)
+tv = Game.create!( #id: ?,
+	user_id: bob.id,
+	title: 'TV Watching',
+	rating: 5,
+	comment: 'My favorite game has always been watching TV.'
+	)
+soccer = Game.create!( #id: ?,
+	user_id: bob.id,
+	title: 'Soccer',
+	rating: 2,
+	comment: 'Did you know fugly Engrish people say futbol, instead of soccer. What tards.'
+	)
+ruby = Game.create!( #id: ?,
+	user_id: bob.id,
+	title: 'Ruby (On Rails)',
+	rating: 4,
+	comment: 'You have to trick yourself into playing this otherwise it\'ll be hell.'
+	)
 
 
 

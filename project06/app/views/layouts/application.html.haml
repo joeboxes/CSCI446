@@ -46,10 +46,15 @@
 					-if permitted_to? [:create, :edit], :roles
 						Roles Pages
 						%br
-					=#-if current_user.
+					
 					
 				-else
-					Welcome
+					Welcome, Guest!
+					%br
+					= link_to "View Games", games_path
+					%br
+					= link_to "View Users", users_path
 			%div.content
 				= yield
-	=# SHOW NOTICE AND ERROR FIELDS
+		%footer
+			Copyright &copy; Gamez 2012.

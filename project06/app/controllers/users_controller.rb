@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.paginate page: params[:page], per_page: 10, order: 'lname'
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
+# set default to member ---------------------------------------
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
@@ -37,6 +38,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = current_user#User.find(params[:id])
+    #@user = current_user_edit
   end
   # POST /users
   # POST /users.json
@@ -54,8 +56,8 @@ class UsersController < ApplicationController
 		 end
 	    end
 	else
-		#flash[:error] = "invalid recaptcha."
-		#flash[:notice] = "invalid recaptcha."
+		flash[:error] = "invalid recaptcha."
+		flash[:notice] = "invalid recaptcha."
 		@user.errors.add( :base, 'invalid recaptcha')
 		render :action => 'new'
 	end
@@ -64,7 +66,8 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
-    @user = current_user#User.find(params[:id])
+    #@user = current_user
+    User.find(params[:id])
 
     respond_to do |format|
       if @user.update_attributes(params[:user])

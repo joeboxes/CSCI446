@@ -4,22 +4,12 @@ class User < ActiveRecord::Base
 	has_many :games, dependent: :destroy
 	# authlogic
 	acts_as_authentic
-#	acts_as_authentic  do |c|
-#	   c.validate_password_field = false
-#	end
-	#
-	# conflicts with authlogic:
-	# has_secure_password
-	# before_save :encrypt_password
-	
+	# authlogic takes care of password
+
 	# validation
 	validates :username, presence: true, uniqueness: true,
 		:length => {:minimum => 6, :maximum => 20}
-	# authlogic takes care of password
-	# validates_existance_and_...of
-#	validates :password, presence: true, :length => {:minimum => 6, :maximum => 20}
-#	validates :password_confirmation, presence: true
-	
+
 	# paperclip icon
 	has_attached_file :icon, :styles => { :small => "100x100>" },
 		:url => "assets/images/users/:id_:style_:basename.:extension",
