@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
 	
 	
 	def permission_denied
-		flash[:error] = "You are not allowed to access this page..."
+		flash[:error] = "You do not have access to view that material."
 		redirect_to root_url
 	end
 end
