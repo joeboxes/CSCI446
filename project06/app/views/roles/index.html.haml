@@ -1,0 +1,29 @@
+= content_for :header_title do
+  Rolez Listing
+
+%h2 Rolez Listing
+%table.tablelist
+  %thead
+    %tr
+      %th Name
+      - if permitted_to? :edit, :roles
+        %th EDIT
+      - if permitted_to? :destroy, :roles
+        %th DESTROY
+  %tfoot
+    %tr
+      %td{:colspan => 666}
+        = pluralize( @roles.count, 'Rolez')
+  - @roles.each do |role|
+    %tr{ :class => cycle("even","odd") }
+      %td
+        = link_to role.name, role
+      - if permitted_to? :edit, role
+        %td
+          = link_to 'Edit', edit_role_path(role)
+      - if permitted_to? :destroy, role
+        %td
+          = link_to 'Destroy', role, confirm: 'Are you sure?', method: :delete
+= will_paginate @roles
+
+= link_to 'New Role', new_role_path
