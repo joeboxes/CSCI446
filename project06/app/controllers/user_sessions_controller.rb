@@ -1,82 +1,22 @@
 class UserSessionsController < ApplicationController
-
 	#declarative authorization
 	filter_resource_access
-	
-	
-	
-	
-	
-  # GET /user_sessions
-  # GET /user_sessions.json
-#  def index
-#    @user_sessions = UserSession.all
-#    respond_to do |format|
-#      format.html # index.html.erb
-#      format.json { render json: @user_sessions }
-#    end
-#  end
 
-  # GET /user_sessions/1
-  # GET /user_sessions/1.json
-#  def show
-#    @user_session = UserSession.find(params[:id])
-#    respond_to do |format|
-#      format.html # show.html.erb
-#      format.json { render json: @user_session }
-#    end
-#  end
-
-  # GET /user_sessions/new
-  # GET /user_sessions/new.json
   def new
     @user_session = UserSession.new
-    #respond_to do |format|
-    #  format.html # new.html.erb
-    #  format.json { render json: @user_session }
-    #end
+    #redirect_to login_path
   end
 
-  # GET /user_sessions/1/edit
-#  def edit
-#    @user_session = UserSession.find(params[:id])
-#  end
-
-  # POST /user_sessions
-  # POST /user_sessions.json
   def create
     @user_session = UserSession.new(params[:user_session])
-#    respond_to do |format|
       if @user_session.save
-		flash[:notice] = "saved"
-		redirect_to root_url
-#        format.html { redirect_to root_url, notice: 'Logged In.' }
-#        format.json { render json: @user_session, status: :created, location: @user_session }
+		    redirect_to root_url
       else
-		render :action => 'new'
-#        format.html { render action: "new" }
-#        format.json { render json: @user_session.errors, status: :unprocessable_entity }
+		    render :action => 'new' # redirects to users_session, NOT login
+        #redirect_to login_path
       end
-#    end
   end
 
-  # PUT /user_sessions/1
-  # PUT /user_sessions/1.json
-#  def update
-#    @user_session = UserSession.find(params[:id])
-#    respond_to do |format|
-#      if @user_session.update_attributes(params[:user_session])
-#        format.html { redirect_to @user_session, notice: 'User session was successfully updated.' }
-#        format.json { head :ok }
-#      else
-#        format.html { render action: "edit" }
-#        format.json { render json: @user_session.errors, status: :unprocessable_entity }
-#      end
-#    end
-#  end
-
-  # DELETE /user_sessions/1
-  # DELETE /user_sessions/1.json
   def destroy
     @user_session = UserSession.find #current_user
     @user_session.destroy
@@ -84,6 +24,3 @@ class UserSessionsController < ApplicationController
 		redirect_to root_url
   end
 end
-
-
-

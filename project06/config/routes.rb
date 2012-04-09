@@ -1,16 +1,36 @@
 Gamez::Application.routes.draw do
-	
+  
   resources :roles
 
-	resources :user_sessions, :only => [:new, :create, :destroy]
-	resources :games
-	resources :ranks
-	resources :users
-	root :to => 'games#index'
-	
-	#ADDED:
-	match "login" => "user_sessions#new"
-	match "logout" => "user_sessions#destroy"
+  resources :user_sessions, :only => [:new, :create, :destroy]
+  resources :games
+  resources :ranks
+  resources :users
+  root :to => 'games#index'
+  
+  #ADDED:
+  match "user_sessions" => "login"
+  match "login" => "user_sessions#new"
+  match "logout" => "user_sessions#destroy"
+
+
+  # NAMESPACING ------------------------------------
+  # ADMIN
+  namespace 'admin' do
+    resources :roles
+    resources :users
+    resources :games
+    root controller: 'admin', action: 'index'
+  end
+  # MEMBER
+  namespace 'member' do
+    resources :roles
+    resources :users
+    resources :games
+    root controller: 'member', action: 'index'
+  end
+  # 
+
 #	login "login", :controller => "user_sessions", :action => "new"
 #	logout "logout", :controller => "user_sessions", :action => "destroy"
 

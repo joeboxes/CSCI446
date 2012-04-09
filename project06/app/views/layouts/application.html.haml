@@ -27,8 +27,8 @@
 					= link_to "Login", login_path
 					|
 					= link_to "Register", new_user_path
-			%div.sidebar
-				-if current_user
+			-if current_user
+				%div.sidebar
 					= "#{get_user_role(current_user)} Home"
 					%br
 					-if permitted_to? :create, :games
@@ -46,15 +46,10 @@
 					-if permitted_to? [:create, :edit], :roles
 						Roles Pages
 						%br
-					
-					
-				-else
-					Welcome, Guest!
-					%br
-					= link_to "View Games", games_path
-					%br
-					= link_to "View Users", users_path
-			%div.content
+				%div.content
+					= yield
+			-else
+				%div.contentCenter
 				= yield
 		%footer
 			Copyright &copy; Gamez 2012.
