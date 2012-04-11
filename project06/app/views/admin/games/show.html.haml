@@ -1,6 +1,12 @@
 = content_for :header_title do
-	="Member - #{@game.title}"
+	="Admin - #{@game.title}"
 %div
+	%div.halfLeft
+		%b
+			ID: 
+	%div.halfRight
+		%u
+			= @game.id
 	%div.halfLeft
 		%b
 			Title: 
@@ -12,7 +18,7 @@
 			Creator: 
 	%div.halfRight
 		- @user = (User.find @game.user_id)
-		= link_to @user.username, member_user_path(@user)
+		= link_to @user.username, admin_user_path(@user)
 	%div.halfLeft
 		%b
 			Created Date:
@@ -26,5 +32,6 @@
 %div.full
 	= @game.comment
 
-- if @game.user_id == current_user.id
-	= link_to 'Edit', edit_member_game_path(@game)
+= link_to 'Edit', edit_admin_game_path(@game)
+|
+= link_to 'Destroy', [:admin, @game], confirm: 'Are you sure?', method: :delete

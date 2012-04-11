@@ -1,5 +1,5 @@
 %div.editform
-  = form_for [:member, @user], :html => { :multipart => true } do |f|
+  = form_for [:admin, @user], :html => { :multipart => true } do |f|
     -if @user.errors.any?
       %div#error_explanation
         %h2
@@ -11,7 +11,7 @@
     %div.fieldtitle
       = f.label :username
     %div.fieldinput
-      = f.text_field :username, :disabled => true
+      = f.text_field :username
     %div.fieldtitle
       = f.label "First Name"
     %div.fieldinput
@@ -40,24 +40,27 @@
       &nbsp;
     %div.fieldinput
       = image_tag "/#{@user.icon.url(:small)}"
-    
-    =#-for role in Role.find(:all)
-    =#  %div.fieldtitle
-    =#    = label :user, role.name
-    =#  %div.fieldinput
-    =#    = radio_button :user, :role_id, role.id
-    =#  %br
-    %div.fieldtitle
-      = f.label "ReCaptcha"
-    %div.fieldinput
-      = recaptcha_tags
+    - i=0
+    -for role in Role.find(:all)
+      %div.fieldtitle
+        = label :user, role.name
+      %div.fieldinput
+        -if i==0
+          = radio_button :user, :role_id, role.id, :checked => true
+        -else
+          = radio_button :user, :role_id, role.id
+        -i = i + 1
     %br
+    =#%div.fieldtitle
+    =#  = f.label "ReCaptcha"
+    =#%div.fieldinput
+    =#  = recaptcha_tags
+    =#%br
     %div.actions
-      =#"#{params[:action]} =?= #{:edit}"
       - if (params[:action] == "edit" || params[:action] == "update")
         = f.submit "Update"
       -else
-        = f.submit "Register"
+        = f.submit "Create"
 
 
 

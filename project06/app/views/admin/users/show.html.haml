@@ -1,6 +1,12 @@
 = content_for :header_title do
-	= "Member - Profilez #{@user.username}"
+	= "Admin - Profilez #{@user.username}"
 %div
+	%div.halfLeft
+		%b
+			ID: 
+	%div.halfRight
+		%u
+			= @user.id
 	%div.halfLeft
 		%b
 			Username: 
@@ -31,4 +37,5 @@
 
 %div.full
 	= image_tag "/#{@user.icon.url(:small)}"
-
+= link_to 'Edit', edit_admin_user_path(@user)
+= link_to 'Destroy', [:admin, @user], confirm: 'Are you sure?', method: :delete

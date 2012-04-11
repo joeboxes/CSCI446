@@ -1,0 +1,38 @@
+= content_for :header_title do
+  Admin - Gamez Listing
+
+%h2 Admin - Gamez Listing
+%table.tablelist
+  %thead
+    %tr
+      %th Title
+      %th Rating
+      %th Added
+      %th User
+      %th Edit
+      %th Destroy
+  %tfoot
+    %tr
+      %td{:colspan => 666}
+        = pluralize( @games.count, 'Gamez')
+  - @games.each do |game|
+    %tr{ :class => cycle("even","odd") }
+      - usr = User.find(game.user_id)
+      %td
+        = link_to game.title, admin_game_path(game)
+      %td
+        = rating_to_title(game.rating)
+      %td
+        = game.created_at.to_s(:time_format_main)
+      %td
+        -if current_user && current_user.id == usr.id
+          = link_to "me", admin_user_path(usr)
+        -else
+          = link_to usr.username, admin_user_path(usr)
+      %td
+        = link_to 'Edit', edit_admin_game_path(game)
+      %td
+        = link_to 'Destroy', [:admin, game], confirm: 'Are you sure?', method: :delete
+= will_paginate @games
+
+= link_to 'New Gamez', new_admin_game_path

@@ -1,18 +1,18 @@
 = content_for :header_title do
-  Member - Userz Listing
+  Admin - Userz Listing
 
-%h2 Member - Userz Listing
+%h2 Admin - Userz Listing
 %table.tablelist
   %thead
     %tr
+      %th ID
+      %th Rank
       %th Name
       %th Username
-      %th Registration
+      %th Created
       %th Gamez
-      - if permitted_to? :edit, :users
-        %th Edit
-      - if permitted_to? :destroy, :users
-        %th Destroy
+      %th Edit
+      %th Destroy
   %tfoot
     %tr
       %td{:colspan => 666}
@@ -20,18 +20,22 @@
   - @users.each do |user|
     %tr{ :class => cycle("even","odd") }
       %td
+        = user.id
+      %td
+        = Role.find(user.role_id).name
+      %td
         = "#{user.fname} #{user.lname}"
       %td
-        = link_to user.username, member_user_path(user)
+        = link_to user.username, admin_user_path(user)
       %td
         = user.created_at.to_s(:time_format_main)
       %td
         = Game.count(:conditions => {:user_id => user.id} )
-      - if permitted_to? :edit, user
-        %td
-          = link_to 'Edit', edit_member_user_path(user)
-      - if permitted_to? :destroy, user
-        %td
-          = link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete
+      %td
+        = link_to 'Edit', edit_admin_user_path(user)
+      %td
+        = link_to 'Destroy', [:admin, user], confirm: 'Are you sure?', method: :delete
 
 = will_paginate @users
+
+= link_to 'New Userz', new_admin_user_path

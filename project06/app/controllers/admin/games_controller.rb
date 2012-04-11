@@ -2,10 +2,8 @@ class Admin::GamesController < Admin::AdminController
 	
 	#declarative authorization - single resources loaded behind the scenes
 	filter_resource_access
-	
-	
-	
-	
+  filter_access_to :all, :with_attribute => true
+
 	
   # GET /games
   # GET /games.json
@@ -48,10 +46,9 @@ class Admin::GamesController < Admin::AdminController
   # POST /games.json
   def create
     @game = Game.new(params[:game])
-
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
+        format.html { redirect_to [:admin, @game], notice: 'Game was successfully created BOIIII.' }
         format.json { render json: @game, status: :created, location: @game }
       else
         format.html { render action: "new" }
@@ -67,7 +64,7 @@ class Admin::GamesController < Admin::AdminController
 
     respond_to do |format|
       if @game.update_attributes(params[:game])
-        format.html { redirect_to @game, notice: 'Game was successfully updated.' }
+        format.html { redirect_to [:admin, @game], notice: 'Game was successfully updated DUUDE.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -81,9 +78,8 @@ class Admin::GamesController < Admin::AdminController
   def destroy
     @game = Game.find(params[:id])
     @game.destroy
-
     respond_to do |format|
-      format.html { redirect_to games_url }
+      format.html { redirect_to admin_games_url }
       format.json { head :ok }
     end
   end

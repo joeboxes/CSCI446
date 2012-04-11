@@ -1,0 +1,35 @@
+= content_for :header_title do
+  Admin - Rolez Listing
+
+%h2 Admin - Rolez Listing
+%table.tablelist
+  %thead
+    %tr
+      %th ID
+      %th Name
+      %th Created
+      %th # Users
+      %th Edit
+      %th Destroy
+  %tfoot
+    %tr
+      %td{:colspan => 666}
+        = pluralize( @roles.count, 'Rolez')
+  - @roles.each do |role|
+    %tr{ :class => cycle("even","odd") }
+      %td
+        = role.id
+      %td
+        = role.name
+      %td
+        = role.created_at.to_s(:time_format_main)
+      %td
+        = User.count(:conditions => {:role_id => role.id} )
+      %td
+        = link_to 'Edit', edit_admin_role_path(role)
+      %td
+        = link_to 'Destroy', [:admin, role], confirm: 'Are you sure?', method: :delete
+
+= will_paginate @games
+
+= link_to 'New Rolez', new_admin_role_path

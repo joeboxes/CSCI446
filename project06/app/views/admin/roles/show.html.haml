@@ -1,0 +1,24 @@
+= content_for :header_title do
+	= "Admin - Rolez #{@role.name}"
+%div
+	%div.halfLeft
+		%b
+			ID: 
+	%div.halfRight
+		%u
+			= @role.id
+	%div.halfLeft
+		%b
+			Name: 
+	%div.halfRight
+		%u
+			= @role.name
+	%div.halfLeft
+		%b
+			Created Date:
+	%div.halfRight
+		= @role.created_at.to_s(:time_format_main)
+
+%div.full
+	&nbsp;
+

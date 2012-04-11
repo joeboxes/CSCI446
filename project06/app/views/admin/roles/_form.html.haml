@@ -1,0 +1,31 @@
+%div.editform
+  = form_for [:admin, @role], :html => { :multipart => true } do |f|
+    -if @role.errors.any?
+      %div#error_explanation
+        %h2
+          = "#{pluralize(@role.errors.count, 'error')} prohibited this role from being saved:"
+        %ul
+          -@role.errors.full_messages.each do |msg|
+            %li
+              = msg
+    %div.fieldtitle
+      = f.label :id
+    %div.fieldinput
+      = f.text_field :id, :disabled => true
+    %div.fieldtitle
+      = f.label :name
+    %div.fieldinput
+      = f.text_field :name
+    
+    %br
+    %div.actions
+      - if (params[:action] == "edit" || params[:action] == "update")
+        = f.submit "Update"
+      -else
+        = f.submit "Create"
+
+
+
+
+
+
