@@ -5,6 +5,7 @@
 %table.tablelist
   %thead
     %tr
+      %th ID
       %th Title
       %th Rating
       %th Added
@@ -18,6 +19,8 @@
   - @games.each do |game|
     %tr{ :class => cycle("even","odd") }
       - usr = User.find(game.user_id)
+      %td
+        = game.id
       %td
         = link_to game.title, admin_game_path(game)
       %td

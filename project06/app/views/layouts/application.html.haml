@@ -41,7 +41,10 @@
 					%br
 					= link_to "Userz", member_users_path
 					%br
-					= link_to "Edit Profile", edit_member_user_path(user) #:current
+					-if is_user_admin? user
+						= link_to "Edit Profile", edit_admin_user_path(user) #:current
+					-else
+						= link_to "Edit Profile", edit_member_user_path(user) #:current
 					%br
 					-if is_user_admin? user
 						%br

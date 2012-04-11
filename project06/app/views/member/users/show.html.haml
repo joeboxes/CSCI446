@@ -31,4 +31,5 @@
 
 %div.full
 	= image_tag "/#{@user.icon.url(:small)}"
-
+-if current_user.id == @user.id
+	= link_to 'Edit', edit_member_user_path(@user)
