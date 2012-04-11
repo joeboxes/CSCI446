@@ -22,3 +22,5 @@
 %div.full
 	&nbsp;
 
+= link_to 'Edit', edit_admin_role_path(@role)
+= link_to 'Destroy', [:admin, @role], confirm: 'Are you sure?', method: :delete

@@ -11,7 +11,10 @@
     %div.fieldtitle
       = f.label :username
     %div.fieldinput
-      = f.text_field :username, :disabled => true
+      -if is_user_admin? current_user
+        = f.text_field :username
+      -else
+        = f.text_field :username, :disabled => true
     %div.fieldtitle
       = f.label "First Name"
     %div.fieldinput
@@ -47,10 +50,10 @@
     =#  %div.fieldinput
     =#    = radio_button :user, :role_id, role.id
     =#  %br
-    %div.fieldtitle
-      = f.label "ReCaptcha"
-    %div.fieldinput
-      = recaptcha_tags
+    =#%div.fieldtitle
+    =#  = f.label "ReCaptcha"
+    =#%div.fieldinput
+    =#  = recaptcha_tags
     %br
     %div.actions
       =#"#{params[:action]} =?= #{:edit}"

@@ -8,7 +8,7 @@ authorization do
 	# members permissions
 	role :member do
 		includes :guest # main page
-		has_permission_on :member_games, :to => [:index, :show]
+		has_permission_on :member_games, :to => [:index, :show, :new, :create]
 		has_permission_on :member_games, :to => [:edit, :update] do # :destroy
 			if_attribute :user_id => is { user.id }
 		end

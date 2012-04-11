@@ -1,0 +1,8 @@
+#	deleted:    app/views/member/users/edit.html.erb
+#	deleted:    app/views/member/users/new.html.haml
+#	deleted:    public/assets/images/users/48_original_captain.png
+#	deleted:    public/assets/images/users/48_small_captain.png
+#	deleted:    public/assets/images/users/49_original_BEWBZ.png
+#	deleted:    public/assets/images/users/49_small_BEWBZ.png
+#	deleted:    public/assets/images/users/53_original_BAM.png
+#	deleted:    public/assets/images/users/53_small_BAM.png

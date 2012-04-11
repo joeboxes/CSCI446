@@ -57,9 +57,8 @@ class UsersController < ApplicationController
 		 end
 	    end
 	else
-		#flash[:error] = "invalid recaptcha."
-		flash[:error] = "role: #{role.id}"
-		@user.errors.add( :base, 'invalid recaptcha')
+		flash[:error] = "invalid recaptcha."
+		#@user.errors.add( :base, 'invalid recaptcha')
 		render :action => 'new'
 	end
   end
