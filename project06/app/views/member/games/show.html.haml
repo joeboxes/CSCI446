@@ -1,0 +1,27 @@
+= content_for :header_title do
+	="#{@game.title}"
+%div
+	%div.halfLeft
+		%b
+			Title: 
+	%div.halfRight
+		%u
+			= @game.title
+	%div.halfLeft
+		%b
+			Creator: 
+	%div.halfRight
+		- @user = (User.find @game.user_id)
+		= link_to @user.username, member_user_path(@user)
+	%div.halfLeft
+		%b
+			Created Date:
+	%div.halfRight
+		= @game.created_at.to_s(:time_format_main)
+	%div.halfLeft
+		%b
+			Rating: 
+	%div.halfRight
+		= rating_to_title @game.rating
+%div.full
+	= @game.comment

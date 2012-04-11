@@ -1,0 +1,34 @@
+= content_for :header_title do
+	= "Profilez #{@user.username}"
+%div
+	%div.halfLeft
+		%b
+			Username: 
+	%div.halfRight
+		%u
+			= @user.username
+	%div.halfLeft
+		%b
+			Email: 
+	%div.halfRight
+		%u
+			= @user.email
+	%div.halfLeft
+		%b
+			Full Name:  
+	%div.halfRight
+		= "#{@user.fname.capitalize} #{@user.lname.capitalize}"
+	%div.halfLeft
+		%b
+			Registration Date:
+	%div.halfRight
+		= @user.created_at.to_s(:time_format_main)
+	%div.halfLeft
+		%b
+			Rank: 
+	%div.halfRight
+		= Role.find(@user.role_id).name
+
+%div.full
+	= image_tag "/#{@user.icon.url(:small)}"
+

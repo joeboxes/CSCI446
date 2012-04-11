@@ -1,10 +1,11 @@
 Gamez::Application.routes.draw do
-  
+  # http://guides.rubyonrails.org/routing.html#controller-namespaces-and-routing
+
   resources :roles
 
   resources :user_sessions, :only => [:new, :create, :destroy]
   resources :games
-  resources :ranks
+  #resources :ranks
   resources :users
   root :to => 'games#index'
   
@@ -13,21 +14,22 @@ Gamez::Application.routes.draw do
   match "login" => "user_sessions#new"
   match "logout" => "user_sessions#destroy"
 
-
   # NAMESPACING ------------------------------------
   # ADMIN
   namespace 'admin' do
     resources :roles
     resources :users
     resources :games
-    root controller: 'admin', action: 'index'
+    #root controller: 'admin', action: 'index'
+    root controller: 'games', action: 'index'
   end
   # MEMBER
   namespace 'member' do
-    resources :roles
+    #resources :roles
     resources :users
     resources :games
-    root controller: 'member', action: 'index'
+    #root controller: 'member', action: 'index'
+    root controller: 'games', action: 'index'
   end
   # 
 

@@ -1,0 +1,45 @@
+%div.editform
+  = form_for [:member, @game] do |f|
+    -if @game.errors.any?
+      %div#error_explanation
+        %h2
+          = "#{pluralize(@game.errors.count, "error")} prohibited this game from being saved:"
+        %ul
+          -@game.errors.full_messages.each do |msg|
+            %li
+              = msg
+    =#%div.fieldtitle
+    =#  = f.label :user_id
+    =#%div.fieldinput
+    =#  = f.number_field :user_id
+    =# , :disabled => true
+    %div.fieldtitle
+      = f.label "Creator:"
+      -@user_list = [ current_user ]
+      -@u_name_id = []
+      -@user_list.each do |usr|
+        -@u_name_id.push( [usr.username, usr.id] )
+    %div.fieldinput
+      = f.select :user_id, @u_name_id
+    
+    %div.fieldtitle
+      = f.label :title
+    %div.fieldinput
+      = f.text_field :title
+
+    %div.fieldtitle
+      = f.label :rating
+      -@rate_list = [5, 4, 3, 2, 1]
+      -@r_name_amt = []
+      -@rate_list.each do |amt|
+        -@r_name_amt.push( [rating_to_title(amt), amt] )
+    %div.fieldinput
+      = f.select :rating, @r_name_amt
+    
+    %div.fieldtitle
+      = f.label :comment
+    %div.fieldinput
+      = f.text_area :comment
+    %br
+    %div.actions
+      = f.submit "submit"

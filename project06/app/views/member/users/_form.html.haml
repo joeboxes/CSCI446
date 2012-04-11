@@ -1,5 +1,5 @@
 %div.editform
-  = form_for @user, :html => { :multipart => true } do |f|
+  = form_for [:member, @user], :html => { :multipart => true } do |f|
     -if @user.errors.any?
       %div#error_explanation
         %h2
@@ -36,13 +36,17 @@
       = f.label :icon
     %div.fieldinput
       = f.file_field :icon
-    %div.field
-    -for role in Role.find(:all)
-      %div.fieldtitle
-        = label :user, role.name
-      %div.fieldinput
-        = radio_button :user, :role_id, role.id
-      %br
+    %div.fieldtitle
+      &nbsp;
+    %div.fieldinput
+      = image_tag "/#{@user.icon.url(:small)}"
+    
+    =#-for role in Role.find(:all)
+    =#  %div.fieldtitle
+    =#    = label :user, role.name
+    =#  %div.fieldinput
+    =#    = radio_button :user, :role_id, role.id
+    =#  %br
     %div.fieldtitle
       = f.label "ReCaptcha"
     %div.fieldinput

@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 	
 	helper_method :current_user_session, :current_user #, :current_user_edit
 	helper_method :rating_to_title, :get_user_role
+	helper_method :is_user_member?, :is_user_admin?
 	
 	def rating_to_title (rate)
 		if rate==5
@@ -22,6 +23,11 @@ class ApplicationController < ActionController::Base
 		end
 		return 
 	end
+
+	def find_user
+		@user = current_user
+	end
+
 	def get_user_role usr
 		Role.find(usr.role_id).name
 	end
@@ -43,12 +49,24 @@ class ApplicationController < ActionController::Base
 #		end
 #		return current_user
 #	end
-#	def is_user_admin? usr
-#	    is_admin?(Role.find(usr.role.id))
-#	end
-#	def is_admin? roller
-#	    roller.name.downcase == "admin"
-#	end
+	def is_user_member? usr
+		if usr
+	    	return is_member?(Role.find(usr.role.id))
+	    end
+	    return false
+	end
+	def is_member? roller
+	    return roller.name.downcase == "member"
+	end
+	def is_user_admin? usr
+		if usr
+	   		return is_admin?(Role.find(usr.role.id))
+		end
+		return false
+	end
+	def is_admin? roller
+	    return roller.name.downcase == "admin"
+	end
 	def permission_denied
 		flash[:error] = "You do not have access to view that material."
 		redirect_to root_url

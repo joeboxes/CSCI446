@@ -36,12 +36,12 @@
       = f.label :icon
     %div.fieldinput
       = f.file_field :icon
-    %div.field
-    -for role in Role.find(:all)
-      %div.fieldtitle
+    =# %div.field
+    -#for role in Role.find(:all)
+      =#%div.fieldtitle
         = label :user, role.name
-      %div.fieldinput
-        = radio_button :user, :role_id, role.id
+      =#%div.fieldinput
+        =# radio_button :user, :role_id, role.id, :disabled => true, :checked => true
       %br
     %div.fieldtitle
       = f.label "ReCaptcha"

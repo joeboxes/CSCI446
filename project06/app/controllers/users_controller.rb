@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
-	
-	#declarative authorization - single resources loaded behind the scenes
 	filter_resource_access
-	
-	
-	
+	before_filter :find_user, :only => [:show, :edit, :update, :destroy]
 	
 	
   # GET /users
@@ -29,7 +25,6 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
-# set default to member ---------------------------------------
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
@@ -44,8 +39,14 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+	# set default to member ---------------------------------------
+	role = Role.find_by_name('member')
+	if !role
+		role = Role.find_by_name('Member')
+	end
+	@user.role_id = role.id
 	#recaptcha
-	if true #verify_recaptcha
+	if verify_recaptcha
 	    respond_to do |format|
 		 if @user.save
 		   format.html { redirect_to root_url, notice: 'Registration Successful.' }
@@ -56,8 +57,8 @@ class UsersController < ApplicationController
 		 end
 	    end
 	else
-		flash[:error] = "invalid recaptcha."
-		flash[:notice] = "invalid recaptcha."
+		#flash[:error] = "invalid recaptcha."
+		flash[:error] = "role: #{role.id}"
 		@user.errors.add( :base, 'invalid recaptcha')
 		render :action => 'new'
 	end

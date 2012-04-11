@@ -1,7 +1,7 @@
 = content_for :header_title do
-  Userz Listing
+  Member Userz Listing
 
-%h2 Userz Listing
+%h2 Member Userz Listing
 %table.tablelist
   %thead
     %tr
@@ -22,15 +22,16 @@
       %td
         = "#{user.fname} #{user.lname}"
       %td
-        = link_to user.username, user
+        = link_to user.username, member_user_path(user)
       %td
         = "last login?"
       %td
-        = "no games"
+        = Game.count(:conditions => {:user_id => user.id} )
       - if permitted_to? :edit, user
         %td
-          = link_to 'Edit', edit_game_path(user)
+          = link_to 'Edit', edit_member_user_path(user)
       - if permitted_to? :destroy, user
         %td
           = link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete
+
 = will_paginate @games

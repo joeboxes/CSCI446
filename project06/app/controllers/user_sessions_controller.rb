@@ -10,7 +10,14 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
       if @user_session.save
-		    redirect_to root_url
+        @usr = UserSession.find.user # User.find @user_session # find_user #current_user # UserSession.find current_user
+        if ( is_user_member?(@usr) || is_user_admin?(@usr) )
+          redirect_to :member_root
+          #  elsif is_user_admin? @usr
+          #  redirect_to :admin_root
+        else
+		      redirect_to root_url
+        end
       else
 		    render :action => 'new' # redirects to users_session, NOT login
         #redirect_to login_path

@@ -1,0 +1,56 @@
+= content_for :header_title do
+  Member Gamez Listing
+
+%h2 Member Gamez Listing
+%table.tablelist
+  %thead
+    %tr
+      %th Title
+      %th Rating
+      %th Added
+      %th User
+      - if permitted_to? :edit, :member_games
+        %th EDIT
+      - if permitted_to? :destroy, :member_games
+        %th DESTROY
+  %tfoot
+    %tr
+      %td{:colspan => 666}
+        = pluralize( @games.count, 'Gamez')
+  - @games.each do |game|
+    %tr{ :class => cycle("even","odd") }
+      - usr = User.find(game.user_id)
+      %td
+        = link_to game.title, member_game_path(game)
+      %td
+        = rating_to_title(game.rating)
+      %td
+        = game.created_at.to_s(:time_format_main)
+      %td
+        -if current_user && current_user.id == usr.id
+          = link_to "me", member_user_path(usr)
+        -else
+          = link_to usr.username, member_user_path(usr)
+      %td
+        =# People.with_permissions_to(:read)
+        - if permitted_to? :edit, :member_games
+          =#- if permitted_to? :edit, game
+          -if is_user_admin? current_user
+            = link_to 'Edit', edit_admin_game_path(game)
+          -elsif (game.user_id == current_user.id)
+            =# :edit, [:member_games, game] :member_edit, game # game.user_id == current_user.id #permitted_to? :edit, game
+            = link_to 'Edit', edit_member_game_path(game)
+          -else
+            &nbsp;
+      %td
+        - if permitted_to? :destroy, :member_games
+          - if permitted_to? :destroy, [:member, game]
+            = link_to 'Destroy', game_member_path(game), confirm: 'Are you sure?', method: :delete
+          -else 
+            &nbsp;
+= will_paginate @games
+%div
+  -if false #is_user_admin? current_user
+    = link_to 'New Gamez', new_admin_game_path
+  -elsif
+    = link_to 'New Gamez', new_member_game_path
