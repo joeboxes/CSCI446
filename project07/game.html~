@@ -6,12 +6,17 @@
 		<!-- external resources -->
 		<link rel="stylesheet" type="text/css" href="game.css"/>
 
-		<script src="jquery-1.7.2.js"></script>
-			
+		<script src="jquery-1.7.2.js"></script>			
 			<script src="game/Dispatch.js"></script>
 			<script src="game/V2D.js"></script>
+			<script src="game/Obj2D.js"></script>
 			<script src="game/Code.js"></script>
+			<script src="game/ImageLoader.js"></script>
+			<script src="game/MultiLoader.js"></script>
+			<script src="game/Resource.js"></script>
+				<script src="game/ResourceBakos.js"></script>
 
+			<script src="game/ClassA.js"></script>
 			
 			<script src="game/Output.js"></script>
 			<script src="game/Canvas.js"></script>

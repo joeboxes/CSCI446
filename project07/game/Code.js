@@ -30,6 +30,11 @@ Code.removeElement = function(a,o){
 		}
 	}
 }
+Code.emptyArray = function(a){
+	while(a.length>0){
+		a.pop();
+	}
+}
 // conversion functions ----------------------------------------------
 Code.getHex = function (intVal){
 	return '#'+intVal.toString(16);
@@ -37,7 +42,10 @@ Code.getHex = function (intVal){
 
 
 
-// ? functions ----------------------------------------------
+// class functions ----------------------------------------------
+Code.extendClass = function(child,parent){
+	parent.apply(child); child.base = new parent; child.base.child = child;
+}
 
 
 // ? functions ----------------------------------------------
