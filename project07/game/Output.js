@@ -4,11 +4,6 @@
 var CANVAS_NUM_ALL =  0;
 
 function Output(debHTML){ // input is debug HTML object
-	
-// VARIABLES --------------------------------------------------------------
-	// public
-	//
-	// private
 	var output;
 	var MAXLINES;
 	var MAXCHARS;
@@ -18,8 +13,6 @@ function Output(debHTML){ // input is debug HTML object
 	MAXLINES = 5;
 	MAXCHARS = 100;
 	
-	
-// FUNCTIONS --------------------------------------------------------------
 	// public
 	this.getOutput = function(){
 		return output;
@@ -51,9 +44,6 @@ function Output(debHTML){ // input is debug HTML object
 	this.clear = function(){
 		output.innerHTML = "";
 	}
-	
-	// private
-	//
 }
 
 

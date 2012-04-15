@@ -1,13 +1,13 @@
 // Canvas.js
 
 // CLASS VARIABLES
-//Canvas.prototype.EVENT_CLICK = "canevtclk";
 Canvas.EVENT_CLICK = "canevtclk";
 
 function Canvas(canHTML){ // input is canvas HTML object
 // VARIABLES --------------------------------------------------------------
 	// public
-	//
+	this.width = 0;
+	this.height = 0;
 	// private
 	var canvas;
 	var context;

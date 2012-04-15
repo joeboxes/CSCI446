@@ -1,37 +1,25 @@
 // V2D.js
-
-// CLASS VARIABLES
 function V2D(xP,yP){ // input is debug HTML object
-	
-// VARIABLES --------------------------------------------------------------
-	// public
+//	alert( [x,y] );
 	this.x = 0;
 	this.y = 0;
-	// private
-	
 	// constructor
-	x = xP; y = yP;
-	
+	this.x = xP; this.y = yP;
 	
 // FUNCTIONS --------------------------------------------------------------
-	// public
 	this.length = length;
 	function length(){
 		return Math.sqrt(x*x+y*y);
 	}
 	this.norm = norm;
 	function norm(){
-		dist = Math.sqrt(x*x+y*y);
-		x = x/dist; y = y/dist;
+		dist = Math.sqrt(this.x*this.x+this.y*this.y);
+		this.x = this.x/dist; this.y = this.y/dist;
 	}
 	this.kill = kill
 	function kill(){
-		x = undefined; y = undefined;
+		this.x = undefined; this.y = undefined;
 		this = null;
 	}
-	// private
-	//
 }
-
-
 

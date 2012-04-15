@@ -6,7 +6,8 @@ Canvas.EVENT_CLICK = "canevtclk";
 function Canvas(canHTML){ // input is canvas HTML object
 // VARIABLES --------------------------------------------------------------
 	// public
-	//
+	this.width = 0;
+	this.height = 0;
 	// private
 	var canvas;
 	var context;
@@ -15,6 +16,8 @@ function Canvas(canHTML){ // input is canvas HTML object
 	// constructor
 	dispatch = new Dispatch();
 	canvas = canHTML;
+	this.width = canvas.width;
+	this.height = canvas.height;
 	context = canvas.getContext("2d");
 	addListeners();
 	

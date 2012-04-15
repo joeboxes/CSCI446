@@ -9,7 +9,7 @@
 		<script src="jquery-1.7.2.js"></script>
 			
 			<script src="game/Dispatch.js"></script>
-			<script src="game/V3D.js"></script>
+			<script src="game/V2D.js"></script>
 			<script src="game/Code.js"></script>
 
 			

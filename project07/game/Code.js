@@ -1,14 +1,6 @@
-// Lattice.js
-
-// CLASS VARIABLES
+// Code.js
 function Code(){
-	//var priv;
-	alert('you don\'t need to instantiate me');
-	//this.hia = hia;
-	/*function hia(){
-		alert('hia');
-	}*/
-	
+	alert('you shouldn\'t need to instantiate me');
 }
 // array functions ----------------------------------------------
 Code.elementExists = function(a,o){
@@ -39,20 +31,20 @@ Code.removeElement = function(a,o){
 	}
 }
 // conversion functions ----------------------------------------------
-function getHex(intVal){
+Code.getHex = function (intVal){
 	return '#'+intVal.toString(16);
 }
 
 
 
+// ? functions ----------------------------------------------
+
+
+// ? functions ----------------------------------------------
 
 
 
-
-
-
-
-
+// ? functions ----------------------------------------------
 
 
 

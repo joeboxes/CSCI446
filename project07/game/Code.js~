@@ -2,15 +2,9 @@
 
 // CLASS VARIABLES
 function Code(){
-	//var priv;
-	alert('you don\'t need to instantiate me');
-	//this.hia = hia;
-	/*function hia(){
-		alert('hia');
-	}*/
-	
+	alert('you shouldn\'t need to instantiate me');
 }
-// static functions
+// array functions ----------------------------------------------
 Code.elementExists = function(a,o){
 	var i;
 	for(i=0;i<a.length;++i){
@@ -38,6 +32,23 @@ Code.removeElement = function(a,o){
 		}
 	}
 }
+// conversion functions ----------------------------------------------
+Code.getHex = function (intVal){
+	return '#'+intVal.toString(16);
+}
+
+
+
+// ? functions ----------------------------------------------
+
+
+// ? functions ----------------------------------------------
+
+
+
+// ? functions ----------------------------------------------
+
+
 
 
 

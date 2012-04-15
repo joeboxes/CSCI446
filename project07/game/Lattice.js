@@ -1,22 +1,13 @@
 // Lattice.js
 
 // CLASS VARIABLES
-// 
-
 function Lattice(xNum,yNum, obj){
-	
-// VARIABLES --------------------------------------------------------------
-	// public
-	
 	// private
 	var a = null;
 	var x, y, xy;
-	
 	// constructor
 	setDims(xNum,yNum, obj);
 	
-	
-// FUNCTIONS --------------------------------------------------------------
 	// public
 	this.setDims = setDims;
 	function setDims(xNum,yNum, obj){
@@ -50,11 +41,7 @@ function Lattice(xNum,yNum, obj){
 	this.setIndex = function(i, val){
 		a[i] = val;
 	}
-	
-	// private
-	/*function myFxn(){
-		//
-	}*/
+
 }
 
 
