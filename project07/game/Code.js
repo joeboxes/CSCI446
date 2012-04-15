@@ -10,7 +10,7 @@ function Code(){
 	}*/
 	
 }
-// static functions
+// array functions ----------------------------------------------
 Code.elementExists = function(a,o){
 	var i;
 	for(i=0;i<a.length;++i){
@@ -38,6 +38,23 @@ Code.removeElement = function(a,o){
 		}
 	}
 }
+// conversion functions ----------------------------------------------
+function getHex(intVal){
+	return '#'+intVal.toString(16);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

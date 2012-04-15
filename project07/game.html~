@@ -7,9 +7,11 @@
 		<link rel="stylesheet" type="text/css" href="game.css"/>
 
 		<script src="jquery-1.7.2.js"></script>
-
-			<script src="game/Code.js"></script>
+			
 			<script src="game/Dispatch.js"></script>
+			<script src="game/V3D.js"></script>
+			<script src="game/Code.js"></script>
+
 			
 			<script src="game/Output.js"></script>
 			<script src="game/Canvas.js"></script>

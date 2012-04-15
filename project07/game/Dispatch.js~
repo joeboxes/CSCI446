@@ -1,8 +1,10 @@
-// Lattice.js
+// Dispatch.js
 
 // CLASS VARIABLES
 var EVENT_START = "evtsta";
 var EVENT_STOP = "evtsto";
+var EVENT_LOAD = "evtloa";
+var EVENT_COMPLETE = "evtcmp";
 
 function Dispatch(){
 	

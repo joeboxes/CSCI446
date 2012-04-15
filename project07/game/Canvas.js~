@@ -1,7 +1,9 @@
 // Canvas.js
 
 // CLASS VARIABLES
-//var CANVAS_NUM_ALL =  0;
+//Canvas.prototype.EVENT_CLICK = "canevtclk";
+Canvas.EVENT_CLICK = "canevtclk";
+
 function Canvas(canHTML){ // input is canvas HTML object
 // VARIABLES --------------------------------------------------------------
 	// public
@@ -9,18 +11,36 @@ function Canvas(canHTML){ // input is canvas HTML object
 	// private
 	var canvas;
 	var context;
+	var dispatch;
 	
 	// constructor
+	dispatch = new Dispatch();
 	canvas = canHTML;
 	context = canvas.getContext("2d");
 	addListeners();
 	
 // FUNCTIONS --------------------------------------------------------------
 	// public
-	this.getCanvas = function(){
+	// dispatch -----------------------------------------------------------
+	this.addFunction = addFunction;
+	function addFunction(str,fxn){
+		dispatch.addFunction(str,fxn);
+	}
+	this.removeFunction = removeFunction;
+	function removeFunction(str,fxn){
+		dispatch.removeFunction(str,fxn);
+	}
+	this.alertAll = alertAll;
+	function alertAll(str,o){
+		dispatch.alertAll(str,o);
+	}
+	// getters -----------------------------------------------------------
+	this.getCanvas = getCanvas;
+	function getCanvas(){
 		return canvas;
 	}
-	this.getContext = function(){
+	this.getContext = getContext;
+	function getContext(){
 		return context;
 	}
 	// LISTENERS ----------------------------------------------------------
@@ -28,40 +48,29 @@ function Canvas(canHTML){ // input is canvas HTML object
 	function addListeners(){
 		canvas.addEventListener('click', canvasClickFxn);
 	}
-
 	function canvasClickFxn(e){
-		var xPos = 0;
-		var yPos = 0;
+		var pos = new V2D(0,0);
 		var ele = canvas;
 		while(ele != null){
-			xPos += ele.offsetLeft;
-			yPos += ele.offsetTop;
+			pos.x += ele.offsetLeft;
+			pos.y += ele.offsetTop;
 			ele = ele.offsetParent;
 		}
-		//alert(canvas.offsetParent);
-		//alert(canvas.offsetParent.offsetParent);
-		/*while(){
-			
-		}*/
-		xPos = e.pageX - xPos;
-		yPos = e.pageY - yPos;
-	
+		pos.x = e.pageX - pos.x;
+		pos.y = e.pageY - pos.y;
 		context.beginPath();
 		context.fillStyle = "#FF0000";
 		context.strokeStyle = "#00FF00";
 		context.lineWidth = 2;
-		context.arc(xPos,yPos, 10, 0,2*Math.PI, true);
+		context.arc(pos.x,pos.y, 10, 0,2*Math.PI, true);
 		context.stroke();
 		context.closePath();
 		context.fill();
-		
+		alertAll(Canvas.EVENT_CLICK,pos);
+		pos = null;
 	}
-	// private
-	/*function myFxn(){
-		alert('private');
-	}*/
-	
 }
+
 
 
 

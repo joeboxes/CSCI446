@@ -14,12 +14,14 @@ function Code(){
 Code.elementExists = function(a,o){
 	var i;
 	for(i=0;i<a.length;++i){
-		return true;
+		if(a[i]==o){
+			return true;
+		}
 	}
 	return false;
 }
 Code.addUnique = function(a,o){
-	if( !Code.elementExists() ){
+	if( !Code.elementExists(a,o) ){
 		a.push(o);
 	}
 }
