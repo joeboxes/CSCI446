@@ -1,3 +1,5 @@
+// Output.js
+
 // CLASS VARIABLES
 var CANVAS_NUM_ALL =  0;
 
@@ -5,13 +7,11 @@ function Output(debHTML){ // input is debug HTML object
 	
 // VARIABLES --------------------------------------------------------------
 	// public
-	//this.;
+	//
 	// private
 	var output;
 	var MAXLINES;
 	var MAXCHARS;
-	
-	
 	
 	// constructor
 	output = debHTML;
@@ -21,23 +21,16 @@ function Output(debHTML){ // input is debug HTML object
 	
 // FUNCTIONS --------------------------------------------------------------
 	// public
-	this.getOutput = getOutput;
-	function getOutput(){
+	this.getOutput = function(){
 		return output;
 	}
-
-	this.setMaxChars = setMaxChars;
-	function setMaxChars(n){
+	this.setMaxChars = function(n){
 		MAXCHARS = n;
 	}
-
-	this.setMaxLines = setMaxLines;
-	function setMaxLines(n){
+	this.setMaxLines = function(n){
 		MAXLINES = n;
 	}
-	
-	this.write = write;
-	function write(str){
+	this.write = function(str){
 		if(str.length>MAXCHARS){
 			str = str.substr(0,MAXCHARS);
 		}
@@ -55,16 +48,12 @@ function Output(debHTML){ // input is debug HTML object
 		}
 		output.innerHTML = newStr;
 	}
-	
-	this.clear = clear;
-	function clear(){
-		utput.innerHTML = "";
+	this.clear = function(){
+		output.innerHTML = "";
 	}
 	
 	// private
-	function myFxn(){
-		alert('private');
-	}
+	
 }
 
 
