@@ -42,6 +42,10 @@ function Voxel(){
 	function addChar(ch){
 		chars.push(ch);
 	}
+	this.removeChar = removeChar;
+	function removeChar(ch){
+		chars.push(ch);
+	}
 // -----------------------------------------------
 	this.getReserved = getReserved;
 	function getReserved(){

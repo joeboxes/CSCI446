@@ -40,11 +40,13 @@ function Lattice(xNum,yNum, obj){
 		return ( 0<=xF && xF<x && 0<=yF && yF<y );
 	}
 	this.getElement = function(xN,yN){
-		var i = yN*x + xN;
+		var xF = Math.floor(xN), yF = Math.floor(yN);
+		var i = yF*x + xF;
 		return a[i];
 	}
 	this.setElement = function(xN,yN, val){
-		var i = yN*x + xN;
+		var xF = Math.floor(xN), yF = Math.floor(yN);
+		var i = yF*x + xF;
 		a[i] = val;
 	}
 	this.getIndex = function(i){

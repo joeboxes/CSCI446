@@ -47,7 +47,7 @@ function enterFrameFxn(){
 	renderScene();
 }
 function keyDownFxn(key){
-	debug.write("keydn: "+key);
+//	debug.write("keydn: "+key);
 	if(!charMain.moving){
 		if(key==Keyboard.KEY_UP){
 			charMain.dir = Obj2D.DIR_UP;//charMain.pos.y -= 1;
@@ -62,7 +62,7 @@ function keyDownFxn(key){
 }
 function onClickFxn(o){
 	//debug.write("click: <"+o.x+","+o.y+">");
-	var pos = o;
+	/*var pos = o;
 	var context = canvas.getContext();
 	context.beginPath();
 	context.fillStyle = "#FF0000";
@@ -71,7 +71,7 @@ function onClickFxn(o){
 	context.arc(pos.x,pos.y, 10, 0,2*Math.PI, true);
 	context.stroke();
 	context.closePath();
-	context.fill();
+	context.fill();*/
 }
 function resizeEventFxn(e){
 	// 
@@ -96,7 +96,7 @@ function removeListeners(){
 }
 // PROCESSING - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function processScene(){
-	var i, j, k, len, ch, obj, next, dir;
+	var i, j, k, len, ch, obj, arr, next, dir, vox, v, u, canMove;
 	next = new V2D(0,0);
 	dir = new V2D(0,0);
 	var speed = 0.2;
@@ -115,6 +115,14 @@ function processScene(){
 			}
 			if( ch.moving ){ // already moving
 				next.x = ch.pos.x+dir.x*speed; next.y = ch.pos.y+dir.y*speed;
+				u = lattice.getElement(ch.pos.x,ch.pos.y); // AM IN
+				v = lattice.getElement(Math.round(next.x),Math.round(next.y)); // AVG IN
+				w = lattice.getElement(ch.dest.x,ch.dest.y); // WILL BE IN
+				if(u!=v){// switched voxels
+					u.removeChar(ch);
+					w.addChar(ch);
+					w.setBG( new Array() );
+				}
 				if( (ch.pos.x<ch.dest.x && ch.dest.x<=next.x) || (ch.pos.x>ch.dest.x && ch.dest.x>=next.x) ||  
 					(ch.pos.y<ch.dest.y && ch.dest.y<=next.y) || (ch.pos.y>ch.dest.y && ch.dest.y>=next.y) ){
 					ch.pos.x = ch.dest.x; ch.pos.y = ch.dest.y;
@@ -125,8 +133,23 @@ function processScene(){
 			}else{ // start moving if possible
 				next.x = ch.pos.x+dir.x; next.y = ch.pos.y+dir.y;
 				if( lattice.inLimits(next.x,next.y) ){ // available - movement
-					ch.dest.x = next.x; ch.dest.y = next.y;
-					ch.moving = true;
+					vox = lattice.getElement(next.x,next.y);
+					arr = vox.getChars();
+					canMove = true;
+					for(j=0;j<arr.length;++j){
+						obj = arr[j];
+						if(obj.type==Obj2D.TYPE_WALL){
+							canMove = false;
+							break;
+						}
+					}
+					if(canMove){
+						ch.dest.x = next.x; ch.dest.y = next.y;
+						ch.moving = true;
+					}else{
+						obj.nextImage();
+						ch.moving = false; ch.dir = Obj2D.DIR_NA;
+					}
 				}else{ // objstruction/limit - cannot move
 					ch.moving = false; ch.dir = Obj2D.DIR_NA;
 				}
@@ -201,29 +224,28 @@ function loadLevel(i){
 				//arr.push(resource.tex[ResourceBakos.TEX_DIRT_1]);
 				break;
 			case ResourceBakos.SYM_RUBY :
-				obj = new Obj2D(x,y, new Array(resource.tex[ResourceBakos.TEX_RUBY_3]));
-				vox.addChar(obj);
+				obj = new Obj2D(x,y, new Array(null,resource.tex[ResourceBakos.TEX_RUBY_1],resource.tex[ResourceBakos.TEX_RUBY_2],resource.tex[ResourceBakos.TEX_RUBY_3]));
+				obj.type = Obj2D.TYPE_WALL; vox.addChar(obj);
 				break;
 			case ResourceBakos.SYM_ROCK :
-				obj = new Obj2D(x,y, new Array(resource.tex[ResourceBakos.TEX_ROCK_3]));
-				vox.addChar(obj);
+				obj = new Obj2D(x,y, new Array(null, resource.tex[ResourceBakos.TEX_ROCK_1],resource.tex[ResourceBakos.TEX_ROCK_2],resource.tex[ResourceBakos.TEX_ROCK_3]));
+				obj.type = Obj2D.TYPE_WALL; vox.addChar(obj);
 				break;
 			case ResourceBakos.SYM_PYTHON :
 				obj = new Obj2D(x,y, new Array(resource.tex[ResourceBakos.TEX_PYTHON_1]));
-				vox.addChar(obj); charListAll.push(obj);
+				obj.type = Obj2D.TYPE_ENEM; vox.addChar(obj); charListAll.push(obj);
 				break;
 			case ResourceBakos.SYM_MAIN_CHAR :
 				obj = new Obj2D(x,y, new Array(resource.tex[ResourceBakos.TEX_BAKOS_1]));
-				vox.addChar(obj); charListAll.push(obj);
+				obj.type = Obj2D.TYPE_CHAR; vox.addChar(obj); charListAll.push(obj);
 				break;
 			case ResourceBakos.SYM_DB :
-				obj = new Obj2D(x,y, new Array(resource.tex[ResourceBakos.TEX_DB_3]));
-				vox.addChar(obj);
+				obj = new Obj2D(x,y, new Array(null,resource.tex[ResourceBakos.TEX_DB_1],resource.tex[ResourceBakos.TEX_DB_2],resource.tex[ResourceBakos.TEX_DB_3]));
+				obj.type = Obj2D.TYPE_WALL; vox.addChar(obj);
 				break;
 		}
 		if(ch==ResourceBakos.SYM_MAIN_CHAR){ charMain = obj; }
-		++x;
-		if(x>=GRID_SIZE_X){ x = 0; ++y; }
+		++x; if(x>=GRID_SIZE_X){ x = 0; ++y; }
 	}
 }
 

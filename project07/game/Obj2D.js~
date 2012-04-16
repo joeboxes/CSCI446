@@ -35,6 +35,10 @@ function Obj2D(x,y, arr){// lat,
 		}
 		setSelectedImage(0);
 	}
+	this.nextImage = nextImage;
+	function nextImage(){
+		setSelectedImage(imgSel+1);
+	}
 	this.setSelectedImage = setSelectedImage;
 	function setSelectedImage(i){
 		imgSel = Math.max(0,i);

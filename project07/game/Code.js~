@@ -42,7 +42,10 @@ Code.getHex = function (intVal){
 
 
 
-// ? functions ----------------------------------------------
+// class functions ----------------------------------------------
+Code.extendClass = function(child,parent){
+	parent.apply(child); child.base = new parent; child.base.child = child;
+}
 
 
 // ? functions ----------------------------------------------
