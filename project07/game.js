@@ -12,35 +12,52 @@ var GRID_SIZE_Y = 0;
 var frameSpeed = 10;
 var debugHTMLID = "output";
 var canvasHTMLID = "canvas0";
+var titleHTMLID = "title";
 var debug;
+var titleBase = "Bakos' Ruby Data Mining";
+var title;
 //
 var time = 0;
+var score = 0;
 var charMain = null;
 var charListAll = new Array();
 var level = 1;
 var levelMax = 5;
+var speedChar = 0.2;
+var speedEnem = 0.1;
 
 // init function called on page load complete
 function startLoad(){
 	resource = new ResourceBakos();
-	resource.setFxnComplete(load1);
+	resource.setFxnComplete(loadAll);
 	resource.load();
 }
-function load1(){
+function loadAll(){
 	debug = new Output( document.getElementById(debugHTMLID) );
 	debug.setMaxChars(75); debug.setMaxLines(3);
+	
+	title = new Output( document.getElementById(titleHTMLID) );
+	title.setMaxChars(35); title.setMaxLines(1);
 	
 	canvas = new Canvas( document.getElementById(canvasHTMLID) );
 	GRID_SIZE_X = Math.floor(canvas.width/RECT_SIZE);
 	GRID_SIZE_Y = Math.floor(canvas.height/RECT_SIZE);
-	lattice = new Lattice(GRID_SIZE_X,GRID_SIZE_Y, Voxel);//null);// Obj2D);
+	lattice = new Lattice(GRID_SIZE_X,GRID_SIZE_Y, Voxel);
 	
 	ticker = new Ticker(frameSpeed);
 	keyboard = new Keyboard();
 	
 	level = 1; loadLevel(level);
+	updateTitle(charMain.amt);
 	addListeners();
 	
+}
+function updateTitle(str,obj){
+	if(obj==true){
+		title.write(str);
+	}else{
+		title.write(titleBase+" : $"+str+"K");
+	}
 }
 // INTERACTION - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function enterFrameFxn(){
@@ -49,31 +66,20 @@ function enterFrameFxn(){
 	renderScene();
 }
 function keyDownFxn(key){
-//	debug.write("keydn: "+key);
 	if(!charMain.moving){
 		if(key==Keyboard.KEY_UP){
-			charMain.dir = Obj2D.DIR_UP;//charMain.pos.y -= 1;
+			charMain.dir = Obj2D.DIR_UP;
 		}else if(key==Keyboard.KEY_DN){
-			charMain.dir = Obj2D.DIR_DN;//charMain.pos.y += 1;
+			charMain.dir = Obj2D.DIR_DN;
 		}else if(key==Keyboard.KEY_LF){
-			charMain.dir = Obj2D.DIR_LF;//charMain.pos.x -= 1;
+			charMain.dir = Obj2D.DIR_LF;
 		}else if(key==Keyboard.KEY_RT){
-			charMain.dir = Obj2D.DIR_RT;//charMain.pos.x += 1;
+			charMain.dir = Obj2D.DIR_RT;
 		}
 	}
 }
 function onClickFxn(o){
-	//debug.write("click: <"+o.x+","+o.y+">");
-	/*var pos = o;
-	var context = canvas.getContext();
-	context.beginPath();
-	context.fillStyle = "#FF0000";
-	context.strokeStyle = "#00FF00";
-	context.lineWidth = 2;
-	context.arc(pos.x,pos.y, 10, 0,2*Math.PI, true);
-	context.stroke();
-	context.closePath();
-	context.fill();*/
+	// 
 }
 function resizeEventFxn(e){
 	// 
@@ -101,10 +107,24 @@ function processScene(){
 	var i, j, k, len, ch, obj, arr, next, dir, vox, v, u, canMove;
 	next = new V2D(0,0);
 	dir = new V2D(0,0);
-	var speed = 0.2;
+	var speed = 0;
+	// REFRESH AI MAP
+	
 	// MOVE CHARS
 	for(i=0;i<charListAll.length;++i){
 		ch = charListAll[i];
+		if( ch.type == Obj2D.TYPE_CHAR){
+			speed = speedChar;
+		}else{ //  ENEMY LOGIC GOETH HERE
+			speed = speedEnem;
+			
+			
+			
+			
+			
+			
+			
+		}
 		if( ch.dir != Obj2D.DIR_NA){
 			if(ch.dir==Obj2D.DIR_UP){ // set up direction from symbol
 				dir.y = -1;
@@ -151,7 +171,8 @@ function processScene(){
 							if( obj.type==Obj2D.TYPE_NONE || obj.type==Obj2D.TYPE_EXIT){
 								obj.checkMe(ch);
 								vox.removeChar(obj);
-								debug.write("amt: "+ch.amt);
+								//debug.write("amt: "+ch.amt);
+								updateTitle(ch.amt);
 							}
 						}
 						ch.dest.x = next.x; ch.dest.y = next.y;
@@ -161,7 +182,7 @@ function processScene(){
 						obj.checkMe(ch);
 						ch.moving = false; ch.dir = Obj2D.DIR_NA;
 					}
-				}else{ // objstruction/limit - cannot move
+				}else{ // obstruction/limit - cannot move
 					ch.moving = false; ch.dir = Obj2D.DIR_NA;
 				}
 			}
@@ -181,22 +202,24 @@ function processScene(){
 			vox.setBG( new Array() );
 		}
 		renderScene();
-		alert('Completed Level'+level+'!');
-		loadLevel(1);
-		addListeners();
+		updateTitle('Completed Level '+level+'!', true);
+		level += 1;
+		if(level<=levelMax){
+			loadLevel(level);
+			charMain.amt = score;
+			addListeners();
+		}
 	}
-	
 }	
 // RENDERING - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function renderScene(){
 	var context = canvas.getContext();
+	var img, obj, vox, arr, x, y, i, j, len;
 	// bg
 	var bgImage = resource.tex[ResourceBakos.TEX_BG_ROW_1];
 	context.fillStyle = context.createPattern(bgImage,'repeat');
 	context.fillRect(0,0,canvas.width,canvas.height);
-	// lattice
-	var img, obj, vox, arr, x, y;
-	var i, j, len = lattice.getLength();
+	len = lattice.getLength();
 	// BG
 	x = 0; y = 0;
 	for(i=0;i<len;++i){
@@ -229,7 +252,7 @@ function renderScene(){
 // LEVEL AUTO-LOADING -------------------------------------------------
 function loadLevel(i){
 	lattice.clear(); Code.emptyArray(charListAll);
-	var levelString = resource.map[i];
+	var levelString = resource.map[i-1];
 	var i, len, vox, obj, x,y, arr, ch;
 	len = levelString.length;
 	x = 0; y = 0;
@@ -251,7 +274,6 @@ function loadLevel(i){
 		// CHAR
 		switch(ch){
 			case ResourceBakos.SYM_DIRT :
-				//arr.push(resource.tex[ResourceBakos.TEX_DIRT_1]);
 				break;
 			case ResourceBakos.SYM_RUBY :
 				obj = new Obj2D(x,y, new Array(null,resource.tex[ResourceBakos.TEX_RUBY_1],resource.tex[ResourceBakos.TEX_RUBY_2],resource.tex[ResourceBakos.TEX_RUBY_3]));
@@ -279,19 +301,3 @@ function loadLevel(i){
 	}
 }
 
-
-/*
-ResourceBakos.TEX_BAKOS_1 = 0;
-ResourceBakos.TEX_BG_ROW_1 = 1;
-ResourceBakos.TEX_DB_1 = 2;
-ResourceBakos.TEX_DB_2 = 3;
-ResourceBakos.TEX_DB_3 = 4;
-ResourceBakos.TEX_DIRT_1 = 5;
-ResourceBakos.TEX_PYTHON_1 = 6;
-ResourceBakos.TEX_ROCK_1 = 7;
-ResourceBakos.TEX_ROCK_2 = 8;
-ResourceBakos.TEX_ROCK_3 = 9;
-ResourceBakos.TEX_RUBY_1 = 10;
-ResourceBakos.TEX_RUBY_2 = 11;
-ResourceBakos.TEX_RUBY_3 = 12;
-*/

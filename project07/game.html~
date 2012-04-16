@@ -36,7 +36,7 @@
 	<body>
 		<!-- internal resources -->
 		<div class="centerCanvas">
-			<h2>Bakos' Ruby Data Mining</h2>
+			<h2 id="title">Bakos' Ruby Data Mining</h2>
 			<canvas id="canvas0" width="600" height="400"></canvas>
 			<div id="output" class="center"></div>
 		</div>
