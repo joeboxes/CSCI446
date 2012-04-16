@@ -12,9 +12,9 @@ function Lattice(xNum,yNum, obj){
 	this.setDims = setDims;
 	function setDims(xNum,yNum, obj){
 		x = xNum; y = yNum; xy = x*y;
-		/*if(a!=null && a!=undefined){
+		if(a!=null && a!=undefined){
 			delete a;
-		}*/
+		}
 		a = new Array(xy);
 		var i;
 		if(obj==null || obj==undefined){
@@ -27,6 +27,14 @@ function Lattice(xNum,yNum, obj){
 			}
 		}
 	}
+// -----------------------------------------------
+	this.clear = clear;
+	function clear(){
+		for(i=0;i<xy;++i){
+			a[i].clear();
+		}
+	}
+// -----------------------------------------------
 	this.getElement = function(xN,yN){
 		var i = yN*x + xN;
 		return a[i];
