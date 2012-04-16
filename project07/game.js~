@@ -9,12 +9,13 @@ var keyboard = null;
 var RECT_SIZE = 25;
 var GRID_SIZE_X = 0;
 var GRID_SIZE_Y = 0;
-var frameSpeed = 500;
+var frameSpeed = 200;
 var debugHTMLID = "output";
 var canvasHTMLID = "canvas0";
 var debug;
 //
 var time = 0;
+var charMain = null;
 
 // init function called on page load complete
 function startLoad(){
@@ -34,6 +35,10 @@ function load1(){
 	ticker = new Ticker(frameSpeed);
 	keyboard = new Keyboard();
 	
+	
+	// LEVEL
+	charMain = new Obj2D(10,5, new Array( resource.tex[ResourceBakos.TEX_BAKOS_1]) );
+	
 	addListeners();
 	
 }
@@ -51,9 +56,18 @@ function enterFrameFxn(){
 }
 function keyDownFxn(key){
 	debug.write("keydn: "+key);
+	if(key==Keyboard.KEY_UP){
+		charMain.pos.y -= 1;
+	}else if(key==Keyboard.KEY_DN){
+		charMain.pos.y += 1;
+	}else if(key==Keyboard.KEY_LF){
+		charMain.pos.x -= 1;
+	}else if(key==Keyboard.KEY_RT){
+		charMain.pos.x += 1;
+	}
 }
 function keyUpFxn(key){
-	debug.write("keyup: "+key);
+	//debug.write("keyup: "+key);
 }
 function onClickFxn(o){
 	debug.write("click: <"+o.x+","+o.y+">");
@@ -94,10 +108,16 @@ function removeListeners(){
 // RENDERING - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function renderScene(){
 	var context = canvas.getContext();
-	//bg
+	// bg
 	var bgImage = resource.tex[ResourceBakos.TEX_BG_ROW_1];
 	context.fillStyle = context.createPattern(bgImage,'repeat');
 	context.fillRect(0,0,canvas.width,canvas.height);
+	// lattice
+
+	var img = charMain.getSelectedImage();
+	context.fillStyle = context.createPattern(img,'repeat');
+	var pos = charMain.pos;
+	context.fillRect(pos.x*RECT_SIZE,pos.y*RECT_SIZE,img.width,img.height);
 	
 	/*
 	context.fillStyle = '#CFF';

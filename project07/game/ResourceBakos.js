@@ -21,19 +21,34 @@ ResourceBakos.TEX_DIRT = 0;
 ResourceBakos.TEX_GRASS = 0;
 ResourceBakos.TEX_EMPTY = 0;
 */
+// TEXTURES -----------------------------------
 ResourceBakos.TEX_BAKOS_1 = 0;
 ResourceBakos.TEX_BG_ROW_1 = 1;
 ResourceBakos.TEX_DB_1 = 2;
 ResourceBakos.TEX_DB_2 = 3;
 ResourceBakos.TEX_DB_3 = 4;
 ResourceBakos.TEX_DIRT_1 = 5;
-ResourceBakos.PYTHON_1 = 6;
-ResourceBakos.ROCK_1 = 7;
-ResourceBakos.ROCK_2 = 8;
-ResourceBakos.ROCK_3 = 9;
-ResourceBakos.RUBY_1 = 10;
-ResourceBakos.RUBY_2 = 11;
-ResourceBakos.RUBY_3 = 12;
+ResourceBakos.TEX_PYTHON_1 = 6;
+ResourceBakos.TEX_ROCK_1 = 7;
+ResourceBakos.TEX_ROCK_2 = 8;
+ResourceBakos.TEX_ROCK_3 = 9;
+ResourceBakos.TEX_RUBY_1 = 10;
+ResourceBakos.TEX_RUBY_2 = 11;
+ResourceBakos.TEX_RUBY_3 = 12;
+// MAPS ---------------------------------------
+ResourceBakos.MAP_LEVEL_1 = 0;
+ResourceBakos.MAP_LEVEL_2 = 1;
+ResourceBakos.MAP_LEVEL_3 = 2;
+ResourceBakos.MAP_LEVEL_4 = 3;
+ResourceBakos.MAP_LEVEL_5 = 4;
+// SOUNDS -------------------------------------
+// SYMBOLS -------------------------------------
+ResourceBakos.SYM_NONE = '_';
+ResourceBakos.SYM_MAIN_CHAR = 'M';
+ResourceBakos.SYM_ROCK = '*';
+ResourceBakos.SYM_DIRT = '-';
+ResourceBakos.SYM_RUBY = 'R';
+ResourceBakos.SYM_DB = 'D';
 
 function ResourceBakos(){
 	Code.extendClass(this,Resource);
@@ -51,9 +66,55 @@ function ResourceBakos(){
 														"rock_3.png",
 														"ruby_1.png",
 														"ruby_2.png",
-														"ruby_3.png") );
-
+														"ruby_3.png"), this );
+	this.fxnLoader.setLoadList( new Array(loadLevels), this );
+	this.loadLevels = loadLevels;
+	function loadLevels(ref){ // 24 x 16
+				//   123456789012345678901234|
+		var lvl1 = 	"_M______________________|"+ // 1
+					"---------*--------------|"+ // 2
+					"------------------------|"+ // 3
+					"------------------------|"+ // 4
+					"------------------------|"+ // 5
+					"------------------------|"+ // 6
+					"------------------------|"+ // 7
+					"------------------------|"+ // 8
+					"------------------------|"+ // 9
+					"------------------------|"+ // 10
+					"------------------------|"+ // 11
+					"------------------------|"+ // 12
+					"------------------------|"+ // 13
+					"------------------------|"+ // 14
+					"------------------------|"+ // 15
+					"------------------------|"; // 16
+		ref.map[ResourceBakos.MAP_LEVEL_1] = lvl1;
+		ref.map[ResourceBakos.MAP_LEVEL_2] = lvl1;
+		ref.map[ResourceBakos.MAP_LEVEL_3] = lvl1;
+		ref.map[ResourceBakos.MAP_LEVEL_4] = lvl1;
+		ref.map[ResourceBakos.MAP_LEVEL_5] = lvl1;
+	}
+	
+	
+	
 }
+/*
+		var lvl1 = 	"________________________|"+ // 1
+					"------------------------|"+ // 2
+					"------------------------|"+ // 3
+					"------------------------|"+ // 4
+					"------------------------|"+ // 5
+					"------------------------|"+ // 6
+					"------------------------|"+ // 7
+					"------------------------|"+ // 8
+					"------------------------|"+ // 9
+					"------------------------|"+ // 10
+					"------------------------|"+ // 11
+					"------------------------|"+ // 12
+					"------------------------|"+ // 13
+					"------------------------|"+ // 14
+					"------------------------|"+ // 15
+					"------------------------|"; // 16
+*/
 	/*
 	this.tex = this.base.tex;
 	alert( [this.tex.length, this.base.tex.length] );

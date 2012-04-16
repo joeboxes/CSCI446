@@ -1,13 +1,15 @@
 // MultiLoader.js
 
-function MultiLoader(arr){
+function MultiLoader(arr,obj){
 	var list = new Array();
 	var fxnComplete = null;
-	var timer;
-	setLoadList(arr);
+	var timer = null;
+	var reference = null;
+	setLoadList(arr,obj);
 	
 	this.setLoadList = setLoadList;
-	function setLoadList(arr){
+	function setLoadList(arr,obj){
+		reference = obj;
 		Code.emptyArray(list);
 		var i;
 		for(i=0;i<arr.length;++i){
@@ -21,12 +23,12 @@ function MultiLoader(arr){
 	function next(){
 		if(list.length==0){
 			if(fxnComplete!=null){
-				fxnComplete();
+				fxnComplete(reference);
 			}
 			return;
 		}
 		var fxn = list.pop();
-		fxn();
+		fxn(reference);
 		timer = setTimeout(next,10);
 	}
 	this.setFxnComplete = setFxnComplete;

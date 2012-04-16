@@ -5,9 +5,11 @@ function Resource(){
 	this.tex = tex;
 	var snd = new Array();
 	this.snd = snd;
-	var imgLoader = new ImageLoader( "images/", new Array() );//"default.png"
+	var map = new Array();
+	this.map = map;
+	var imgLoader = new ImageLoader( "images/", new Array(), this );
 	this.imgLoader = imgLoader;
-	var fxnLoader = new MultiLoader( new Array() );
+	var fxnLoader = new MultiLoader( new Array(), this );
 	this.fxnLoader = fxnLoader;
 	imgLoader.setFxnComplete(load2);
 	fxnLoader.setFxnComplete(load3);
@@ -18,7 +20,7 @@ function Resource(){
 		imgLoader.load();
 	}
 	this.load2 = load2;
-	function load2(imgList){
+	function load2(imgList, ref){
 		var i;
 		for(i=0;i<imgList.length;++i){
 			tex[i] = imgList[i];
