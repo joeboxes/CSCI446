@@ -35,6 +35,10 @@ function Lattice(xNum,yNum, obj){
 		}
 	}
 // -----------------------------------------------
+	this.inLimits = function(xN,yN){
+		var xF = Math.floor(xN), yF = Math.floor(yN);
+		return ( 0<=xF && xF<x && 0<=yF && yF<y );
+	}
 	this.getElement = function(xN,yN){
 		var i = yN*x + xN;
 		return a[i];

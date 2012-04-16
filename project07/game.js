@@ -9,13 +9,14 @@ var keyboard = null;
 var RECT_SIZE = 25;
 var GRID_SIZE_X = 0;
 var GRID_SIZE_Y = 0;
-var frameSpeed = 200;
+var frameSpeed = 10;
 var debugHTMLID = "output";
 var canvasHTMLID = "canvas0";
 var debug;
 //
 var time = 0;
 var charMain = null;
+var charListAll = new Array();
 
 // init function called on page load complete
 function startLoad(){
@@ -35,18 +36,9 @@ function load1(){
 	ticker = new Ticker(frameSpeed);
 	keyboard = new Keyboard();
 	
-	
-	// LEVEL
-	//charMain = new Obj2D(10,5, new Array( resource.tex[ResourceBakos.TEX_BAKOS_1]) );
 	loadLevel(1);
 	addListeners();
 	
-}
-function imgLoadedFxn(){//arr){
-	renderScene();
-	
-	var fxnLoader = new MultiLoader( new Array(nextFxn,nextFxn,nextFxn) );
-	fxnLoader.load();
 }
 // INTERACTION - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function enterFrameFxn(){
@@ -56,35 +48,34 @@ function enterFrameFxn(){
 }
 function keyDownFxn(key){
 	debug.write("keydn: "+key);
-	if(key==Keyboard.KEY_UP){
-		charMain.pos.y -= 1;
-	}else if(key==Keyboard.KEY_DN){
-		charMain.pos.y += 1;
-	}else if(key==Keyboard.KEY_LF){
-		charMain.pos.x -= 1;
-	}else if(key==Keyboard.KEY_RT){
-		charMain.pos.x += 1;
+	if(!charMain.moving){
+		if(key==Keyboard.KEY_UP){
+			charMain.dir = Obj2D.DIR_UP;//charMain.pos.y -= 1;
+		}else if(key==Keyboard.KEY_DN){
+			charMain.dir = Obj2D.DIR_DN;//charMain.pos.y += 1;
+		}else if(key==Keyboard.KEY_LF){
+			charMain.dir = Obj2D.DIR_LF;//charMain.pos.x -= 1;
+		}else if(key==Keyboard.KEY_RT){
+			charMain.dir = Obj2D.DIR_RT;//charMain.pos.x += 1;
+		}
 	}
 }
-function keyUpFxn(key){
-	//debug.write("keyup: "+key);
-}
 function onClickFxn(o){
-	debug.write("click: <"+o.x+","+o.y+">");
+	//debug.write("click: <"+o.x+","+o.y+">");
 	var pos = o;
-		var context = canvas.getContext();
-		context.beginPath();
-		context.fillStyle = "#FF0000";
-		context.strokeStyle = "#00FF00";
-		context.lineWidth = 2;
-		context.arc(pos.x,pos.y, 10, 0,2*Math.PI, true);
-		context.stroke();
-		context.closePath();
-		context.fill();
+	var context = canvas.getContext();
+	context.beginPath();
+	context.fillStyle = "#FF0000";
+	context.strokeStyle = "#00FF00";
+	context.lineWidth = 2;
+	context.arc(pos.x,pos.y, 10, 0,2*Math.PI, true);
+	context.stroke();
+	context.closePath();
+	context.fill();
 }
-function resizeEventFxn(e){}
-
-
+function resizeEventFxn(e){
+	// 
+}
 function addListeners(){
 	window.onresize = resizeEventFxn;
 	canvas.addListeners();
@@ -92,7 +83,6 @@ function addListeners(){
 	ticker.addFunction(Ticker.EVENT_TICK,enterFrameFxn);
 	ticker.start();
 	keyboard.addFunction(Keyboard.EVENT_KEY_DOWN,keyDownFxn);
-	keyboard.addFunction(Keyboard.EVENT_KEY_UP,keyUpFxn);
 	keyboard.addListeners();
 }
 function removeListeners(){
@@ -102,12 +92,47 @@ function removeListeners(){
 	ticker.removeFunction(Ticker.EVENT_TICK,enterFrameFxn);
 	ticker.stop();
 	keyboard.removeFunction(Keyboard.EVENT_KEY_DOWN,keyDownFxn);
-	keyboard.removeFunction(Keyboard.EVENT_KEY_UP,keyUpFxn);
 	keyboard.removeListeners();
 }
 // PROCESSING - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function processScene(){
-	
+	var i, j, k, len, ch, obj, next, dir;
+	next = new V2D(0,0);
+	dir = new V2D(0,0);
+	var speed = 0.2;
+	// MOVE CHARS
+	for(i=0;i<charListAll.length;++i){
+		ch = charListAll[i];
+		if( ch.dir != Obj2D.DIR_NA){
+			if(ch.dir==Obj2D.DIR_UP){ // set up direction from symbol
+				dir.y = -1;
+			}else if(ch.dir==Obj2D.DIR_DN){
+				dir.y = 1;
+			}else if(ch.dir==Obj2D.DIR_LF){
+				dir.x = -1;
+			}else if(ch.dir==Obj2D.DIR_RT){
+				dir.x = 1;
+			}
+			if( ch.moving ){ // already moving
+				next.x = ch.pos.x+dir.x*speed; next.y = ch.pos.y+dir.y*speed;
+				if( (ch.pos.x<ch.dest.x && ch.dest.x<=next.x) || (ch.pos.x>ch.dest.x && ch.dest.x>=next.x) ||  
+					(ch.pos.y<ch.dest.y && ch.dest.y<=next.y) || (ch.pos.y>ch.dest.y && ch.dest.y>=next.y) ){
+					ch.pos.x = ch.dest.x; ch.pos.y = ch.dest.y;
+					ch.moving = false; ch.dir = Obj2D.DIR_NA;
+				}else{
+					ch.pos.x = next.x; ch.pos.y = next.y;
+				}
+			}else{ // start moving if possible
+				next.x = ch.pos.x+dir.x; next.y = ch.pos.y+dir.y;
+				if( lattice.inLimits(next.x,next.y) ){ // available - movement
+					ch.dest.x = next.x; ch.dest.y = next.y;
+					ch.moving = true;
+				}else{ // objstruction/limit - cannot move
+					ch.moving = false; ch.dir = Obj2D.DIR_NA;
+				}
+			}
+		}
+	}
 }	
 // RENDERING - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function renderScene(){
@@ -117,7 +142,7 @@ function renderScene(){
 	context.fillStyle = context.createPattern(bgImage,'repeat');
 	context.fillRect(0,0,canvas.width,canvas.height);
 	// lattice
-	var img, pos, obj, vox, arr, x, y;
+	var img, obj, vox, arr, x, y;
 	var i, j, len = lattice.getLength();
 	// BG
 	x = 0; y = 0;
@@ -139,62 +164,18 @@ function renderScene(){
 		for(j=0;j<arr.length;++j){
 			obj = arr[j];
 			img = obj.getSelectedImage();
-			if(img){
-				pos = obj.pos;
-				context.fillStyle = context.createPattern(img,'repeat');
-				context.fillRect(pos.x*RECT_SIZE,pos.y*RECT_SIZE,RECT_SIZE,RECT_SIZE);
+			
+			if(img!=null){
+				context.drawImage(img, obj.pos.x*RECT_SIZE,obj.pos.y*RECT_SIZE);
 			}
 		}
 		++x; if(x>=GRID_SIZE_X){ x=0; ++y; }
 	}
-
-		/*obj = 
-		img = obj.getSelectedImage();
-		if(img){
-			context.fillStyle = context.createPattern(img,'repeat');
-			pos = obj.pos;
-			context.fillRect(pos.x*RECT_SIZE,pos.y*RECT_SIZE,img.width,img.height);
-		}*/
-	/*
-	img = charMain.getSelectedImage();
-	context.fillStyle = context.createPattern(img,'repeat');
-	pos = charMain.pos;
-	context.fillRect(pos.x*RECT_SIZE,pos.y*RECT_SIZE,img.width,img.height);
-	*/
-	/*
-	context.fillStyle = '#CFF';
-	context.fillRect(0,0, canvas.width,canvas.height);
-	var i, j;
-	
-	var bgImage = resource.tex[ResourceBakos.TEX_BG_ROW_1];
-	context.fillStyle = context.createPattern(bgImage,'repeat');
-	context.fillRect(0,0,canvas.width,canvas.height);
-	
-	context.strokeStyle = '#000';
-	context.lineWidth = 1;
-*/
-/*
-	for(i=0;i<=canvas.width;i+=RECT_SIZE){
-		context.beginPath();
-		context.moveTo(i,0);
-		context.lineTo(i,canvas.height);
-		context.stroke();
-		context.closePath();
-	}
-	for(j=0;j<=canvas.height;j+=RECT_SIZE){
-		context.beginPath();
-		context.moveTo(0,j);
-		context.lineTo(canvas.width,j);
-		context.stroke();
-		context.closePath();
-	}
-*/
-//	context.drawImage(img,25,25);
 }
 
 // LEVEL AUTO-LOADING -------------------------------------------------
 function loadLevel(i){
-	lattice.clear();
+	lattice.clear(); Code.emptyArray(charListAll);
 	var levelString = resource.map[i];
 	var i, len, vox, obj, x,y, arr, ch;
 	len = levelString.length;
@@ -229,11 +210,11 @@ function loadLevel(i){
 				break;
 			case ResourceBakos.SYM_PYTHON :
 				obj = new Obj2D(x,y, new Array(resource.tex[ResourceBakos.TEX_PYTHON_1]));
-				vox.addChar(obj);
+				vox.addChar(obj); charListAll.push(obj);
 				break;
 			case ResourceBakos.SYM_MAIN_CHAR :
 				obj = new Obj2D(x,y, new Array(resource.tex[ResourceBakos.TEX_BAKOS_1]));
-				vox.addChar(obj);
+				vox.addChar(obj); charListAll.push(obj);
 				break;
 			case ResourceBakos.SYM_DB :
 				obj = new Obj2D(x,y, new Array(resource.tex[ResourceBakos.TEX_DB_3]));
@@ -262,6 +243,3 @@ ResourceBakos.TEX_RUBY_1 = 10;
 ResourceBakos.TEX_RUBY_2 = 11;
 ResourceBakos.TEX_RUBY_3 = 12;
 */
-
-
-
