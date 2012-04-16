@@ -13,6 +13,7 @@ function Lattice(xNum,yNum, obj){
 	function setDims(xNum,yNum, obj){
 		x = xNum; y = yNum; xy = x*y;
 		if(a!=null && a!=undefined){
+			Code.emptyArray(a);
 			delete a;
 		}
 		a = new Array(xy);
@@ -30,6 +31,7 @@ function Lattice(xNum,yNum, obj){
 // -----------------------------------------------
 	this.clear = clear;
 	function clear(){
+		var i;
 		for(i=0;i<xy;++i){
 			a[i].clear();
 		}

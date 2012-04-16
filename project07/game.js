@@ -9,6 +9,7 @@ var keyboard = null;
 var RECT_SIZE = 25;
 var GRID_SIZE_X = 0;
 var GRID_SIZE_Y = 0;
+var GRID_SIZE = 0;
 var frameSpeed = 10;
 var debugHTMLID = "output";
 var canvasHTMLID = "canvas0";
@@ -26,6 +27,7 @@ var level = 1;
 var levelMax = 5;
 var speedChar = 0.2;
 var speedEnem = 0.1;
+var mapSolution = null;
 
 // init function called on page load complete
 function startLoad(){
@@ -43,12 +45,14 @@ function loadAll(){
 	canvas = new Canvas( document.getElementById(canvasHTMLID) );
 	GRID_SIZE_X = Math.floor(canvas.width/RECT_SIZE);
 	GRID_SIZE_Y = Math.floor(canvas.height/RECT_SIZE);
+	GRID_SIZE = GRID_SIZE_X*GRID_SIZE_Y;
 	lattice = new Lattice(GRID_SIZE_X,GRID_SIZE_Y, Voxel);
 	
 	ticker = new Ticker(frameSpeed);
 	keyboard = new Keyboard();
 	
-	level = 1; loadLevel(level);
+	mapSolution = new Map(GRID_SIZE_X,GRID_SIZE_Y);
+	level = 1;
 	
 	continueFxn();
 }
@@ -59,6 +63,7 @@ function continueFxn(){
 	loadLevel(level);
 	charMain.amt = score;
 	updateTitle(charMain.amt);
+	updateEnemyMap();
 	addListeners();
 }
 function updateTitle(str,obj){
@@ -118,7 +123,7 @@ function processScene(){
 	dir = new V2D(0,0);
 	var speed = 0;
 	// REFRESH AI MAP
-	
+	updateEnemyMap();
 	// MOVE CHARS
 	for(i=0;i<charListAll.length;++i){
 		ch = charListAll[i];
@@ -219,7 +224,7 @@ function processScene(){
 			ticker.start();
 			//continueFxn();
 		}else{
-			updateTitle('YOU BEAT THE GAME '+score+'!', true);
+			updateTitle('YOU BEAT THE GAME &'+score+'K!', true);
 		}
 	}
 }
@@ -263,11 +268,20 @@ function renderScene(){
 }
 
 function updateEnemyMap(){
-	var i, j, len;
-	
-	
-	
-	
+	var index,i, j, len, vox, obj, arr;
+	mapSolution.clear(); // INIT TO EVERYTHING HIGH
+	for(i=0;i<GRID_SIZE;++i){
+		vox = lattice.getIndex(i);
+		arr = vox.getChars();
+		for(j=0;j<arr.length;++j){
+			obj = arr[j];
+			if( obj.type==Obj2D.TYPE_WALL || obj.type==Obj2D.TYPE_ITEM || obj.type==Obj2D.TYPE_EXIT){
+				mapSolution.setIndex(i, Map.WALL);
+				break;
+			}
+		}
+	}
+	mapSolution.createPaths();
 }
 
 // LEVEL AUTO-LOADING -------------------------------------------------
