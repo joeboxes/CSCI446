@@ -17,6 +17,8 @@ var debug;
 var time = 0;
 var charMain = null;
 var charListAll = new Array();
+var level = 1;
+var levelMax = 5;
 
 // init function called on page load complete
 function startLoad(){
@@ -36,7 +38,7 @@ function load1(){
 	ticker = new Ticker(frameSpeed);
 	keyboard = new Keyboard();
 	
-	loadLevel(1);
+	level = 1; loadLevel(level);
 	addListeners();
 	
 }
@@ -138,16 +140,25 @@ function processScene(){
 					canMove = true;
 					for(j=0;j<arr.length;++j){
 						obj = arr[j];
-						if(obj.type==Obj2D.TYPE_WALL){
+						if( obj.type==Obj2D.TYPE_WALL || obj.type==Obj2D.TYPE_ITEM || obj.type==Obj2D.TYPE_EXIT ){
 							canMove = false;
 							break;
 						}
 					}
 					if(canMove){
+						for(j=0;j<arr.length;++j){
+							obj = arr[j];
+							if( obj.type==Obj2D.TYPE_NONE || obj.type==Obj2D.TYPE_EXIT){
+								obj.checkMe(ch);
+								vox.removeChar(obj);
+								debug.write("amt: "+ch.amt);
+							}
+						}
 						ch.dest.x = next.x; ch.dest.y = next.y;
 						ch.moving = true;
 					}else{
 						obj.nextImage();
+						obj.checkMe(ch);
 						ch.moving = false; ch.dir = Obj2D.DIR_NA;
 					}
 				}else{ // objstruction/limit - cannot move
@@ -156,6 +167,25 @@ function processScene(){
 			}
 		}
 	}
+	// check for exit
+	if(charMain.complete){
+		removeListeners();
+		len = lattice.getLength();
+		for(i=0;i<len;++i){
+			vox = lattice.getIndex(i);
+			arr = vox.getChars();
+			for(j=0;j<arr.length;++j){
+				ch = arr[j];
+				ch.setSelectedImage(666);
+			}
+			vox.setBG( new Array() );
+		}
+		renderScene();
+		alert('Completed Level'+level+'!');
+		loadLevel(1);
+		addListeners();
+	}
+	
 }	
 // RENDERING - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function renderScene(){
@@ -225,7 +255,7 @@ function loadLevel(i){
 				break;
 			case ResourceBakos.SYM_RUBY :
 				obj = new Obj2D(x,y, new Array(null,resource.tex[ResourceBakos.TEX_RUBY_1],resource.tex[ResourceBakos.TEX_RUBY_2],resource.tex[ResourceBakos.TEX_RUBY_3]));
-				obj.type = Obj2D.TYPE_WALL; vox.addChar(obj);
+				obj.type = Obj2D.TYPE_ITEM; obj.amt = Math.floor(Math.random()*10+10); vox.addChar(obj);
 				break;
 			case ResourceBakos.SYM_ROCK :
 				obj = new Obj2D(x,y, new Array(null, resource.tex[ResourceBakos.TEX_ROCK_1],resource.tex[ResourceBakos.TEX_ROCK_2],resource.tex[ResourceBakos.TEX_ROCK_3]));
@@ -240,8 +270,8 @@ function loadLevel(i){
 				obj.type = Obj2D.TYPE_CHAR; vox.addChar(obj); charListAll.push(obj);
 				break;
 			case ResourceBakos.SYM_DB :
-				obj = new Obj2D(x,y, new Array(null,resource.tex[ResourceBakos.TEX_DB_1],resource.tex[ResourceBakos.TEX_DB_2],resource.tex[ResourceBakos.TEX_DB_3]));
-				obj.type = Obj2D.TYPE_WALL; vox.addChar(obj);
+				obj = new Obj2D(x,y, new Array(null,resource.tex[ResourceBakos.TEX_DB_1],resource.tex[ResourceBakos.TEX_DB_2],resource.tex[ResourceBakos.TEX_DB_3],resource.tex[ResourceBakos.TEX_DB_3]));
+				obj.type = Obj2D.TYPE_EXIT; vox.addChar(obj);
 				break;
 		}
 		if(ch==ResourceBakos.SYM_MAIN_CHAR){ charMain = obj; }

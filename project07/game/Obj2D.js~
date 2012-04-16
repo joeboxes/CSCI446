@@ -3,6 +3,8 @@ Obj2D.TYPE_NONE = 0;
 Obj2D.TYPE_WALL = 1;
 Obj2D.TYPE_CHAR = 2;
 Obj2D.TYPE_ENEM = 3;
+Obj2D.TYPE_ITEM = 4;
+Obj2D.TYPE_EXIT = 5;
 
 Obj2D.DIR_NA = 0;
 Obj2D.DIR_UP = 1;
@@ -10,8 +12,9 @@ Obj2D.DIR_DN = 2;
 Obj2D.DIR_LF = 3;
 Obj2D.DIR_RT = 4;
 
-function Obj2D(x,y, arr){// lat,
-	//this.lattice = lat;
+function Obj2D(x,y, arr){
+	this.amt = 0;
+	this.complete = false;
 	this.dir = Obj2D.DIR_NA;
 	this.moving = false;
 	//
@@ -21,8 +24,25 @@ function Obj2D(x,y, arr){// lat,
 	var imgList = new Array();
 	var imgSel = -1;
 	setImageList(arr);
-	// -----------------------------------------
-	
+	// ----------------------------------------- INTERACTION AMONG OBJECTS
+	this.checkMe = checkMe;
+	function checkMe(obj){
+		if( obj.type==Obj2D.TYPE_CHAR ){ // not ENEM
+			if( this.type==Obj2D.TYPE_ITEM ){ // WAS ITEM
+				if( imgSel == imgList.length-1){
+					this.type = Obj2D.TYPE_NONE;
+				}
+			}else if( this.type==Obj2D.TYPE_EXIT ){ // WAS EXIT
+				if( imgSel == imgList.length-1){
+alert('complete');
+					obj.complete = true;
+				}
+			}else if(this.type==Obj2D.TYPE_NONE){ // IS MONEY
+				obj.amt += this.amt;
+				this.amt = 0;
+			}
+		}
+	}
 	// -----------------------------------------
 	this.setImageList = setImageList;
 	function setImageList(arr){
