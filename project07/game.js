@@ -30,15 +30,15 @@ function load1(){
 	canvas = new Canvas( document.getElementById(canvasHTMLID) );
 	GRID_SIZE_X = Math.floor(canvas.width/RECT_SIZE);
 	GRID_SIZE_Y = Math.floor(canvas.height/RECT_SIZE);
-	lattice = new Lattice(GRID_SIZE_X,GRID_SIZE_Y, Obj2D);
+	lattice = new Lattice(GRID_SIZE_X,GRID_SIZE_Y,null);// Obj2D);
 	
 	ticker = new Ticker(frameSpeed);
 	keyboard = new Keyboard();
 	
 	
 	// LEVEL
-	charMain = new Obj2D(10,5, new Array( resource.tex[ResourceBakos.TEX_BAKOS_1]) );
-	
+	//charMain = new Obj2D(10,5, new Array( resource.tex[ResourceBakos.TEX_BAKOS_1]) );
+	loadLevel(1);
 	addListeners();
 	
 }
@@ -113,12 +113,23 @@ function renderScene(){
 	context.fillStyle = context.createPattern(bgImage,'repeat');
 	context.fillRect(0,0,canvas.width,canvas.height);
 	// lattice
-
-	var img = charMain.getSelectedImage();
+	var img, pos, obj;
+	var i, len = lattice.getLength();
+	for(i=0;i<len;++i){
+		obj = lattice.getIndex(i);
+		img = obj.getSelectedImage();
+		if(img){
+			context.fillStyle = context.createPattern(img,'repeat');
+			pos = obj.pos;
+			context.fillRect(pos.x*RECT_SIZE,pos.y*RECT_SIZE,img.width,img.height);
+		}
+	}
+	/*
+	img = charMain.getSelectedImage();
 	context.fillStyle = context.createPattern(img,'repeat');
-	var pos = charMain.pos;
+	pos = charMain.pos;
 	context.fillRect(pos.x*RECT_SIZE,pos.y*RECT_SIZE,img.width,img.height);
-	
+	*/
 	/*
 	context.fillStyle = '#CFF';
 	context.fillRect(0,0, canvas.width,canvas.height);
@@ -150,7 +161,72 @@ function renderScene(){
 //	context.drawImage(img,25,25);
 }
 
+// LEVEL AUTO-LOADING -------------------------------------------------
+function loadLevel(i){
+	var levelString = resource.map[i];
+	var i, len, obj, x,y, arr, ch;
+	len = levelString.length;
+	x = 0; y = 0;
+	for(i=0;i<len;++i){
+		ch = levelString.charAt(i);
+		arr = new Array();
+		switch(ch){
+			case ResourceBakos.SYM_DIRT :
+				arr.push(resource.tex[ResourceBakos.TEX_DIRT_1]);
+				break;
+			case ResourceBakos.SYM_RUBY :
+				arr.push(resource.tex[ResourceBakos.TEX_RUBY_3]);
+				break;
+			case ResourceBakos.SYM_ROCK :
+				arr.push(resource.tex[ResourceBakos.TEX_ROCK_3]);
+				break;
+			case ResourceBakos.SYM_PYTHON :
+				arr.push(resource.tex[ResourceBakos.TEX_PYTHON_1]);
+				break;
+			case ResourceBakos.SYM_MAIN_CHAR :
+				arr.push(resource.tex[ResourceBakos.TEX_BAKOS_1]);
+				break;
+			case ResourceBakos.SYM_DB :
+				arr.push(resource.tex[ResourceBakos.TEX_DB_3]);
+				break;
+		}
+		obj = new Obj2D(x,y, arr);
+		lattice.setIndex(i,obj);
+		if(ch==ResourceBakos.SYM_MAIN_CHAR){
+			charMain = obj;
+		}
+		++x;
+		if(x>=GRID_SIZE_X){
+			x = 0; ++y;
+		}
+	}
+	
+}
 
+
+/*
+
+ResourceBakos.SYM_MAIN_CHAR = 'M';
+ResourceBakos.SYM_ROCK = '*';
+ResourceBakos.SYM_DIRT = '-';
+ResourceBakos.SYM_RUBY = 'R';
+ResourceBakos.SYM_PYTHON = 'S';
+ResourceBakos.SYM_DB = 'D';
+
+ResourceBakos.TEX_BAKOS_1 = 0;
+ResourceBakos.TEX_BG_ROW_1 = 1;
+ResourceBakos.TEX_DB_1 = 2;
+ResourceBakos.TEX_DB_2 = 3;
+ResourceBakos.TEX_DB_3 = 4;
+ResourceBakos.TEX_DIRT_1 = 5;
+ResourceBakos.TEX_PYTHON_1 = 6;
+ResourceBakos.TEX_ROCK_1 = 7;
+ResourceBakos.TEX_ROCK_2 = 8;
+ResourceBakos.TEX_ROCK_3 = 9;
+ResourceBakos.TEX_RUBY_1 = 10;
+ResourceBakos.TEX_RUBY_2 = 11;
+ResourceBakos.TEX_RUBY_3 = 12;
+*/
 
 
 

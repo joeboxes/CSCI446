@@ -41,7 +41,9 @@ function Lattice(xNum,yNum, obj){
 	this.setIndex = function(i, val){
 		a[i] = val;
 	}
-
+	this.getLength = function(){
+		return xy;
+	}
 }
 
 
