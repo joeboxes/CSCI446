@@ -29,7 +29,7 @@ function Ticker(delta){
 	this.start = start;
 	function start(){
 		running = true;
-		next(null);
+		timer = setTimeout(next,deltaT);//next(null);
 	}
 	this.stop = stop;
 	function stop(){
@@ -37,6 +37,7 @@ function Ticker(delta){
 	}
 	function next(e){
 		if(running){
+			dispatch.alertAll(Ticker.EVENT_TICK);
 			timer = setTimeout(next,deltaT);
 		}
 	}

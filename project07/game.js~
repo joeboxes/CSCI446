@@ -17,6 +17,7 @@ var debug;
 var titleBase = "Bakos' Ruby Data Mining";
 var title;
 //
+var ticker = null;
 var time = 0;
 var score = 0;
 var charMain = null;
@@ -48,9 +49,17 @@ function loadAll(){
 	keyboard = new Keyboard();
 	
 	level = 1; loadLevel(level);
+	
+	continueFxn();
+}
+function continueFxn(){
+	ticker.stop();
+	ticker.removeFunction(Ticker.EVENT_TICK,continueFxn);
+	ticker.setFrameSpeed(frameSpeed);
+	loadLevel(level);
+	charMain.amt = score;
 	updateTitle(charMain.amt);
 	addListeners();
-	
 }
 function updateTitle(str,obj){
 	if(obj==true){
@@ -171,7 +180,6 @@ function processScene(){
 							if( obj.type==Obj2D.TYPE_NONE || obj.type==Obj2D.TYPE_EXIT){
 								obj.checkMe(ch);
 								vox.removeChar(obj);
-								//debug.write("amt: "+ch.amt);
 								updateTitle(ch.amt);
 							}
 						}
@@ -202,15 +210,20 @@ function processScene(){
 			vox.setBG( new Array() );
 		}
 		renderScene();
+		score += charMain.amt;
 		updateTitle('Completed Level '+level+'!', true);
 		level += 1;
 		if(level<=levelMax){
-			loadLevel(level);
-			charMain.amt = score;
-			addListeners();
+			ticker.setFrameSpeed(2000);
+			ticker.addFunction(Ticker.EVENT_TICK,continueFxn);
+			ticker.start();
+			//continueFxn();
+		}else{
+			updateTitle('YOU BEAT THE GAME '+score+'!', true);
 		}
 	}
-}	
+}
+
 // RENDERING - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function renderScene(){
 	var context = canvas.getContext();
@@ -249,6 +262,14 @@ function renderScene(){
 	}
 }
 
+function updateEnemyMap(){
+	var i, j, len;
+	
+	
+	
+	
+}
+
 // LEVEL AUTO-LOADING -------------------------------------------------
 function loadLevel(i){
 	lattice.clear(); Code.emptyArray(charListAll);
@@ -276,11 +297,13 @@ function loadLevel(i){
 			case ResourceBakos.SYM_DIRT :
 				break;
 			case ResourceBakos.SYM_RUBY :
-				obj = new Obj2D(x,y, new Array(null,resource.tex[ResourceBakos.TEX_RUBY_1],resource.tex[ResourceBakos.TEX_RUBY_2],resource.tex[ResourceBakos.TEX_RUBY_3]));
+				obj = new Obj2D(x,y, new Array(resource.tex[ResourceBakos.TEX_RUBY_3]
+, resource.tex[ResourceBakos.TEX_RUBY_1],resource.tex[ResourceBakos.TEX_RUBY_2],resource.tex[ResourceBakos.TEX_RUBY_3]));
 				obj.type = Obj2D.TYPE_ITEM; obj.amt = Math.floor(Math.random()*10+10); vox.addChar(obj);
 				break;
 			case ResourceBakos.SYM_ROCK :
-				obj = new Obj2D(x,y, new Array(null, resource.tex[ResourceBakos.TEX_ROCK_1],resource.tex[ResourceBakos.TEX_ROCK_2],resource.tex[ResourceBakos.TEX_ROCK_3]));
+				obj = new Obj2D(x,y, new Array(resource.tex[ResourceBakos.TEX_ROCK_3]
+, resource.tex[ResourceBakos.TEX_ROCK_1],resource.tex[ResourceBakos.TEX_ROCK_2],resource.tex[ResourceBakos.TEX_ROCK_3]));
 				obj.type = Obj2D.TYPE_WALL; vox.addChar(obj);
 				break;
 			case ResourceBakos.SYM_PYTHON :
@@ -292,7 +315,8 @@ function loadLevel(i){
 				obj.type = Obj2D.TYPE_CHAR; vox.addChar(obj); charListAll.push(obj);
 				break;
 			case ResourceBakos.SYM_DB :
-				obj = new Obj2D(x,y, new Array(null,resource.tex[ResourceBakos.TEX_DB_1],resource.tex[ResourceBakos.TEX_DB_2],resource.tex[ResourceBakos.TEX_DB_3],resource.tex[ResourceBakos.TEX_DB_3]));
+				obj = new Obj2D(x,y, new Array(resource.tex[ResourceBakos.TEX_DB_3]
+, resource.tex[ResourceBakos.TEX_DB_1],resource.tex[ResourceBakos.TEX_DB_2],resource.tex[ResourceBakos.TEX_DB_3],resource.tex[ResourceBakos.TEX_DB_3]));
 				obj.type = Obj2D.TYPE_EXIT; vox.addChar(obj);
 				break;
 		}

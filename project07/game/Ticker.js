@@ -29,7 +29,7 @@ function Ticker(delta){
 	this.start = start;
 	function start(){
 		running = true;
-		next(null);
+		timer = setTimeout(next,deltaT);//next(null);
 	}
 	this.stop = stop;
 	function stop(){
