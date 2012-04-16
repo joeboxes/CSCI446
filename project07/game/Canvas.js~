@@ -1,6 +1,8 @@
 // Canvas.js
 
 // CLASS VARIABLES
+Canvas.EVENT_MOUSE_DOWN = "canevtmdn";
+Canvas.EVENT_MOUSE_UP = "canevtmup";
 Canvas.EVENT_CLICK = "canevtclk";
 
 function Canvas(canHTML){ // input is canvas HTML object
@@ -8,19 +10,17 @@ function Canvas(canHTML){ // input is canvas HTML object
 	// public
 	this.width = 0;
 	this.height = 0;
+	this.mouseDown = false;
 	// private
 	var canvas;
 	var context;
 	var dispatch;
-	
 	// constructor
 	dispatch = new Dispatch();
 	canvas = canHTML;
+	this.width = canvas.width;
+	this.height = canvas.height;
 	context = canvas.getContext("2d");
-	addListeners();
-	
-// FUNCTIONS --------------------------------------------------------------
-	// public
 	// dispatch -----------------------------------------------------------
 	this.addFunction = addFunction;
 	function addFunction(str,fxn){
@@ -47,8 +47,33 @@ function Canvas(canHTML){ // input is canvas HTML object
 	this.addListeners = addListeners;
 	function addListeners(){
 		canvas.addEventListener('click', canvasClickFxn);
+		canvas.addEventListener('mousedown', canvasMouseDownFxn);
+		canvas.addEventListener('mouseup', canvasMouseUpFxn);
+	}
+	this.removeListeners = removeListeners;
+	function removeListeners(){
+		canvas.removeEventListener('click', canvasClickFxn);
+		canvas.removeEventListener('mousedown', canvasMouseDownFxn);
+		canvas.removeEventListener('mouseup', canvasMouseUpFxn);
 	}
 	function canvasClickFxn(e){
+		pos = getMousePosition(e);
+		alertAll(Canvas.EVENT_CLICK,pos);
+		pos = null;
+	}
+	function canvasMouseDownFxn(e){
+		this.mouseDown = true;
+		pos = getMousePosition(e);
+		alertAll(Canvas.EVENT_MOUSE_DOWN,pos);
+		pos = null;
+	}
+	function canvasMouseUpFxn(e){
+		this.mouseDown = false;
+		pos = getMousePosition(e);
+		alertAll(Canvas.EVENT_MOUSE_UP,pos);
+		pos = null;
+	}
+	function getMousePosition(e){
 		var pos = new V2D(0,0);
 		var ele = canvas;
 		while(ele != null){
@@ -58,16 +83,7 @@ function Canvas(canHTML){ // input is canvas HTML object
 		}
 		pos.x = e.pageX - pos.x;
 		pos.y = e.pageY - pos.y;
-		context.beginPath();
-		context.fillStyle = "#FF0000";
-		context.strokeStyle = "#00FF00";
-		context.lineWidth = 2;
-		context.arc(pos.x,pos.y, 10, 0,2*Math.PI, true);
-		context.stroke();
-		context.closePath();
-		context.fill();
-		alertAll(Canvas.EVENT_CLICK,pos);
-		pos = null;
+		return pos;
 	}
 }
 

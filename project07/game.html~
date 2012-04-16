@@ -11,6 +11,7 @@
 			<script src="game/V2D.js"></script>
 			<script src="game/Obj2D.js"></script>
 			<script src="game/Code.js"></script>
+			<script src="game/Ticker.js"></script>
 			<script src="game/ImageLoader.js"></script>
 			<script src="game/MultiLoader.js"></script>
 			<script src="game/Resource.js"></script>
