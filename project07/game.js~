@@ -63,7 +63,7 @@ function continueFxn(){
 	ticker.setFrameSpeed(frameSpeed);
 speedChar = 0.25 + 0.01*level;
 speedEnem = 0.02;// + 0.001*level;
-seeDistance = 4 + level;
+seeDistance = 3.5 + 0.5*level;
 	loadLevel(level);
 	charMain.amt = score;
 	updateTitle(charMain.amt);

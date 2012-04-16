@@ -248,7 +248,7 @@ context.closePath();*/
 			ticker.start();
 			//continueFxn();
 		}else{
-			updateTitle('YOU BEAT THE GAME &'+score+'K!', true);
+			updateTitle('YOU BEAT THE GAME $'+score+'K!', true);
 		}
 	}
 }
