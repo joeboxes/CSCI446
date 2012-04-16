@@ -62,7 +62,7 @@ function continueFxn(){
 	ticker.removeFunction(Ticker.EVENT_TICK,continueFxn);
 	ticker.setFrameSpeed(frameSpeed);
 speedChar = 0.25 + 0.01*level;
-speedEnem = 0.02 + 0.001*level;
+speedEnem = 0.02;// + 0.001*level;
 seeDistance = 4 + level;
 	loadLevel(level);
 	charMain.amt = score;
@@ -164,8 +164,12 @@ function processScene(){
 			if( ch.moving ){ // already moving
 				next.x = ch.pos.x+dir.x*speed; next.y = ch.pos.y+dir.y*speed;
 				u = lattice.getElement(ch.pos.x,ch.pos.y); // AM IN
-				v = lattice.getElement(Math.floor(next.x),Math.floor(next.y)); // AVG IN
+				v = lattice.getElement(Math.max(0,Math.min(GRID_SIZE_X-1,Math.floor(next.x))),
+					Math.max(0,Math.min(GRID_SIZE_Y-1,Math.floor(next.y)))); // AVG IN
 				w = lattice.getElement(ch.dest.x,ch.dest.y); // WILL BE IN
+if(u==null){ alert('u'); }
+if(v==null){ alert('v'); }
+if(w==null){ alert('w'); }
 				if(u!=v){// switched voxels
 					u.removeChar(ch);
 					v.addChar(ch);
