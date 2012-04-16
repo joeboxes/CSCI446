@@ -10,7 +10,7 @@ var RECT_SIZE = 25;
 var GRID_SIZE_X = 0;
 var GRID_SIZE_Y = 0;
 var GRID_SIZE = 0;
-var frameSpeed = 10;
+var frameSpeed = 20;
 var debugHTMLID = "output";
 var canvasHTMLID = "canvas0";
 var titleHTMLID = "title";
@@ -26,7 +26,8 @@ var charListAll = new Array();
 var level = 1;
 var levelMax = 5;
 var speedChar = 0.2;
-var speedEnem = 0.1;
+var speedEnem = 0.05;
+var seeDistance = 5;
 var mapSolution = null;
 
 // init function called on page load complete
@@ -60,6 +61,9 @@ function continueFxn(){
 	ticker.stop();
 	ticker.removeFunction(Ticker.EVENT_TICK,continueFxn);
 	ticker.setFrameSpeed(frameSpeed);
+speedChar = 0.25 + 0.01*level;
+speedEnem = 0.02 + 0.001*level;
+seeDistance = 4 + level;
 	loadLevel(level);
 	charMain.amt = score;
 	updateTitle(charMain.amt);
@@ -121,8 +125,8 @@ function processScene(){
 	var i, j, k, len, ch, obj, arr, next, dir, vox, v, u, canMove;
 	next = new V2D(0,0);
 	dir = new V2D(0,0);
-	var speed = 0;
-	// REFRESH AI MAP
+	var xD, yD, dist, speed, move;
+	// REFRESH AI MAP - ONLY NEED TO DO WHEN CHAR CHANGES LOCATION
 	updateEnemyMap();
 	// MOVE CHARS
 	for(i=0;i<charListAll.length;++i){
@@ -131,14 +135,22 @@ function processScene(){
 			speed = speedChar;
 		}else{ //  ENEMY LOGIC GOETH HERE
 			speed = speedEnem;
-			
-			
-			
-			
-			
-			
-			
+			if(!ch.moving && ch.dir==Obj2D.DIR_NA){
+				xD = ch.pos.x - charMain.pos.x; yD = ch.pos.y - charMain.pos.y;
+				dist = Math.sqrt(xD*xD + yD*yD);
+				if(dist<seeDistance){
+					move = mapSolution.getBestMove(ch.pos.x,ch.pos.y);
+					if(move==Map.MOVE4_UP){ ch.dir=Obj2D.DIR_UP;
+					}else if(move==Map.MOVE4_DN){ ch.dir=Obj2D.DIR_DN;
+					}else if(move==Map.MOVE4_LF){ ch.dir=Obj2D.DIR_LF;
+					}else if(move==Map.MOVE4_RT){ ch.dir=Obj2D.DIR_RT;
+					}else{
+						//do some random directions
+					}
+				}
+			}
 		}
+		dir.x = 0; dir.y = 0;
 		if( ch.dir != Obj2D.DIR_NA){
 			if(ch.dir==Obj2D.DIR_UP){ // set up direction from symbol
 				dir.y = -1;
@@ -152,11 +164,14 @@ function processScene(){
 			if( ch.moving ){ // already moving
 				next.x = ch.pos.x+dir.x*speed; next.y = ch.pos.y+dir.y*speed;
 				u = lattice.getElement(ch.pos.x,ch.pos.y); // AM IN
-				v = lattice.getElement(Math.round(next.x),Math.round(next.y)); // AVG IN
+				v = lattice.getElement(Math.floor(next.x),Math.floor(next.y)); // AVG IN
 				w = lattice.getElement(ch.dest.x,ch.dest.y); // WILL BE IN
+if(u==null){ alert('u'); }
+if(v==null){ alert('v'); }
+if(w==null){ alert('w'); }
 				if(u!=v){// switched voxels
 					u.removeChar(ch);
-					w.addChar(ch);
+					v.addChar(ch);
 					w.setBG( new Array() );
 				}
 				if( (ch.pos.x<ch.dest.x && ch.dest.x<=next.x) || (ch.pos.x>ch.dest.x && ch.dest.x>=next.x) ||  
@@ -164,6 +179,14 @@ function processScene(){
 					ch.pos.x = ch.dest.x; ch.pos.y = ch.dest.y;
 					ch.moving = false; ch.dir = Obj2D.DIR_NA;
 				}else{
+/*var context = canvas.getContext();
+context.strokeStyle = "#000000";
+context.lineWidth = 5;
+context.beginPath();
+context.moveTo(RECT_SIZE*(ch.pos.x+0.5),RECT_SIZE*(ch.pos.y+0.5));
+context.lineTo(RECT_SIZE*(next.x+0.5),RECT_SIZE*(next.y+0.5))
+context.stroke();
+context.closePath();*/
 					ch.pos.x = next.x; ch.pos.y = next.y;
 				}
 			}else{ // start moving if possible
@@ -265,11 +288,26 @@ function renderScene(){
 		}
 		++x; if(x>=GRID_SIZE_X){ x=0; ++y; }
 	}
+	// TEXT
+	/*x = 0; y = 0;
+	var str, metrics, xPos, yPos;
+	for(i=0;i<len;++i){
+		context.fillStyle = "#000000";
+		context.font = "10px sans-serif";
+		str = ""+mapSolution.getIndex(i)+"";
+		metrics = context.measureText(str);
+		//alert(metrics.height);
+		xPos = x*RECT_SIZE + metrics.width/2;
+		yPos = (y+1)*RECT_SIZE - 10;// - metrics.height/2;
+		context.fillText(str,xPos,yPos);
+		++x; if(x>=GRID_SIZE_X){ x=0; ++y; }
+	}
+	*/
 }
 
 function updateEnemyMap(){
 	var index,i, j, len, vox, obj, arr;
-	mapSolution.clear(); // INIT TO EVERYTHING HIGH
+	mapSolution.clear(); // INIT TO EVERYTHING N/A
 	for(i=0;i<GRID_SIZE;++i){
 		vox = lattice.getIndex(i);
 		arr = vox.getChars();
@@ -281,7 +319,7 @@ function updateEnemyMap(){
 			}
 		}
 	}
-	mapSolution.createPaths();
+	mapSolution.createPaths(charMain.pos.x,charMain.pos.y); // PROPAGATE PATH NUMBERS
 }
 
 // LEVEL AUTO-LOADING -------------------------------------------------
@@ -311,13 +349,11 @@ function loadLevel(i){
 			case ResourceBakos.SYM_DIRT :
 				break;
 			case ResourceBakos.SYM_RUBY :
-				obj = new Obj2D(x,y, new Array(resource.tex[ResourceBakos.TEX_RUBY_3]
-, resource.tex[ResourceBakos.TEX_RUBY_1],resource.tex[ResourceBakos.TEX_RUBY_2],resource.tex[ResourceBakos.TEX_RUBY_3]));
+				obj = new Obj2D(x,y, new Array(null, resource.tex[ResourceBakos.TEX_RUBY_1],resource.tex[ResourceBakos.TEX_RUBY_2],resource.tex[ResourceBakos.TEX_RUBY_3]));
 				obj.type = Obj2D.TYPE_ITEM; obj.amt = Math.floor(Math.random()*10+10); vox.addChar(obj);
 				break;
 			case ResourceBakos.SYM_ROCK :
-				obj = new Obj2D(x,y, new Array(resource.tex[ResourceBakos.TEX_ROCK_3]
-, resource.tex[ResourceBakos.TEX_ROCK_1],resource.tex[ResourceBakos.TEX_ROCK_2],resource.tex[ResourceBakos.TEX_ROCK_3]));
+				obj = new Obj2D(x,y, new Array(null, resource.tex[ResourceBakos.TEX_ROCK_1],resource.tex[ResourceBakos.TEX_ROCK_2],resource.tex[ResourceBakos.TEX_ROCK_3]));
 				obj.type = Obj2D.TYPE_WALL; vox.addChar(obj);
 				break;
 			case ResourceBakos.SYM_PYTHON :
@@ -329,8 +365,7 @@ function loadLevel(i){
 				obj.type = Obj2D.TYPE_CHAR; vox.addChar(obj); charListAll.push(obj);
 				break;
 			case ResourceBakos.SYM_DB :
-				obj = new Obj2D(x,y, new Array(resource.tex[ResourceBakos.TEX_DB_3]
-, resource.tex[ResourceBakos.TEX_DB_1],resource.tex[ResourceBakos.TEX_DB_2],resource.tex[ResourceBakos.TEX_DB_3],resource.tex[ResourceBakos.TEX_DB_3]));
+				obj = new Obj2D(x,y, new Array(null, resource.tex[ResourceBakos.TEX_DB_1],resource.tex[ResourceBakos.TEX_DB_2],resource.tex[ResourceBakos.TEX_DB_3],resource.tex[ResourceBakos.TEX_DB_3]));
 				obj.type = Obj2D.TYPE_EXIT; vox.addChar(obj);
 				break;
 		}

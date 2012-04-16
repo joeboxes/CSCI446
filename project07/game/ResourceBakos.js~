@@ -92,10 +92,10 @@ function ResourceBakos(){
 					"-*----------*-----------"+
 					"-----------*R*----------"+
 					"------*-*-*---*---------"+
-					"*--***R*-*--R--*S-*--***"+
+					"*--***R*-*--R--*--*--***"+
 					"R-----------D---*R------"+
 					"----*****-----------*---"+
-					"------R---*--*-*----*--R";
+					"-S----R---*--*-*----*--R";
 		var lvl4 = 	"_M______________________"+
 					"-------*****-------**--*"+
 					"-*----*R-S--*--S--------"+
@@ -128,7 +128,7 @@ function ResourceBakos(){
 					"-R--*R**R---R**-R*---*--"+
 					"-*-----R*****--**-***-R-"+
 					"R*---------------------R";
-		ref.map[ResourceBakos.MAP_LEVEL_1] = lvl5;
+		ref.map[ResourceBakos.MAP_LEVEL_1] = lvl1;
 		ref.map[ResourceBakos.MAP_LEVEL_2] = lvl2;
 		ref.map[ResourceBakos.MAP_LEVEL_3] = lvl3;
 		ref.map[ResourceBakos.MAP_LEVEL_4] = lvl4;
