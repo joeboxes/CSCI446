@@ -5,6 +5,7 @@ var resource = null;
 var canvas = null;
 var lattice = null;
 var ticker = null;
+var keyboard = null;
 var RECT_SIZE = 25;
 var GRID_SIZE_X = 0;
 var GRID_SIZE_Y = 0;
@@ -31,6 +32,7 @@ function load1(){
 	lattice = new Lattice(GRID_SIZE_X,GRID_SIZE_Y, Obj2D);
 	
 	ticker = new Ticker(frameSpeed);
+	keyboard = new Keyboard();
 	
 	addListeners();
 	
@@ -41,11 +43,17 @@ function imgLoadedFxn(){//arr){
 	var fxnLoader = new MultiLoader( new Array(nextFxn,nextFxn,nextFxn) );
 	fxnLoader.load();
 }
-// INTERACTION
+// INTERACTION - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function enterFrameFxn(){
 	++time;
-	debug.write("time: "+time);
+	//debug.write("time: "+time);
 	renderScene();
+}
+function keyDownFxn(key){
+	debug.write("keydn: "+key);
+}
+function keyUpFxn(key){
+	debug.write("keyup: "+key);
 }
 function onClickFxn(o){
 	debug.write("click: <"+o.x+","+o.y+">");
@@ -69,6 +77,9 @@ function addListeners(){
 	canvas.addFunction(Canvas.EVENT_CLICK,onClickFxn);
 	ticker.addFunction(Ticker.EVENT_TICK,enterFrameFxn);
 	ticker.start();
+	keyboard.addFunction(Keyboard.EVENT_KEY_DOWN,keyDownFxn);
+	keyboard.addFunction(Keyboard.EVENT_KEY_UP,keyUpFxn);
+	keyboard.addListeners();
 }
 function removeListeners(){
 	window.onresize = null;
@@ -76,6 +87,9 @@ function removeListeners(){
 	canvas.removeFunction(Canvas.EVENT_CLICK,onClickFxn);
 	ticker.removeFunction(Ticker.EVENT_TICK,enterFrameFxn);
 	ticker.stop();
+	keyboard.removeFunction(Keyboard.EVENT_KEY_DOWN,keyDownFxn);
+	keyboard.removeFunction(Keyboard.EVENT_KEY_UP,keyUpFxn);
+	keyboard.removeListeners();
 }
 // RENDERING - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function renderScene(){
