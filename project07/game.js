@@ -126,8 +126,6 @@ function processScene(){
 	next = new V2D(0,0);
 	dir = new V2D(0,0);
 	var xD, yD, dist, speed, move;
-	// REFRESH AI MAP - ONLY NEED TO DO WHEN CHAR CHANGES LOCATION
-	updateEnemyMap();
 	// MOVE CHARS
 	for(i=0;i<charListAll.length;++i){
 		ch = charListAll[i];
@@ -172,6 +170,9 @@ if(v==null){ alert('v'); }
 if(w==null){ alert('w'); }
 				if(u!=v){// switched voxels
 					u.removeChar(ch);
+					if( ch.type == Obj2D.TYPE_CHAR){// REFRESH AI MAP - ONLY NEED TO DO WHEN CHAR CHANGES LOCATION
+						updateEnemyMap();
+					}
 					v.addChar(ch);
 					w.setBG( new Array() );
 				}

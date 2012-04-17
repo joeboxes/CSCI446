@@ -126,8 +126,6 @@ function processScene(){
 	next = new V2D(0,0);
 	dir = new V2D(0,0);
 	var xD, yD, dist, speed, move;
-	// REFRESH AI MAP - ONLY NEED TO DO WHEN CHAR CHANGES LOCATION
-	updateEnemyMap();
 	// MOVE CHARS
 	for(i=0;i<charListAll.length;++i){
 		ch = charListAll[i];
@@ -248,7 +246,7 @@ context.closePath();*/
 			ticker.start();
 			//continueFxn();
 		}else{
-			updateTitle('YOU BEAT THE GAME &'+score+'K!', true);
+			updateTitle('YOU BEAT THE GAME $'+score+'K!', true);
 		}
 	}
 }
