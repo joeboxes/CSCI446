@@ -1,12 +1,6 @@
 // V2D.js
 function V2D(xP,yP){ // input is debug HTML object
-//	alert( [x,y] );
-	this.x = 0;
-	this.y = 0;
-	// constructor
 	this.x = xP; this.y = yP;
-	
-// FUNCTIONS --------------------------------------------------------------
 	this.length = length;
 	function length(){
 		return Math.sqrt(x*x+y*y);
@@ -19,7 +13,7 @@ function V2D(xP,yP){ // input is debug HTML object
 	this.kill = kill
 	function kill(){
 		this.x = undefined; this.y = undefined;
-		this = null;
+		//this = null; FF does not like
 	}
 }
 
