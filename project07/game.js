@@ -376,3 +376,10 @@ function loadLevel(i){
 	}
 }
 
+/*
+TODO:
+ADD INTRO SCENE
+ADD CHAR-ENEM-TOUCH RESTART LEVEL WITH $/2
+ADD 'WIN' SCENE - HIGH SCORES
+
+*/
