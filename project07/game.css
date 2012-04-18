@@ -47,9 +47,8 @@ h2{
 /* debugging window */
 #output{
 	width: 600px;
-/*	height: 50px;*/
-	height: 200px;
-	text-align: left;
+	height: 15px;
+	text-align: center;
 	overflow: hidden;
 	font-size: 14px;
 	background-color: #FFF;

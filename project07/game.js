@@ -36,7 +36,7 @@ function startLoad(){
 }
 function loadAll(){
 	debug = new Output( document.getElementById(debugHTMLID) );
-	debug.setMaxChars(75); debug.setMaxLines(10);
+	debug.setMaxChars(75); debug.setMaxLines(1);
 	
 	title = new Output( document.getElementById(titleHTMLID) );
 	title.setMaxChars(35); title.setMaxLines(1);
@@ -380,6 +380,7 @@ context.closePath();*/
 						for(j=0;j<arr.length;++j){
 							obj = arr[j];
 							if( obj.type==Obj2D.TYPE_NONE || obj.type==Obj2D.TYPE_EXIT){
+								debug.write("Got $"+obj.amt+"K!");
 								obj.checkMe(ch);
 								vox.removeChar(obj);
 								updateTitle(ch.amt);
