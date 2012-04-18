@@ -39,10 +39,10 @@ function Keyboard(){
 	}
 	function keyDownFxn(e){
 		var num = e.keyCode;
-		if(key[num]==false){
+//		if( key[num]==false ){
 			key[num] = true;
 			dispatch.alertAll(Keyboard.EVENT_KEY_DOWN,num);
-		}
+//		}
 	}
 	function keyUpFxn(e){
 		var num = e.keyCode;

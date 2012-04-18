@@ -1,25 +1,23 @@
 // Dispatch.js
-
-// CLASS VARIABLES
 Dispatch.EVENT_START = "evtsta";
 Dispatch.EVENT_STOP = "evtsto";
 Dispatch.EVENT_LOAD = "evtloa";
 Dispatch.EVENT_COMPLETE = "evtcmp";
 
 function Dispatch(){
-	
-// VARIABLES --------------------------------------------------------------
-	// public
-	
-	// private
 	var list;
-	
-	// constructor
 	list = new Array();
 	
-	
+	this.showList = showList;
+	function showList(){
+		var key;
+		var str = "";
+		for(key in list){
+			str = str + list[key] + " ";// do something with vals
+		}
+		alert( str );
+	}
 // FUNCTIONS --------------------------------------------------------------
-	// public
 	this.alertAll = alertAll;
 	function alertAll(str,o){
 		if(list[str] == undefined){
@@ -47,8 +45,6 @@ function Dispatch(){
 			list[str] = undefined;
 		}
 	}
-	// private
-	//
 }
 
 

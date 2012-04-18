@@ -12,6 +12,10 @@ function Ticker(delta){
 	function setFrameSpeed(delta){
 		deltaT = delta;
 	}
+	this.getFrameSpeed = getFrameSpeed;
+	function getFrameSpeed(){
+		return deltaT;
+	}
 	// dispatch -----------------------------------------------------------
 	this.addFunction = addFunction;
 	function addFunction(str,fxn){
@@ -28,15 +32,18 @@ function Ticker(delta){
 	// fxns -----------------------------------------------------------
 	this.start = start;
 	function start(){
+		if(timer!=null){ clearTimeout(timer); timer = null}
 		running = true;
-		timer = setTimeout(next,deltaT);//next(null);
+		timer = setTimeout(next,deltaT);
 	}
 	this.stop = stop;
 	function stop(){
+			if(timer!=null){ clearTimeout(timer); timer = null}
 		running = false;
 	}
 	function next(e){
 		if(running){
+			if(timer!=null){ clearTimeout(timer); timer = null}
 			dispatch.alertAll(Ticker.EVENT_TICK);
 			timer = setTimeout(next,deltaT);
 		}

@@ -18,6 +18,7 @@ function Obj2D(x,y, arr){
 	this.dir = Obj2D.DIR_NA;
 	this.moving = false;
 	//
+	this.origin = new V2D(x,y);
 	this.pos = new V2D(x,y);
 	this.dest = new V2D(0,0);
 	this.type = Obj2D.TYPE_NONE;
@@ -34,7 +35,6 @@ function Obj2D(x,y, arr){
 				}
 			}else if( this.type==Obj2D.TYPE_EXIT ){ // WAS EXIT
 				if( imgSel == imgList.length-1){
-alert('complete');
 					obj.complete = true;
 				}
 			}else if(this.type==Obj2D.TYPE_NONE){ // IS MONEY

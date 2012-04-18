@@ -1,23 +1,19 @@
 // Code.js
 function Code(){
-	alert('you shouldn\'t need to instantiate me');
+	alert('you shouldn\'t instantiate me');
 }
 // array functions ----------------------------------------------
 Code.elementExists = function(a,o){
 	var i;
 	for(i=0;i<a.length;++i){
-		if(a[i]==o){
-			return true;
-		}
+		if(a[i]==o){ return true; }
 	}
 	return false;
 }
 Code.addUnique = function(a,o){
-	if( !Code.elementExists(a,o) ){
-		a.push(o);
-	}
+	if( !Code.elementExists(a,o) ){ a.push(o); }
 }
-Code.removeElement = function(a,o){
+Code.removeElement = function(a,o){ // preserves order
 	var i;
 	for(i=0;i<a.length;++i){
 		if(a[i]==o){
@@ -31,30 +27,19 @@ Code.removeElement = function(a,o){
 	}
 }
 Code.emptyArray = function(a){
-	while(a.length>0){
-		a.pop();
-	}
+	while(a.length>0){ a.pop(); }
 }
 // conversion functions ----------------------------------------------
 Code.getHex = function (intVal){
 	return '#'+intVal.toString(16);
 }
 
-
-
 // class functions ----------------------------------------------
 Code.extendClass = function(child,parent){
 	parent.apply(child); child.base = new parent; child.base.child = child;
 }
 
-
 // ? functions ----------------------------------------------
-
-
-
-// ? functions ----------------------------------------------
-
-
 
 
 

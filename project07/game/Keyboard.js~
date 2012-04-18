@@ -39,6 +39,7 @@ function Keyboard(){
 	}
 	function keyDownFxn(e){
 		var num = e.keyCode;
+//		alert([num, ' key down']);
 		if(key[num]==false){
 			key[num] = true;
 			dispatch.alertAll(Keyboard.EVENT_KEY_DOWN,num);

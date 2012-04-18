@@ -18,8 +18,9 @@ function Obj2D(x,y, arr){
 	this.dir = Obj2D.DIR_NA;
 	this.moving = false;
 	//
+	this.origin = new V2D(x,y);
 	this.pos = new V2D(x,y);
-	this.dest = new V2D(0,0);
+	this.dest = new V2D(x,y);
 	this.type = Obj2D.TYPE_NONE;
 	var imgList = new Array();
 	var imgSel = -1;
