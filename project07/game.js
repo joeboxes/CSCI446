@@ -22,8 +22,8 @@ var time = 0;
 var score = 0;
 var charMain = null;
 var charListAll = new Array();
-var level = 1;
-var levelMax = 5;
+var level = 0;
+var levelMax = 0;
 var speedChar, speedEnem, speedVar, seeDistance;
 var hitDistance = 0.5;
 var mapSolution = null;
@@ -52,6 +52,7 @@ function loadAll(){
 	keyboard.addListeners(); // keyboard.removeListeners();
 	
 	mapSolution = new Map(GRID_SIZE_X,GRID_SIZE_Y);
+	levelMax = resource.map.length;
 	level = 1;
 	continueFxn();
 }
@@ -78,7 +79,7 @@ function updateTitle(str,obj){
 }
 // INTERACTION - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 var count = 0;
-var gotoPause = false;//true;//false;
+var gotoPause = true;//false;
 function showPauseScreen(){
 	var metrics, str, xPos, yPos;
 	var spacing = 10;
@@ -107,7 +108,7 @@ context.fillStyle = gr;
 	str = "Enemy (Python)";
 		metrics = context.measureText(str);
 		context.fillText(str,(canvas.width+metrics.width)/2+spacing,130);
-	str = "Dirt (Dig to explore)";
+	str = "Dirt (Dig and Explore)";
 		metrics = context.measureText(str);
 		context.fillText(str,(canvas.width+metrics.width)/2+spacing,160);
 	str = "Gems (Ruby)";
@@ -132,7 +133,7 @@ context.fillStyle = gr;
 	context.font = "15px sans-serif";
 		context.fillText("p to un/pause",canvas.width/2,280);
 		context.fillText("u/d/l/r to move",canvas.width/2,300);
-		context.fillText("Objective: Collect as many gems as possible",canvas.width/2,350);
+		context.fillText("Objective: Collect as many ruby gems as possible",canvas.width/2,350);
 	addPauseListener();
 }
 function hidePauseScreen(){
