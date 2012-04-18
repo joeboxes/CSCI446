@@ -3,6 +3,7 @@
 // global vars
 var resource = null;
 var canvas = null;
+var debug = null;
 var lattice = null;
 var ticker = null;
 var keyboard = null;
@@ -14,20 +15,17 @@ var frameSpeed = 20;
 var debugHTMLID = "output";
 var canvasHTMLID = "canvas0";
 var titleHTMLID = "title";
-var debug;
 var titleBase = "Bakos' Ruby Data Mining";
 var title;
 //
-var ticker = null;
 var time = 0;
 var score = 0;
 var charMain = null;
 var charListAll = new Array();
 var level = 1;
 var levelMax = 5;
-var speedChar = 0.2;
-var speedEnem = 0.05;
-var seeDistance = 5;
+var speedChar, speedEnem, speedVar, seeDistance;
+var hitDistance = 0.5;
 var mapSolution = null;
 
 // init function called on page load complete
@@ -38,7 +36,7 @@ function startLoad(){
 }
 function loadAll(){
 	debug = new Output( document.getElementById(debugHTMLID) );
-	debug.setMaxChars(75); debug.setMaxLines(3);
+	debug.setMaxChars(75); debug.setMaxLines(10);
 	
 	title = new Output( document.getElementById(titleHTMLID) );
 	title.setMaxChars(35); title.setMaxLines(1);
@@ -51,19 +49,20 @@ function loadAll(){
 	
 	ticker = new Ticker(frameSpeed);
 	keyboard = new Keyboard();
+	keyboard.addListeners(); // keyboard.removeListeners();
 	
 	mapSolution = new Map(GRID_SIZE_X,GRID_SIZE_Y);
 	level = 1;
-	
 	continueFxn();
 }
 function continueFxn(){
 	ticker.stop();
 	ticker.removeFunction(Ticker.EVENT_TICK,continueFxn);
 	ticker.setFrameSpeed(frameSpeed);
-speedChar = 0.25 + 0.01*level;
-speedEnem = 0.02;// + 0.001*level;
-seeDistance = 3.5 + 0.5*level;
+speedChar = 0.25 + 0.05*level;
+speedEnem = 0.03 + 0.01*level;
+speedVar = 0.15*speedEnem;
+seeDistance = 5.0 + 0.5*level;
 	loadLevel(level);
 	charMain.amt = score;
 	updateTitle(charMain.amt);
@@ -78,10 +77,176 @@ function updateTitle(str,obj){
 	}
 }
 // INTERACTION - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+var count = 0;
+var gotoPause = false;//true;//false;
+function showPauseScreen(){
+	var metrics, str, xPos, yPos;
+	var spacing = 10;
+	gotoPause = true;
+	removeListeners();
+	var context = canvas.getContext();
+	// bg
+var gr = context.createRadialGradient(canvas.width/2,canvas.height/2,0, canvas.width/2,canvas.height/2,500);
+gr.addColorStop(0,'rgba(0,0,0,0.9)');
+gr.addColorStop(0.5,'rgba(0,0,0,.8)');
+gr.addColorStop(1,'rgba(0,0,0,.6)');
+context.fillStyle = gr;
+	context.fillRect(0, 0, canvas.width, canvas.height);
+	context.fill();
+	//text
+	context.textAlign = "center";
+	context.baseLine = "middle";
+	context.fillStyle = "#FFFFFF";
+	//
+	context.font = "30px sans-serif";
+		context.fillText("Paused",canvas.width/2,30);
+	context.font = "15px sans-serif";
+	str = "You (Bakos)";
+		metrics = context.measureText(str);
+		context.fillText(str,(canvas.width+metrics.width)/2+spacing,100);
+	str = "Enemy (Python)";
+		metrics = context.measureText(str);
+		context.fillText(str,(canvas.width+metrics.width)/2+spacing,130);
+	str = "Dirt (Dig to explore)";
+		metrics = context.measureText(str);
+		context.fillText(str,(canvas.width+metrics.width)/2+spacing,160);
+	str = "Gems (Ruby)";
+		metrics = context.measureText(str);
+		context.fillText(str,(canvas.width+metrics.width)/2+spacing,190);
+	str = "DataBase (Exit)";
+		metrics = context.measureText(str);
+		context.fillText(str,(canvas.width+metrics.width)/2+spacing,220);
+	//icons
+	img = resource.tex[ResourceBakos.TEX_BAKOS_1];
+		context.drawImage(img, (canvas.width-img.width)/2-spacing, 100-17);
+	img = resource.tex[ResourceBakos.TEX_PYTHON_1];
+		context.drawImage(img, (canvas.width-img.width)/2-spacing, 130-17);
+	img = resource.tex[ResourceBakos.TEX_DIRT_1];
+		context.drawImage(img, (canvas.width-img.width)/2-spacing, 160-17);
+	img = resource.tex[ResourceBakos.TEX_RUBY_3];
+		context.drawImage(img, (canvas.width-img.width)/2-spacing, 190-17);
+	img = resource.tex[ResourceBakos.TEX_DB_3];
+		context.drawImage(img, (canvas.width-img.width)/2-spacing, 220-17);
+	// instructions
+	context.fillStyle = "#FFFFFF";
+	context.font = "15px sans-serif";
+		context.fillText("p to un/pause",canvas.width/2,280);
+		context.fillText("u/d/l/r to move",canvas.width/2,300);
+		context.fillText("Objective: Collect as many gems as possible",canvas.width/2,350);
+	addPauseListener();
+}
+function hidePauseScreen(){
+	gotoPause = false;
+	removePauseListener();
+	addListeners();
+}
+function showCompleteScreen(){
+	var i, j, rad, metrics, str;
+	var context = canvas.getContext();
+	context.fillStyle = "rgba(0, 0, 0, 0.9)";
+	context.fillRect(0, 0, canvas.width, canvas.height);
+	context.fill();
+
+	context.save();
+		context.scale(2,2);
+		img = resource.tex[ResourceBakos.TEX_DB_3];
+		for(i=0;i<12;++i){
+			for(j=0;j<8;++j){
+				context.drawImage(img, i*25,j*25);
+			}
+		}
+	context.restore();
+
+	context.save();
+		context.scale(2,2);
+		context.translate(137.5,75);
+		img = resource.tex[ResourceBakos.TEX_RUBY_3];
+		rad = 0;
+		for(i=0;i<180;++i){
+			context.drawImage(img, Math.cos(i/4)*rad,Math.sin(i/4)*rad);
+			rad+=Math.pow(100/(i+1),.25);
+		}
+	context.restore();
+
+	context.save();
+		context.setTransform(1,0,0,1,0,0);
+		context.scale(2,2);
+		context.translate(112.5,50);
+		img = resource.tex[ResourceBakos.TEX_RUBY_3];
+			context.drawImage(img, 25,0);
+			context.drawImage(img, 0,25);
+			context.drawImage(img, 50,25);
+			context.drawImage(img, 25,50);
+		img = resource.tex[ResourceBakos.TEX_BAKOS_1];
+			context.drawImage(img, 25,25);
+	context.restore();
+
+	img = resource.tex[ResourceBakos.TEX_PYTHON_1];
+		context.drawImage(img, 535,360);
+
+	//text
+	context.textAlign = "center";
+	context.baseLine = "middle";
+	context.fillStyle = "#FFFFFF";
+	context.shadowColor = "#990033";
+	context.shadowOffsetX = 0;
+	context.shadowOffsetY = 0;
+	context.shadowBlur = 25;
+	
+	context.font = "30px sans-serif";
+	str = "$"+score+"K";
+	for(i=0;i<15;++i){
+		context.fillText(str,canvas.width/2,40);
+	}
+
+	context.font = "20px sans-serif";
+	str = "(To replay, refresh screen)";
+	for(i=0;i<15;++i){
+		context.fillText(str,canvas.width/2,380);
+	}
+
+}
 function enterFrameFxn(){
 	++time;
 	processScene();
 	renderScene();
+	checkEnd();
+	if(gotoPause){
+		showPauseScreen();
+	}
+}
+function checkEnd(){
+// check for exit
+	if(charMain.complete){
+		removeListeners();
+		len = lattice.getLength();
+		for(i=0;i<len;++i){
+			vox = lattice.getIndex(i);
+			arr = vox.getChars();
+			for(j=0;j<arr.length;++j){
+				ch = arr[j];
+				ch.setSelectedImage(666);
+			}
+			vox.setBG( new Array() );
+		}
+		renderScene();
+		score = charMain.amt;
+		updateTitle('Completed Level '+level+'!', true);
+		level++;
+		if(level<=levelMax){
+			ticker.setFrameSpeed(1000);
+			ticker.addFunction(Ticker.EVENT_TICK,continueFxn);
+			ticker.start();
+		}else{
+			updateTitle('YOU BEAT THE GAME $'+score+'K!', true);
+			showCompleteScreen();
+		}
+	}
+}
+function keyDownPauseFxn(key){
+	if(key==Keyboard.KEY_LET_P){
+		hidePauseScreen();
+	}
 }
 function keyDownFxn(key){
 	if(!charMain.moving){
@@ -94,6 +259,9 @@ function keyDownFxn(key){
 		}else if(key==Keyboard.KEY_RT){
 			charMain.dir = Obj2D.DIR_RT;
 		}
+	}
+	if(key==Keyboard.KEY_LET_P){
+		gotoPause = true;
 	}
 }
 function onClickFxn(o){
@@ -109,7 +277,6 @@ function addListeners(){
 	ticker.addFunction(Ticker.EVENT_TICK,enterFrameFxn);
 	ticker.start();
 	keyboard.addFunction(Keyboard.EVENT_KEY_DOWN,keyDownFxn);
-	keyboard.addListeners();
 }
 function removeListeners(){
 	window.onresize = null;
@@ -118,13 +285,17 @@ function removeListeners(){
 	ticker.removeFunction(Ticker.EVENT_TICK,enterFrameFxn);
 	ticker.stop();
 	keyboard.removeFunction(Keyboard.EVENT_KEY_DOWN,keyDownFxn);
-	keyboard.removeListeners();
+}
+function addPauseListener(){
+	keyboard.addFunction(Keyboard.EVENT_KEY_DOWN,keyDownPauseFxn);
+}
+function removePauseListener(){
+	keyboard.removeFunction(Keyboard.EVENT_KEY_DOWN,keyDownPauseFxn);
 }
 // PROCESSING - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function processScene(){
 	var i, j, k, len, ch, obj, arr, next, dir, vox, v, u, canMove;
-	next = new V2D(0,0);
-	dir = new V2D(0,0);
+	next = new V2D(0,0); dir = new V2D(0,0);
 	var xD, yD, dist, speed, move;
 	// MOVE CHARS
 	for(i=0;i<charListAll.length;++i){
@@ -132,10 +303,14 @@ function processScene(){
 		if( ch.type == Obj2D.TYPE_CHAR){
 			speed = speedChar;
 		}else{ //  ENEMY LOGIC GOETH HERE
-			speed = speedEnem;
+			speed = speedEnem + Math.random()*speedVar - 0.5*speedVar;
+			xD = ch.pos.x - charMain.pos.x; yD = ch.pos.y - charMain.pos.y;
+			dist = Math.sqrt(xD*xD + yD*yD);
+				if(dist<hitDistance){
+					resetOrigins();
+					break;
+				}
 			if(!ch.moving && ch.dir==Obj2D.DIR_NA){
-				xD = ch.pos.x - charMain.pos.x; yD = ch.pos.y - charMain.pos.y;
-				dist = Math.sqrt(xD*xD + yD*yD);
 				if(dist<seeDistance){
 					move = mapSolution.getBestMove(ch.pos.x,ch.pos.y);
 					if(move==Map.MOVE4_UP){ ch.dir=Obj2D.DIR_UP;
@@ -165,16 +340,13 @@ function processScene(){
 				v = lattice.getElement(Math.max(0,Math.min(GRID_SIZE_X-1,Math.floor(next.x))),
 					Math.max(0,Math.min(GRID_SIZE_Y-1,Math.floor(next.y)))); // AVG IN
 				w = lattice.getElement(ch.dest.x,ch.dest.y); // WILL BE IN
-if(u==null){ alert('u'); }
-if(v==null){ alert('v'); }
-if(w==null){ alert('w'); }
 				if(u!=v){// switched voxels
 					u.removeChar(ch);
+					v.addChar(ch);
+					w.setBG( new Array() );
 					if( ch.type == Obj2D.TYPE_CHAR){// REFRESH AI MAP - ONLY NEED TO DO WHEN CHAR CHANGES LOCATION
 						updateEnemyMap();
 					}
-					v.addChar(ch);
-					w.setBG( new Array() );
 				}
 				if( (ch.pos.x<ch.dest.x && ch.dest.x<=next.x) || (ch.pos.x>ch.dest.x && ch.dest.x>=next.x) ||  
 					(ch.pos.y<ch.dest.y && ch.dest.y<=next.y) || (ch.pos.y>ch.dest.y && ch.dest.y>=next.y) ){
@@ -226,32 +398,19 @@ context.closePath();*/
 			}
 		}
 	}
-	// check for exit
-	if(charMain.complete){
-		removeListeners();
-		len = lattice.getLength();
-		for(i=0;i<len;++i){
-			vox = lattice.getIndex(i);
-			arr = vox.getChars();
-			for(j=0;j<arr.length;++j){
-				ch = arr[j];
-				ch.setSelectedImage(666);
-			}
-			vox.setBG( new Array() );
-		}
-		renderScene();
-		score += charMain.amt;
-		updateTitle('Completed Level '+level+'!', true);
-		level += 1;
-		if(level<=levelMax){
-			ticker.setFrameSpeed(2000);
-			ticker.addFunction(Ticker.EVENT_TICK,continueFxn);
-			ticker.start();
-			//continueFxn();
-		}else{
-			updateTitle('YOU BEAT THE GAME $'+score+'K!', true);
-		}
+}
+function resetOrigins(){ // for getting hit
+	var i, arr, obj;
+	for(i=0;i<charListAll.length;++i){
+		obj = charListAll[i];
+		obj.pos.x = obj.origin.x; obj.pos.y = obj.origin.y;
+		obj.dir = Obj2D.DIR_NA;
+		obj.moving = false;
 	}
+	var diff = charMain.amt - score;
+	score = score + Math.floor(diff/2);
+	charMain.amt = score;
+	updateTitle(charMain.amt);
 }
 
 // RENDERING - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -270,8 +429,7 @@ function renderScene(){
 		arr = vox.getBG();
 		for(j=0;j<arr.length;++j){
 			img = arr[j];
-			context.fillStyle = context.createPattern(img,'repeat');
-			context.fillRect(x*RECT_SIZE,y*RECT_SIZE,RECT_SIZE,RECT_SIZE);
+			context.drawImage(img, x*RECT_SIZE,y*RECT_SIZE);
 		}
 		++x; if(x>=GRID_SIZE_X){ x=0; ++y; }
 	}
@@ -290,8 +448,8 @@ function renderScene(){
 		}
 		++x; if(x>=GRID_SIZE_X){ x=0; ++y; }
 	}
-	// TEXT
-	/*x = 0; y = 0;
+	/*// TEXT
+	x = 0; y = 0;
 	var str, metrics, xPos, yPos;
 	for(i=0;i<len;++i){
 		context.fillStyle = "#000000";
@@ -321,7 +479,8 @@ function updateEnemyMap(){
 			}
 		}
 	}
-	mapSolution.createPaths(charMain.pos.x,charMain.pos.y); // PROPAGATE PATH NUMBERS
+	mapSolution.createPaths(charMain.dest.x,charMain.dest.y);
+	//mapSolution.createPaths(Math.round(charMain.pos.x),Math.round(charMain.pos.y)); // PROPAGATE PATH NUMBERS
 }
 
 // LEVEL AUTO-LOADING -------------------------------------------------
@@ -376,10 +535,3 @@ function loadLevel(i){
 	}
 }
 
-/*
-TODO:
-ADD INTRO SCENE
-ADD CHAR-ENEM-TOUCH RESTART LEVEL WITH $/2
-ADD 'WIN' SCENE - HIGH SCORES
-
-*/
