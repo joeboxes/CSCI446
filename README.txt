@@ -1,1 +1,1 @@
-This folder contains the unit 4 project - Articles
+This folder contains project files for web apps
